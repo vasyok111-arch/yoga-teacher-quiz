@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f6fa">
+<meta name="description" content="Проведите пробное занятие в роли преподавателя йоги. Шесть коротких вопросов, разбор решений и следующий шаг.">
+<link rel="icon" href="data:,">
+<title>Сможете провести урок йоги? · Академия Йоги</title>
+<style>
+:root{
+  color-scheme:light; --ink:#20182e; --mute:#5c5468; --paper:#f7f6fa; --line:#ded9e6;
+  --white:#fff; --brand:#6031b6; --brand-dark:#4c2692; --lav:#efe7fc; --deep:#211436; --warm:#ffdb76;
+  --green:#165b43; --green-bg:#e9f8f0; --amber:#6b4914; --amber-bg:#fff4dd;
+  --out:cubic-bezier(.23,1,.32,1); --edge:18px;
+  font-family:"Segoe UI Variable Text","Segoe UI",Arial,sans-serif; scrollbar-color:#a99cb8 var(--paper);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper)}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+[hidden]{display:none!important}
+.wrap{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+.masthead{border-bottom:1px solid var(--line);background:#fff}
+.mast-row{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:64px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap}
+.brand svg{width:35px;height:35px;flex:none}
+.brand span{font-size:13px;line-height:1.05;font-weight:850;letter-spacing:.045em}
+.brand small{display:block;font-size:8px;letter-spacing:.17em;margin-top:4px}
+.top-offer{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:780}
+.top-offer span{background:#211436;color:#fff;padding:6px 9px;border-radius:6px;font-size:10px;letter-spacing:.055em;text-transform:uppercase}
+.top-offer strong{color:var(--brand-dark);white-space:nowrap}
+.main{padding-top:24px}
+.navline{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+.quiz-progress{display:flex;align-items:center;gap:10px;min-width:0}
+.progress-label{font-size:12px;font-weight:790;white-space:nowrap}
+.track{display:flex;gap:4px;align-items:center;margin:0;padding:0;list-style:none}
+.track li{height:5px;width:clamp(13px,2.5vw,34px);border-radius:4px;background:#ded7e9;position:relative;overflow:hidden}
+.track li::after{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left;background:var(--brand);transition:transform 205ms var(--out)}
+.track li[data-done]::after{transform:scaleX(1)}
+.track li[data-current]::after{transform:scaleX(.52);background:#9166da}
+.time{font-size:12px;font-weight:700;color:var(--mute);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.ico{width:18px;height:18px;flex:none}
+.layout{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(0,1fr);gap:16px;align-items:start}
+.play,.visual,.promo{border-radius:var(--edge);overflow:hidden}
+.play{background:var(--white);border:1px solid var(--line);padding:clamp(24px,3.25vw,48px);min-height:530px}
+.side{display:grid;gap:14px;min-width:0}
+.kicker{display:flex;align-items:center;gap:8px;color:var(--brand-dark);font-size:11px;font-weight:850;letter-spacing:.115em;text-transform:uppercase;margin:0 0 14px}
+.kicker::before{content:"";height:7px;width:7px;background:var(--brand);border-radius:2px;flex:none}
+h1{font-size:clamp(32px,4.4vw,64px);line-height:.99;letter-spacing:-.065em;margin:0;font-weight:850;text-wrap:balance}
+h1 span{color:var(--brand)}
+h1:focus{outline:none}
+.play:not([data-view="welcome"]) h1{font-size:clamp(31px,3.85vw,55px);line-height:1.035;letter-spacing:-.058em}
+.lead{font-size:17px;line-height:1.48;margin:14px 0 0;color:var(--mute);max-width:47ch}
+.question{margin:21px 0 9px;font-size:15px;font-weight:800;line-height:1.37}
+.choice-list{display:grid;gap:8px}
+.choice{
+  display:grid;grid-template-columns:33px minmax(0,1fr) 18px;align-items:center;gap:11px;
+  width:100%;min-height:52px;text-align:left;background:#fff;border:1px solid #d9d1e4;
+  border-radius:10px;padding:7px 13px 7px 8px;
+  transition:background-color 145ms ease,border-color 145ms ease,transform 120ms var(--out);
+}
+.choice:active,.solid:active{transform:scale(.989)}
+.choice[data-selected]{background:#f2ebff;border-color:#8c64d6}
+.choice b{font-weight:750;font-size:15px;line-height:1.24;overflow-wrap:anywhere}
+.glyph,.letter{height:33px;width:33px;display:grid;place-items:center;background:var(--lav);color:var(--brand-dark);border-radius:7px}
+.letter{font-size:12px;font-weight:850}
+.choice>.ico{color:var(--brand-dark);transition:transform 155ms var(--out)}
+.small{font-size:12px;line-height:1.45;color:var(--mute);margin:12px 0 0}
+.scene-line{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:start;padding:10px 12px;background:#f4eefc;border-radius:9px;color:var(--brand-dark);font-size:13px;line-height:1.4;font-weight:690;margin:15px 0 0}
+.scene-line .ico{width:17px;height:17px}
+.nav-actions{display:flex;gap:11px 15px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.quiet,.solid,.grant-btn{min-height:43px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:790;text-decoration:none;border-radius:9px;line-height:1.22;transition:background-color 145ms ease,transform 120ms var(--out)}
+.quiet{color:var(--brand-dark);background:transparent;border:0;padding:8px 0}
+.solid{background:var(--brand);color:#fff;border:1px solid var(--brand);padding:10px 16px}
+.grant-btn{background:var(--warm);color:#241a2c;border:1px solid var(--warm);padding:10px 14px;min-height:49px;width:100%}
+.visual{background:#e9dcf7;border:1px solid #d9c7eb;min-height:287px;display:grid;grid-template-rows:auto 1fr auto}
+.visual-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 9px;gap:8px}
+.visual-tag{font-weight:850;font-size:10px;letter-spacing:.085em;text-transform:uppercase;color:#503373}
+.visual-index{font-size:11px;font-variant-numeric:tabular-nums;color:#503373;font-weight:800}
+.artwork{display:block;width:100%;height:auto;min-height:0;align-self:center}
+.artwork.is-studio{margin-bottom:-5px;aspect-ratio:720/375}
+.artwork.is-diagram{aspect-ratio:480/209}
+.visual-caption{padding:11px 14px;color:#49345d;font-size:12px;line-height:1.35;font-weight:710;background:#f4ecfb}
+.promo{background:var(--deep);color:#fff;padding:17px 18px 18px;border:1px solid #34204e}
+.promo-top{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.promo-kicker{text-transform:uppercase;font-size:10px;font-weight:870;letter-spacing:.10em;color:var(--warm)}
+.promo-pill{font-size:10px;font-weight:740;color:#eadff8;border:1px solid #705c8c;border-radius:20px;padding:4px 7px;white-space:nowrap}
+.amount{font-size:clamp(36px,4.05vw,60px);font-variant-numeric:lining-nums;font-weight:870;line-height:.98;letter-spacing:-.075em;margin:9px 0 0;white-space:nowrap}
+.promo p{color:#eee6f6;margin:7px 0 0;font-size:14px;line-height:1.43}
+.promo .terms{font-size:12px;line-height:1.43;color:#e4d5f6}
+.promo a:not(.grant-btn){text-underline-offset:3px}
+.promo .grant-btn{margin-top:13px}
+.promo-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;margin-top:10px;color:#f2e7fa}
+.mobile-offer{display:none}
+.layout[data-result]{display:block}
+.layout[data-result] .side{display:none}
+.play[data-view="result"]{min-height:0;padding:0;background:transparent;border:0;overflow:visible}
+.result-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,1fr);gap:14px;align-items:start;grid-template-areas:"result offer" "course offer" "review review"}
+.result-hero,.result-promo,.course-panel,.review-panel{border-radius:var(--edge)}
+.result-hero{
+  grid-area:result;position:relative;isolation:isolate;overflow:hidden;
+  background:#5c31a8;color:#fff;padding:clamp(20px,3vw,36px);min-height:265px;
+}
+.result-hero-copy{position:relative;max-width:78%}
+.result-hero .kicker{color:#fbdf91;margin-bottom:10px}
+.result-hero .kicker::before{background:currentColor}
+.play[data-view="result"] .result-hero h1{font-size:clamp(32px,3.4vw,49px);text-wrap:pretty;letter-spacing:-.052em}
+.result-hero h1 span{color:#ffe09a}
+.result-hero .lead{color:#f8efff;margin-top:10px;font-size:15px;max-width:43ch}
+.score-pill{
+  display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 9px;
+  border:1px solid #c5a8ec;border-radius:6px;color:#fff;font-size:12px;font-weight:770;background:#51268f;
+}
+.score-pill .ico{width:14px;height:14px}
+.result-art{position:absolute;width:42%;max-width:235px;height:auto;right:0;bottom:-12px;z-index:-1}
+.course-panel{grid-area:course;background:#fff;border:1px solid var(--line);padding:16px 19px}
+.course-panel .kicker{margin-bottom:7px}
+.course-panel h2,.review-heading{margin:0;font-size:21px;line-height:1.13;letter-spacing:-.03em}
+.course-panel>p:not(.kicker){margin:7px 0 0;color:var(--mute);font-size:14px;line-height:1.43}
+.course-points{display:flex;flex-wrap:wrap;gap:5px;margin:11px 0 0;padding:0;list-style:none}
+.course-points li{background:#f0e8fc;color:#462279;padding:5px 7px;border-radius:5px;font-size:11px;font-weight:770}
+.review-panel{grid-area:review;background:#fff;border:1px solid var(--line);padding:18px 19px}
+.review-top{display:flex;gap:7px 14px;justify-content:space-between;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.review-top .small{margin:0}
+.next-tip{background:#f5efff;border:1px solid #e6d9f9;border-radius:10px;padding:10px 12px;margin:12px 0 0;color:#44296a;font-size:13px;line-height:1.43}
+.review{display:grid;gap:5px;margin:0;padding:0;list-style:none}
+.review li{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.review summary{display:grid;grid-template-columns:21px minmax(0,1fr) 15px;align-items:center;gap:7px;padding:8px 9px;cursor:pointer;list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary>.ico:last-child{width:14px;height:14px;color:var(--brand-dark)}
+.review details[open] summary>.ico:last-child{transform:rotate(180deg)}
+.review summary .status{display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--amber-bg);color:var(--amber);font-size:12px;font-weight:900}
+.review summary .status.good{background:var(--green-bg);color:var(--green)}
+.review summary b{display:block;font-size:12px;line-height:1.22;margin-bottom:2px}
+.review summary small{display:block;font-size:13px;line-height:1.28;color:#3d2b56;font-weight:690}
+.review details p{margin:0 10px 9px 37px;color:var(--mute);font-size:13px;line-height:1.43}
+.result-promo{grid-area:offer;padding:clamp(16px,2.4vw,29px);border-color:#63438f;background:#231437}
+.result-promo .amount{color:var(--warm);margin:12px 0 0;font-size:clamp(44px,6.1vw,88px)}
+.result-promo .offer-subtitle{color:#fff;font-weight:760;margin-top:5px;font-size:16px}
+.result-promo .offer-value{margin-top:9px;font-size:14px}
+.result-promo .offer-facts{display:none}
+.offer-gift{
+  display:grid;grid-template-columns:35px minmax(0,1fr);align-items:center;gap:10px;
+  margin-top:13px;padding:10px;background:#3b2458;border:1px solid #765596;border-radius:9px;
+}
+.gift-icon{display:grid;place-items:center;width:35px;height:35px;background:#ffe09a;color:#462279;border-radius:7px}
+.gift-label{display:block;color:#f7d88b;font-size:10px;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.offer-gift strong{display:block;color:#fff;margin-top:2px;font-size:15px;line-height:1.2}
+.offer-gift small{display:block;color:#f0e3fc;margin-top:4px;font-size:12px;line-height:1.35}
+.lead-form{margin-top:13px}
+.lead-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lead-fields label{display:block;margin-bottom:4px;color:#f8efff;font-size:12px;font-weight:740}
+.lead-fields input{
+  box-sizing:border-box;width:100%;min-height:44px;padding:8px 9px;border:1px solid #cdbedb;border-radius:7px;
+  color:var(--ink);background:#fff;font:inherit;font-size:16px;
+}
+.lead-fields input::placeholder{color:#6d627a}
+.lead-fields input[aria-invalid="true"]{border:2px solid #f6a880}
+.lead-status{margin:8px 0 0;color:#ffe4aa;font-size:12px;line-height:1.45}
+.lead-status:empty{display:none}
+.result-promo .grant-btn{margin-top:9px;min-height:52px;font-size:15px}
+.result-promo .grant-btn:disabled{opacity:.72;cursor:default}
+.result-promo .grant-btn:focus-visible,.result-promo a:focus-visible,.lead-fields input:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+.result-promo .follow-up{margin-top:9px;font-size:12px;color:#f2e7ff;line-height:1.42}
+.result-promo .preview-note{margin-top:6px;font-size:12px;color:#f2e7ff}
+.result-promo .promo-link{min-height:27px;margin-top:5px}
+.result-grid.enter .result-art{animation:enter 245ms var(--out) both;animation-delay:45ms}
+.footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 18px;padding:14px 0 19px;font-size:12px;color:var(--mute)}
+.footer a{color:var(--brand-dark);text-underline-offset:3px}
+.enter{animation:enter 200ms var(--out) both}
+.enter .choice{animation:enter 175ms var(--out) both}
+.enter .choice:nth-child(2){animation-delay:25ms}.enter .choice:nth-child(3){animation-delay:50ms}.enter .choice:nth-child(4){animation-delay:75ms}
+.enter .artwork .beat{animation:enter 245ms var(--out) both;transform-origin:center;transform-box:fill-box}
+.enter .artwork .beat:nth-of-type(2){animation-delay:35ms}.enter .artwork .beat:nth-of-type(3){animation-delay:60ms}
+@keyframes enter{from{opacity:.24;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){
+  .choice:hover{background:#f7f2ff;border-color:#a587d5}.choice:hover>.ico{transform:translateX(3px)}
+  .quiet:hover,.top-offer:hover{text-decoration:underline;text-underline-offset:3px}
+  .solid:hover{background:var(--brand-dark)}.grant-btn:hover{background:#ffe39b}
+}
+@media(max-width:860px){
+  .wrap{width:calc(100% - 40px)}.layout{gap:11px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+  .side{gap:11px}.play{padding:24px}.visual{min-height:0}
+  .result-grid{gap:11px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  .result-hero-copy{max-width:88%}
+}
+@media(max-width:680px){
+  .wrap{width:calc(100% - 28px)}.mast-row{min-height:55px}.brand svg{width:31px;height:31px}
+  .top-offer{gap:5px;font-size:11px}.top-offer span{font-size:8px;padding:5px 6px}
+  .main{padding-top:12px}.navline{margin-bottom:10px;gap:6px}
+  .quiz-progress{gap:7px}.progress-label,.time{font-size:11px}
+  .time .ico{width:15px;height:15px}.track{gap:3px}
+  .layout{display:block}.play{padding:19px 15px 17px;min-height:0;border-radius:14px}
+  .side{margin-top:11px}.layout:not([data-result]) .side{display:none}
+  .kicker{font-size:10px;letter-spacing:.08em;margin-bottom:9px}
+  h1{font-size:clamp(33px,9.6vw,51px);line-height:1.02}
+  .play:not([data-view="welcome"]) h1{font-size:clamp(30px,8.2vw,45px)}
+  .lead{font-size:15px;margin-top:10px}.question{margin-top:15px;font-size:14px}
+  .choice{min-height:48px;gap:8px;padding-right:9px}.choice b{font-size:14px}
+  .choice-list{gap:6px}.mobile-offer{display:grid;grid-template-columns:1fr minmax(77px,36%);align-items:center;gap:5px;margin-top:13px;overflow:hidden;background:#241738;color:#fff;border-radius:9px;min-height:65px}
+  .mobile-offer p{margin:0;padding:8px 0 8px 10px;font-size:11px;line-height:1.25;color:#efe6fa}
+  .mobile-offer strong{display:block;font-size:18px;line-height:1.16;color:var(--warm);letter-spacing:-.045em;white-space:nowrap}
+  .mobile-offer .artwork{height:72px;width:100%;object-fit:cover}
+  .result-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"result" "offer" "course" "review";gap:10px}
+  .result-hero{min-height:0;padding:16px 14px;border-radius:14px}
+  .result-hero-copy{max-width:100%}
+  .play[data-view="result"] .result-hero h1{font-size:clamp(29px,8.1vw,43px)}
+  .result-hero .lead{font-size:14px;max-width:35ch}
+  .result-art{width:39%;right:-6px;bottom:-16px;opacity:.37}
+  .score-pill{margin-top:10px}
+  .result-promo,.course-panel,.review-panel{padding:14px;border-radius:14px}
+  .result-promo .amount{font-size:54px;margin-top:8px}
+  .result-promo .offer-facts{display:block;color:#f0e3fc;font-size:12px;margin-top:5px}
+  .offer-gift,.lead-form{margin-top:10px}
+  .course-panel h2,.review-heading{font-size:20px}
+  .footer{padding:12px 0;font-size:11px}.review summary{padding:7px 8px}
+}
+@media(max-width:350px){.top-offer span{display:none}.track li{width:12px}.time{font-size:10px}.play{padding-inline:12px}}
+@media(max-width:350px){.lead-fields{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.track li[data-current],.track li[data-done]{border:1px solid Highlight}.choice[data-selected]{outline:1px solid Highlight}:root{scrollbar-color:auto}}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 44 44"><rect x="1" y="1" width="42" height="42" rx="11" fill="#6031b6"/><g fill="none" stroke="#fff7ff" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M22 32C13 30 9 24 10 18c6 0 10 4 12 10 2-6 6-10 12-10 1 6-3 12-12 14Z"/><path d="M22 27c-4-6-4-10 0-15 4 5 4 9 0 15Z"/></g><circle cx="22" cy="8.2" r="1.4" fill="#ffdb76"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="back" viewBox="0 0 24 24"><path d="M20 12H5m6 6-6-6 6-6"/></symbol>
+  <symbol id="down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.8v4.8l3.1 1.8"/></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 18c-1-7 4-12 14-12 0 10-5 15-12 13m-2 1c3.1-4.9 5.4-7.6 10-10"/></symbol>
+  <symbol id="steps" viewBox="0 0 24 24"><path d="M4 19h5v-5h5V9h6m-5-4h5v4"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2c1.1 6.4 3.6 8.9 10 10-6.4 1.1-8.9 3.6-10 10C10.9 15.6 8.4 13.1 2 12c6.4-1.1 8.9-3.6 10-10Z"/></symbol>
+  <symbol id="talk" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M7 10h10m-10 3h6"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19v-1a6 6 0 0 1 12 0v1m2-13a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 4"/></symbol>
+  <symbol id="online" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="gift" viewBox="0 0 24 24"><path d="M3 8h18v4H3zM5 12v9h14v-9m-7-4v13M12 8c0-3.5-1.5-5-3-5-1 0-2 .8-2 2 0 1.5 1.5 3 5 3Zm0 0c0-3.5 1.5-5 3-5 1 0 2 .8 2 2 0 1.5-1.5 3-5 3Z"/></symbol>
+  <symbol id="studio" viewBox="0 0 720 440"><defs>
+    <clipPath id="room"><rect width="720" height="440" rx="32"/></clipPath>
+    <clipPath id="window"><path d="M57 247V130a105 105 0 0 1 210 0v117Z"/></clipPath>
+    <pattern id="paper" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".6" fill="#7654AF" opacity=".2"/><circle cx="8" cy="7" r=".4" fill="#7654AF" opacity=".16"/></pattern>
+  </defs>
+  <g clip-path="url(#room)">
+    <path fill="#F1E9FA" d="M0 0h720v440H0z"/>
+    <path fill="#E6D8F3" d="M0 296h720v144H0z"/>
+    <path fill="#F8F0FC" d="M0 297h720l-1 7H0z"/>
+    <path fill="url(#paper)" d="M0 0h720v440H0z"/>
+    <g clip-path="url(#window)">
+      <path fill="#FCF7FB" d="M52 23h223v229H52z"/>
+      <circle cx="151" cy="116" r="42" fill="#F4BB6F"/>
+      <path fill="#EBDCF4" d="M38 218c48-42 87-42 134-9 29-25 62-35 105-26v74H38Z"/>
+      <path fill="#DDCAED" d="M49 225c56-19 80-15 122-6 41 9 59 10 106 2v36H49Z"/>
+      <g fill="none" stroke="#7654AF" opacity=".43" stroke-width="1.5"><path d="M162 26v224M52 145h220"/></g>
+    </g>
+    <path d="M57 247V130a105 105 0 0 1 210 0v117Z" fill="none" stroke="#7654AF" stroke-width="2" opacity=".58"/>
+    <path d="M52 248h219v7H52Z" fill="#E8D9F2" stroke="#7654AF" stroke-width="1.5"/>
+    <g fill="none" stroke="#AE98C9" stroke-width="1.2" opacity=".65">
+      <path d="M0 296h720M0 404h720M11 333l-23 17m153-46L0 432m264-127-57 135m181-135 33 135m83-135 127 135m8-136 80 42"/>
+      <path d="M632 91h34m-17-17v34" stroke="#7654AF" opacity=".48"/>
+    </g>
+    <g fill="none" stroke="#392751" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="555" y="56" width="57" height="72" rx="3" fill="#F8F0FC" stroke="#7654AF" stroke-width="1.5"/>
+      <circle cx="588" cy="81" r="9" fill="#F4BB6F" stroke="none"/>
+      <path d="M569 111c2-11 10-17 19-17 5 0 9 2 13 5m-25 16c4-7 9-11 16-11 4 0 6 1 9 3" stroke="#7654AF" stroke-width="1.5"/>
+    </g>
+
+    <g stroke="#392751" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M627 266c3-48 10-77 28-103m-26 102c-8-25-15-53-15-78m16 82c10-25 18-47 33-58" fill="none"/>
+      <path d="M639 194c-7-22 5-38 26-45 0 21-9 38-26 45Z" fill="#7654AF"/>
+      <path d="M619 219c-21-10-29-27-26-46 20 6 29 23 26 46Z" fill="#CBB3E5"/>
+      <path d="M639 240c5-23 17-36 39-39-4 21-18 34-39 39Z" fill="#9C80C5"/>
+      <path d="M623 247c-16-4-25-15-25-28 16 3 24 13 25 28Z" fill="#E4D4F2"/>
+      <path d="M612 264h35l-3 33c-.4 4-3 6-6 6h-16c-4 0-6-2-6-6Z" fill="#F4BB6F"/>
+      <rect x="608" y="260" width="43" height="9" rx="3" fill="#F9D49D"/>
+      <path d="m624 276 1 15m7-15v15m7-15-1 15" fill="none" stroke="#AD775D" stroke-width="1.2"/>
+    </g>
+
+    <path d="M59 360c68-15 181-15 251 1 24 5 17 18-15 24-80 14-189 8-239-4-18-4-18-16 3-21Z" fill="#CAB3E2" opacity=".47"/>
+    <path d="M385 365c60-15 176-12 242 2 28 6 31 18-8 25-72 13-190 6-236-8-15-4-16-15 2-19Z" fill="#CAB3E2" opacity=".47"/>
+
+    <g stroke="#392751" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="#B69AD6" d="M79 346h202c7 0 12 1 15 3l28 19c4 3 1 7-5 7H57c-8 0-12-4-7-7l17-17c3-4 7-5 12-5Z"/>
+      <path d="M53 370h266" stroke="#7654AF" stroke-width="1.4" opacity=".65"/>
+      <path fill="#B69AD6" d="M414 353h197c6 0 10 2 12 4l19 19c3 3 0 7-6 7H376c-7 0-10-4-5-8l28-18c5-3 9-4 15-4Z"/>
+      <path d="M374 377h264" stroke="#7654AF" stroke-width="1.4" opacity=".65"/>
+
+      <!-- Student, upright and listening. -->
+      <path fill="#F0AD8F" d="M226 333c8 1 25 11 26 18 0 4-3 6-9 6h-33c-8 0-9-5-5-11l11-11Z"/>
+      <path fill="#7654AF" d="M183 300c-16-8-30-7-44 4l-34 28c-14 11-12 26 3 30 21 6 62 0 95-5l22-6-7-14-59 7 40-21Z"/>
+      <path fill="#8D68C4" d="M199 300c10 1 21 12 26 17l24 22c9 10 3 23-7 25-19 5-64 2-89-3l-19-5 7-14 64 2-37-24Z"/>
+      <path fill="#F7C0A2" d="M146 343c-8-1-19 1-26 5-5 4-7 9-2 12 6 5 14 4 25 1l18-4-4-11Z"/>
+      <path d="M201 344c13 0 20 3 25 6m-86-34-25 22" fill="none" stroke="#C5A9E1" stroke-width="1.5"/>
+      <path fill="#F7C0A2" d="M178 205l-3 22 27 1-5-15 1-15Z"/>
+      <path fill="#F4BB6F" d="M173 222c-9 2-15 6-20 13-7 9-9 34-9 49l1 23c10 8 36 12 57 3l-3-40c3-12 13-21 10-33-2-9-9-13-13-15-4 7-16 7-23 0Z"/>
+      <path d="M168 281c-2 8-1 17 2 22m14-62c4 4 10 5 16 3" fill="none" stroke="#BD8064" stroke-width="1.5"/>
+      <path fill="#F7C0A2" d="M154 246c-6 6-6 16-7 23l-5 22-19 21-9 2c-5 3-6 7-4 9 4 4 11 1 19-2 6-2 10-6 16-11l16-15c5-4 9-18 11-27l2-13c-1-9-13-14-20-9Z"/>
+      <path d="m118 318 6-1" fill="none" stroke="#A65E57" stroke-width="1.25"/>
+      <path fill="#F7C0A2" d="M194 176c11 0 20 7 22 18 1 4 0 6 3 9l5 4c1 1 1 3-1 4l-5 2c-1 10-8 15-17 14-8 0-13-5-18-11-7-5-8-14-6-22 2-10 7-17 17-18Z"/>
+      <path fill="#392751" d="M215 193c-9 0-16-4-21-10 0 8-5 16-11 18-4-3-7-1-8 3-9-6-12-14-10-24 3-13 15-20 27-19 15 0 25 11 23 32Z"/>
+      <path fill="#392751" d="M172 180c-7 6-17 1-17-6 1-6 6-9 12-7 6 1 9 7 5 13Z"/>
+      <path d="M173 185c2-9 10-15 20-16" fill="none" stroke="#9473B5" stroke-width="1.5"/>
+      <path d="M207 200q3-2 6 0m-1 17 4 0m-37-12c3-3 6-1 7 2" fill="none" stroke-width="1.35"/>
+      <path d="M204 210h4" stroke="#DB917C" stroke-width="2.8"/>
+
+      <!-- Teacher, turned toward the student with an open palm. -->
+      <path fill="#B46E64" d="M510 341c-10-1-24 2-31 7-6 4-5 10 2 13 9 3 25 1 38-3l9-6Z"/>
+      <path fill="#5B437F" d="M480 309c-12-8-30-6-39 2l-33 28c-11 9-10 20 2 25 18 8 53 2 96-6l23-6-7-13-59 7 34-23Z"/>
+      <path fill="#7654AF" d="M512 303c11 3 20 11 27 18l22 23c8 8 6 20-6 24-16 6-57 2-87-2l-27-5 6-17 60 3-31-26Z"/>
+      <path fill="#CC8574" d="M453 347c-11-1-24 4-29 9-4 4-2 7 2 9 9 3 21 2 35-1l15-5-4-10Z"/>
+      <path d="M501 347c10 0 16 2 25 5m-81-32-23 19" fill="none" stroke="#B296D3" stroke-width="1.5"/>
+      <path fill="#CC8574" d="M489 203l-3 22 25 3 1-25Z"/>
+      <path fill="#FBF1EF" d="M487 219c-13 3-24 10-30 22-6 13-5 24-3 40l1 26c16 9 42 11 62 1l-1-40c10-18 7-33-4-41l-8-7c-4 8-12 8-17-1Z"/>
+      <path d="M479 247c-2 16-5 30-1 47m12-61c3 5 8 7 13 6" fill="none" stroke="#AD91C9" stroke-width="1.6"/>
+      <path fill="#CC8574" d="M515 235c12 2 17 13 21 26l6 25 15 21 8 4c5 4 3 7 0 9-7 2-15-5-19-9l-20-17c-4-4-5-8-7-15l-9-29c-2-6-1-13 5-15Z"/>
+      <path fill="#CC8574" d="M465 236c-9 4-13 10-17 18l-12 20-22-2-14-10-8-3c-3-1-6 1-4 3l7 6-11-1c-3 0-6 1-4 4l9 6c5 3 10 2 18 3l30 12c8 3 15 0 19-7l19-27c8-13 0-27-10-22Z"/>
+      <path d="m391 270 7 3m155 40 5 4" fill="none" stroke="#9B5453" stroke-width="1.25"/>
+      <path fill="#CC8574" d="M481 172c-13 2-20 11-20 23 0 4-2 6-5 9-3 3-2 5 1 6l5 2c2 11 8 16 19 15 10 0 18-9 23-18 4-8 6-18 2-27-5-11-14-13-25-10Z"/>
+      <path fill="#392751" d="M461 192c6-2 16-8 20-15 3 11 10 16 15 18 2-4 6-3 8 1 1 4-1 9-4 12 10-3 16-10 16-22 1-17-12-30-28-30-15-1-26 11-27 22-1 5-1 9 0 14Z"/>
+      <path fill="#392751" d="M505 166c-2-8 3-17 12-17 7 0 12 6 11 13-1 9-9 14-17 10Z"/>
+      <path d="M487 165c7 0 15 5 18 12" fill="none" stroke="#9473B5" stroke-width="1.5"/>
+      <path d="M464 200q3-2 7 0m-7 16q3 1 6-1m27-17c2-3 5-2 5 1" fill="none" stroke-width="1.35"/>
+      <path d="M471 210h4" stroke="#AA5D5D" stroke-width="2.8"/>
+      <circle cx="497" cy="209" r="3.3" fill="#F4BB6F" stroke-width="1.15"/>
+    </g>
+
+    <g stroke="#392751" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M330 354c0 4 3 7 7 7h13c4 0 7-3 7-7l1-27h-30Z" fill="#E9DAF4" stroke-width="2"/>
+      <path d="M330 346h26l-1 9c-.1 2-2 3-4 3h-15c-2 0-4-2-4-4Z" fill="#B69AD6" stroke="none"/>
+      <path d="M334 324v-6h17v6m-19 4h22" fill="none" stroke-width="2"/>
+      <path d="M654 402c-4-7-14-10-24-8l-27 6c-6 2-9 6-8 11 1 5 8 7 13 6l39-7c5-1 9-4 7-8Z" fill="#F4BB6F" stroke-width="2"/>
+      <path d="M603 401c7-1 14 2 15 6 1 3-3 6-8 7-4 1-7 0-8-2s1-4 4-4" fill="none" stroke-width="1.4"/>
+    </g>
+  </g>
+</symbol>
+</svg>
+<header class="masthead">
+  <div class="wrap mast-row">
+    <a class="brand" href="https://yoga-academy.online/" target="_blank" rel="noopener" aria-label="Сайт Академии Йоги"><svg aria-hidden="true"><use href="#logo"></use></svg><span>YOGA<small>ACADEMY</small></span></a>
+    <a class="top-offer" href="https://yoga-academy.online/ackcia-yoga" target="_blank" rel="noopener"><span>Чёрная пятница</span><strong>Грант 40 000 ₽</strong></a>
+  </div>
+</header>
+<main class="wrap main">
+  <div class="navline">
+    <div class="quiz-progress"><span class="progress-label" id="progress-label">Вопрос 1 из 6</span><ol class="track" id="track" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ol></div>
+    <span class="time" id="duration"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#clock"></use></svg>1–2 минуты</span>
+  </div>
+  <div class="layout" id="layout">
+    <section class="play" id="play" data-view="welcome" aria-labelledby="stage-title">
+      <p class="kicker">Профпроба Академии Йоги</p><h1 id="stage-title" tabindex="-1">Сможете провести <span>первый урок йоги?</span></h1>
+      <noscript><p class="lead">Для квиза нужен JavaScript. <a href="https://yoga-academy.online/ackcia-yoga">Перейти к условиям акции</a>.</p></noscript>
+    </section>
+    <aside class="side" id="side" aria-label="Сцена и условия акции"></aside>
+  </div>
+  <footer class="footer"><span>Академия Йоги · Курс «Преподаватель хатха-йоги»</span><a href="https://yoga-academy.online/ackcia-yoga" target="_blank" rel="noopener">Условия Чёрной пятницы ↗</a></footer>
+</main>
+<script>
+/* QUIZ_SOURCE_START */
+(() => {
+  'use strict';
+  const PROMO = 'https://yoga-academy.online/ackcia-yoga';
+  const FORM = 'https://course.great-yoga.ru/pl/lite/widget/widget?id=1533435';
+  // Configure a same-origin endpoint that accepts a JSON lead and returns {ok: true} after saving it.
+  const LEAD_ENDPOINT = '';
+  const TOTAL = 6;
+  const LETTERS = ['А','Б','В','Г'];
+  const goals = [
+    {label:'Попробовать вести занятия',icon:'steps',tip:'Проведите пять минут знакомой практики для одного человека. Спросите, где ему пришлось смотреть на вас, чтобы понять команду.'},
+    {label:'Освоить новую профессию',icon:'sun',tip:'Набросайте план 10-минутного урока: одна цель, три короткие команды и время на самостоятельный повтор.'},
+    {label:'Уже веду занятия и хочу расти',icon:'spark',tip:'Запишите минуту своих команд. Послушайте, хватает ли пауз, чтобы группа успевала за словами.'},
+    {label:'Пока практикую для себя',icon:'leaf',tip:'Возьмите три знакомых движения и объясните каждое одной фразой. Заметьте, какой переход сложнее описать словами.'}
+  ];
+  const settings = [
+    {label:'Новички в студии',icon:'leaf',name:'Группа новичков',first:'start',motto:'Ясная команда помогает всей группе начать.'},
+    {label:'Группа с разным опытом',icon:'users',name:'Группа разного уровня',first:'mixed',motto:'Одна задача может иметь несколько вариантов.'},
+    {label:'Участники онлайн',icon:'online',name:'Занятие онлайн',first:'online',motto:'Инструкция должна работать даже без картинки.'},
+    {label:'Пока не знаю — выберите за меня',icon:'spark',name:'Пробное занятие',first:'start',motto:'Начнём с самого обычного первого занятия.'}
+  ];
+  // Each scene has one best next action given the stated conditions.
+  const cards = {
+    start:{
+      cue:'Первые минуты', title:'Группа не успевает',
+      lead:'Вы сказали: «Шагните вперёд и поднимите руки». Половина группы ещё переставляет ноги.',
+      prompt:'Что скажете дальше?',
+      choices:['Повторю всю фразу медленнее','Дам команду сделать шаг и подожду','Покажу оба движения ещё раз','Продолжу, чтобы не сбить ритм'],
+      correct:1, skill:'Ясность команд', explain:'Отделите шаг от подъёма рук. Сначала короткая команда, затем пауза: группе нужно время, чтобы выполнить действие.',
+      beat:'Группа снова готова двигаться.',
+    },
+    mixed:{
+      cue:'Первые минуты', title:'Группа движется вразнобой',
+      lead:'Новички спешат за теми, кто давно практикует. Ваша задача — оставить всех в одном упражнении.',
+      prompt:'Как перестроите объяснение?',
+      choices:['Задам всем одинаковый медленный темп','Попрошу опытных показать группе','Предложу два варианта одного перехода','Заменю переход на совсем другой'],
+      correct:2, skill:'Внимание к группе', explain:'Сохраните общую задачу и дайте выбор: «Останьтесь на первом движении или добавьте второе, когда будете готовы».',
+      beat:'Вы переходите к следующей части занятия.',
+    },
+    online:{
+      cue:'Первые минуты', title:'На экране видно не всё',
+      lead:'У двух участников обрезана картинка. Они слышат вас, но не видят, с какой ноги вы начинаете.',
+      prompt:'Как продолжите без остановки занятия?',
+      choices:['Назову сторону и одно движение словами','Встану дальше от камеры и повторю молча','Перешлю запись после занятия','Попрошу участников посмотреть друг на друга'],
+      correct:0, skill:'Ясность команд', explain:'Опишите сторону и одно действие голосом. Картинка помогает, но команда должна быть понятна и без неё.',
+      beat:'Группа продолжает практику по вашим подсказкам.',
+    },
+    clarify:{
+      cue:'Второй заход', title:'Сделайте подсказку короче',
+      lead:'Группа готова повторить переход. На этот раз важно, чтобы первую команду можно было выполнить сразу.',
+      prompt:'Какую фразу выберете?',
+      choices:['«Сделайте, как я, и следите за руками»','«Подготовьтесь и выстройте положение»','«Начните шаг и одновременно тянитесь вверх»','«Шагните правой ногой вперёд» — затем пауза'],
+      correct:3, skill:'Ясность команд', explain:'Конкретная сторона и одно действие дают группе ясную задачу. Вторую команду можно добавить после паузы.',
+      beat:'Теперь группа может повторить переход.',
+    },
+    mirror:{
+      cue:'Второй заход', title:'Правая или левая?',
+      lead:'Вы стоите лицом к группе. Участники зеркалят показ и путают стороны. Нужно показать движение ещё раз.',
+      prompt:'Как сделаете сторону понятной?',
+      choices:['Останусь лицом и скажу «моя правая»','Повернусь с группой в одну сторону','Повторю «правая» громче','Уберу слова и только покажу'],
+      correct:1, skill:'Ясность команд', explain:'В одном направлении слова и показ совпадут. Предупредите группу: «Я повернусь вместе с вами».',
+      beat:'Движение теперь можно повторить без путаницы.',
+    },
+    observe:{
+      cue:'Второй заход', title:'Двое теряют один переход',
+      lead:'Остальные повторяют связку. Два человека пропускают одно и то же действие. Останавливать группу срочно не нужно.',
+      prompt:'Что сделаете на следующем повторе?',
+      choices:['Дам одну общую подсказку в нужный момент','После повтора попрошу двоих показать переход','Добавлю объяснение в общий итог урока','Заменю всю связку'],
+      correct:0, skill:'Внимание к группе', explain:'Назовите пропущенное действие во время повтора. Участники смогут попробовать его сразу, без внимания всей группы к их ошибке.',
+      beat:'Класс доходит до самостоятельного повтора.',
+    },
+    screen:{
+      cue:'Второй заход', title:'Все камеры выключены',
+      lead:'Вы объяснили новый переход онлайн. По видео нельзя понять, успели ли участники его повторить.',
+      prompt:'Как проверите, можно ли двигаться дальше?',
+      choices:['Подожду несколько секунд и начну следующий блок','Попрошу одного человека включить камеру','Попрошу короткий знак в чате, когда готовы','Повторю всю связку с начала'],
+      correct:2, skill:'Внимание к группе', explain:'Заранее договоритесь о простом сигнале в чате. Он даст обратную связь без требования включить камеру.',
+      beat:'Вы получаете сигнал от группы и продолжаете.',
+    },
+    demo:{
+      cue:'Самостоятельный повтор', title:'Без показа группа замерла',
+      lead:'Только что группа повторяла за вами. Теперь вы хотите проверить, может ли она начать знакомое движение без картинки.',
+      prompt:'Что сделаете?',
+      choices:['Снова буду показывать от начала до конца','Попрошу повторить всё в тишине','Дам одну команду голосом и посмотрю на группу','Перейду к следующему упражнению'],
+      correct:2, skill:'Внимание к группе', explain:'Одной голосовой команды достаточно для короткой проверки. По реакции группы видно, где ещё нужен показ.',
+      beat:'Урок подходит к финалу.',
+    },
+    pace:{
+      cue:'Самостоятельный повтор', title:'Половина класса уже готова',
+      lead:'Одни закончили переход, другие ещё выполняют его. Через несколько секунд можно продолжить вместе.',
+      prompt:'Что предложите тем, кто уже закончил?',
+      choices:['Начать следующий переход самим','Остаться здесь до общей команды','Повторить движение в быстром темпе','Показать остальным, как успеть'],
+      correct:1, skill:'Внимание к группе', explain:'Один понятный ориентир удержит группу вместе: «Останьтесь здесь, я подскажу, когда продолжать».',
+      beat:'Урок подходит к финалу.',
+    },
+    plan:{
+      cue:'Самостоятельный повтор', title:'План занятия не помещается',
+      lead:'Осталось пять минут. Вы хотели показать новую связку и оставить время на завершение.',
+      prompt:'Что выберете?',
+      choices:['Ускорю оставшуюся часть','Покажу новую связку без повторения','Уберу завершение ради связки','Повторю знакомое и спокойно завершу'],
+      correct:3, skill:'Структура занятия', explain:'Закрепите знакомое и оставьте время на завершение. Новую связку можно разобрать на следующем уроке.',
+      beat:'Последнее движение уже позади.',
+    },
+    advanced:{
+      cue:'Самостоятельный повтор', title:'Что поменять к следующему разу?',
+      lead:'Участники справляются по отдельности, но запаздывают в одном переходе между движениями.',
+      prompt:'Какую одну правку запланируете?',
+      choices:['Разберу именно этот переход отдельно','Упрощу всё занятие','Добавлю ещё один показ всей связки','Попрошу группу выучить последовательность дома'],
+      correct:0, skill:'Структура занятия', explain:'Изолируйте место, где группа теряет нить. Одну конкретную правку проще объяснить и проверить.',
+      beat:'Последнее движение уже позади.',
+    },
+    closing:{
+      cue:'После занятия', title:'«Я смотрела на соседку»',
+      lead:'Участнице понравился урок, но она говорит, что часто ориентировалась на соседку, а не на ваши слова.',
+      prompt:'Что спросите в первую очередь?',
+      choices:['«На каком переходе это случалось?»','«В следующий раз показать больше?»','«Вам было слишком быстро?»','«Хотите попробовать группу для начинающих?»'],
+      correct:0, skill:'Обратная связь', explain:'Конкретный момент поможет понять, чего не хватило: показа, чётких слов или паузы. Это одна проверяемая правка к следующему занятию.',
+    },
+    reflection:{
+      cue:'После занятия', title:'На что обратить внимание?',
+      lead:'Двое говорят, что стало понятнее после вашего второго объяснения. Вы хотите понять, что сработало.',
+      prompt:'Какой вопрос даст больше пользы?',
+      choices:['«Вам всё понравилось?»','«Хотите занятие подлиннее?»','«Что во второй подсказке помогло?»','«На следующем уроке повторить то же самое?»'],
+      correct:2, skill:'Обратная связь', explain:'Конкретный вопрос покажет, что именно помогло: более простые слова, показ или пауза. Так вы сможете повторить удачный приём.',
+    }
+  };
+  const play = document.querySelector('#play');
+  const side = document.querySelector('#side');
+  const layout = document.querySelector('#layout');
+  const label = document.querySelector('#progress-label');
+  const track = [...document.querySelectorAll('#track li')];
+  const duration = document.querySelector('#duration');
+  const letters = i => LETTERS[i];
+  const icon = id => `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#${id}"></use></svg>`;
+  const picture = () => '<svg class="artwork is-studio" viewBox="0 24 720 392" aria-hidden="true"><use href="#studio" width="720" height="440"></use></svg>';
+  const pad = n => String(n).padStart(2,'0');
+  const trackingParams = () => {
+    const incoming = new URLSearchParams(location.search);
+    const tracking = new URLSearchParams();
+    for (const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','yclid']) {
+      const value = incoming.get(key);
+      if (value && value.length < 260) tracking.set(key, value);
+    }
+    return tracking;
+  };
+  const formUrl = () => {
+    const url = new URL(FORM);
+    for (const [key, value] of trackingParams()) url.searchParams.set(key, value);
+    return url.href;
+  };
+  let step = 0;
+  let answers = [];
+
+  function sceneAt(index) {
+    const group = settings[answers[1]?.choice ?? 0];
+    switch (index) {
+      case 2: return group.first;
+      case 3: {
+        const prev=answers[2], wasRight=prev && cards[prev.key].correct===prev.choice;
+        if (!wasRight && group.first==='start') return 'clarify';
+        if (group.first==='online') return wasRight ? 'screen' : 'clarify';
+        if (group.first==='mixed') return wasRight ? 'observe' : 'pace';
+        return 'mirror';
+      }
+      case 4: {
+        const goal=answers[0].choice;
+        if (goal===2) return 'advanced';
+        if (goal===1) return 'plan';
+        if (goal===3) return 'demo';
+        return answers[3]?.key==='pace' ? 'demo' : 'pace';
+      }
+      default: return (answers[3]?.key==='observe'||answers[4]?.key==='advanced') ? 'reflection' : 'closing';
+    }
+  }
+  function choiceRows(choices, current) {
+    return `<div class="choice-list" role="group" aria-labelledby="question">${choices.map((opt,i)=>{
+      const o=typeof opt==='string'?{label:opt}:opt;
+      return `<button class="choice" type="button" data-choice="${i}" ${i===current?'data-selected aria-describedby="chosen-before"':''}>
+        <span class="${o.icon?'glyph':'letter'}" aria-hidden="true">${o.icon?icon(o.icon):letters(i)}</span><b>${o.label}</b>${icon('arrow')}
+      </button>`;
+    }).join('')}</div>`;
+  }
+  const head = (kicker,title,lead) => `<p class="kicker">${kicker}</p><h1 id="stage-title" tabindex="-1">${title}</h1>${lead?`<p class="lead">${lead}</p>`:''}`;
+  const line = t => `<p class="scene-line">${icon('talk')}<span>${t}</span></p>`;
+  const button = (action, text, ico='back') => `<button class="quiet" type="button" data-action="${action}">${icon(ico)}${text}</button>`;
+  const nav = () => `<div class="nav-actions">${button('back','Назад')}</div>`;
+  const ask = (prompt, list) => `<p id="question" class="question">${prompt}</p>${choiceRows(list,answers[step]?.choice)}<span id="chosen-before" hidden>Выбирали ранее</span>`;
+  const grant = () => `<div class="promo">
+    <div class="promo-top"><span class="promo-kicker">Чёрная пятница</span><span class="promo-pill">На флагманский курс</span></div>
+    <div class="amount">40 000 ₽</div><p><strong>Грант на обучение</strong> на курсе «Преподаватель хатха-йоги».</p>
+    <p class="terms"><a href="${PROMO}" target="_blank" rel="noopener">Посмотреть условия акции</a></p>
+  </div>`;
+
+  function diagram(mode) {
+    const people = mode==='online' ? `<path d="M20 15h95v74H20z" fill="#e8d9f7" stroke="#b394d6" stroke-width="1.5"/><rect x="25" y="20" width="85" height="60" rx="4" fill="#f8f2fd"/><path d="M61 96h13m-7-7v7" stroke="#775596" stroke-width="2" stroke-linecap="round"/><circle cx="66" cy="47" r="9" fill="#815bb1"/><path d="M47 73c0-12 8-17 19-17s19 5 19 17" fill="#815bb1"/>` :
+      `<path d="M18 81h98M26 68h82" stroke="#ba9cd7" stroke-width="2" stroke-linecap="round"/><circle cx="68" cy="34" r="10" fill="#663c9e"/><path d="M55 70V53q13-11 26 0v17Z" fill="#663c9e"/><circle cx="38" cy="48" r="8" fill="#a386ca"/><path d="M29 70V62q9-8 18 0v8Z" fill="#a386ca"/><circle cx="98" cy="48" r="8" fill="#a386ca"/><path d="M89 70V62q9-8 18 0v8Z" fill="#a386ca"/>`;
+    return `<svg class="artwork is-diagram" viewBox="0 0 480 209" aria-hidden="true">
+      <rect x="16" y="4" width="448" height="199" rx="11" fill="#f2e9fb"/>
+      <path d="M41 151h399m-399-19h399m-399-19h399m-399-19h399m-399-19h399m-399-19h399" fill="none" stroke="#e4d4f3"/>
+      <g class="beat"><g transform="translate(36 43)"><rect width="136" height="112" rx="12" fill="#fff" stroke="#d5bdea"/>${people}</g></g>
+      <g class="beat"><g transform="translate(193 65)"><rect width="105" height="92" rx="12" fill="#e1cef3" stroke="#c7abde"/>
+      <path d="M21 22h63v36H58L45 71V58H21Z" fill="#fff" stroke="#9876c0" stroke-width="1.5" stroke-linejoin="round"/><path d="M32 35h40M32 45h25" stroke="#683b9e" stroke-width="2.5" stroke-linecap="round"/></g></g>
+      <g class="beat"><g transform="translate(319 43)"><rect width="125" height="112" rx="12" fill="#fff8e4" stroke="#e2c67b"/><circle cx="62" cy="53" r="25" fill="#ffdb76"/>
+      <path d="M62 38q2 11 15 15-13 4-15 15-2-11-15-15 13-4 15-15Z" fill="#583286"/></g></g>
+      <path d="m179 104 8 4-8 4m125-8 8 4-8 4" fill="none" stroke="#8d64b5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+  }
+  function visual(tag, caption, type) {
+    return `<div class="visual"><div class="visual-head"><span class="visual-tag">${tag}</span><span class="visual-index">${pad(step+1)} / ${pad(TOTAL)}</span></div>${type==='studio'?picture():diagram(type)}<div class="visual-caption">${caption}</div></div>`;
+  }
+  const trainerTip = {
+    'Ясность команд':'Разделите две длинные инструкции на короткие команды и оставьте между ними паузу.',
+    'Внимание к группе':'Подготовьте два способа выполнить один переход и придумайте, как предложить их одной фразой.',
+    'Структура занятия':'Продумайте, какую связку можно убрать из плана, чтобы осталось время на повтор и завершение.',
+    'Обратная связь':'После практики спросите: «На каком переходе вам понадобилась ещё одна подсказка?»',
+  };
+  function result() {
+    const decisions = answers.slice(2, TOTAL).map(answer => ({card: cards[answer.key], choice: answer.choice}));
+    const hits = decisions.filter(({card, choice}) => choice === card.correct);
+    const firstMiss = decisions.find(({card, choice}) => choice !== card.correct);
+    const strengths = [...new Set(hits.map(({card}) => card.skill.toLowerCase()))];
+    const score = `${hits.length} из 4 ${hits.length === 1 ? 'удачное решение' : 'удачных решений'}`;
+    let title = 'Вам стоит <span>попробовать преподавать</span>';
+    let lead = 'Вы прошли пробный урок. На курсе начнёте с простых команд и постепенно соберёте своё занятие.';
+    let courseTitle = 'Начните с одного приёма';
+    let courseText = 'Разберёте, как объяснять движения и выстраивать занятие. Затем попробуете провести его в мини-группе.';
+    if (hits.length >= 3) {
+      title = 'Вам подходит роль <span>преподавателя</span>';
+      lead = `В пробном уроке проявились ваши сильные стороны — ${strengths.join(', ')}.`;
+      courseTitle = 'Проведите свой первый урок';
+      courseText = 'Составите последовательность, проведёте занятие в мини-группе и получите обратную связь от кураторов.';
+    } else if (hits.length === 2) {
+      title = 'У вас есть база <span>для преподавания</span>';
+      lead = 'Вы уже нашли рабочие решения в двух сценах. Теперь их можно отработать с реальной группой.';
+      courseTitle = 'Потренируйтесь с наставником';
+      courseText = 'На курсе сможете отработать навык из разбора, попробовать его на практике и узнать у наставника, что улучшить.';
+    }
+    const goal = answers[0].choice;
+    if (goal === 2) {
+      courseTitle = 'Сделайте свои занятия понятнее';
+      courseText = 'Разберёте, как адаптировать последовательности под разных учеников, и получите обратную связь на практике.';
+    } else if (goal === 3) {
+      courseTitle = 'Взгляните на практику глазами преподавателя';
+      courseText = 'Разберёте знакомые асаны, соберёте свою последовательность и попробуете провести её в мини-группе.';
+    }
+    const review = decisions.map(({card, choice}, index) => {
+      const good = choice === card.correct;
+      return `<li><details><summary><span class="status ${good?'good':''}" aria-hidden="true">${good?'✓':'·'}</span><span><b>${index+1}. ${card.title}</b><small>${good?'Верно:':'Лучший ответ:'} ${card.choices[card.correct]}</small></span>${icon('down')}</summary><p>${good?'':`<strong>Ваш выбор:</strong> ${card.choices[choice]}.<br>`}${card.explain}</p></details></li>`;
+    }).join('');
+    const gift = goal === 2
+      ? {id:'womens-yoga-therapy', title:'Йогатерапия женского здоровья', text:'Дополнительная специализация для тех, кто уже ведёт занятия.'}
+      : {id:'yoga-guide', title:'Йога-гид', text:'8 недель, чтобы освоить 24 базовые асаны и укрепить свою практику.'};
+    const application = formUrl().replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+    play.innerHTML = `<div class="result-grid">
+      <div class="result-hero">
+        <div class="result-hero-copy">
+          ${head('Пробный урок пройден', title, lead)}
+          ${hits.length >= 2 ? `<span class="score-pill">${icon('check')}${score}</span>` : ''}
+        </div>
+        <svg class="result-art" viewBox="0 0 238 226" aria-hidden="true">
+          <circle cx="154" cy="143" r="93" fill="#7143bd"/>
+          <circle cx="154" cy="143" r="77" fill="none" stroke="#a278da" stroke-width="1.2"/>
+          <path d="M20 188C24 132 73 164 92 116s79-23 82-66" fill="none" stroke="#e1c7ff" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/>
+          <circle cx="20" cy="188" r="9" fill="#f4e8ff"/><circle cx="93" cy="116" r="14" fill="#ad85e3"/>
+          <circle cx="175" cy="47" r="35" fill="#ffdb76"/>
+          <path d="M175 27c3 12 9 17 20 20-11 3-17 8-20 20-3-12-9-17-20-20 11-3 17-8 20-20Z" fill="#4c2692"/>
+          <path d="M190 164h24m-12-12v24M110 205h20m-10-10v20" stroke="#caa8f4" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="promo result-promo" id="grant">
+        <div class="promo-top"><span class="promo-kicker">Чёрная пятница</span><span class="promo-pill">Курс в подарок</span></div>
+        <div class="amount">40&nbsp;000&nbsp;₽</div>
+        <p class="offer-subtitle">Грант на обучение</p>
+        <p class="offer-value">Скидка на флагманский курс «Преподаватель хатха-йоги».</p>
+        <p class="offer-facts">9 месяцев онлайн · практика со 2-го месяца</p>
+        <div class="offer-gift">
+          <span class="gift-icon">${icon('gift')}</span>
+          <div><span class="gift-label">По вашей цели · курс в подарок</span>
+          <strong>«${gift.title}»</strong><small>${gift.text}</small></div>
+        </div>
+        <form class="lead-form" method="post" data-gift="${gift.id}" novalidate>
+          <div class="lead-fields">
+            <div><label for="grant-name">Имя</label><input id="grant-name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Ваше имя" aria-describedby="grant-status" required></div>
+            <div><label for="grant-phone">Телефон</label><input id="grant-phone" name="phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel" placeholder="+7 999 000-00-00" aria-describedby="grant-status" required></div>
+          </div>
+          <button type="submit" class="grant-btn">Оставить заявку на грант ${icon('arrow')}</button>
+          <p id="grant-status" class="lead-status" role="status"></p>
+        </form>
+        <p class="follow-up">После заявки приёмная комиссия уточнит доступность гранта и подарка и расскажет о поступлении.</p>
+        ${LEAD_ENDPOINT ? '' : `<p class="preview-note">Предпросмотр. Для отправки используйте <a href="${application}" target="_blank" rel="noopener">форму Академии</a>.</p>`}
+        <a class="promo-link" href="${PROMO}" target="_blank" rel="noopener">Условия акции ↗</a>
+      </div>
+      <div class="course-panel">
+        <p class="kicker">Курс «Преподаватель хатха-йоги»</p>
+        <h2>${courseTitle}</h2>
+        <p>${courseText}</p>
+        <ul class="course-points"><li>9 месяцев онлайн</li><li>Практика со 2-го месяца</li><li>Диплом по итогам обучения</li></ul>
+      </div>
+      <div class="review-panel">
+        <div class="review-top"><h2 class="review-heading">Разбор ваших решений</h2><p class="small">${hits.length < 2 ? score : 'Откройте ответ, чтобы прочитать объяснение'}</p></div>
+        <ol class="review">${review}</ol>
+        <p class="next-tip"><strong>Попробуйте на практике.</strong> ${firstMiss ? trainerTip[firstMiss.card.skill] : goals[goal].tip}</p>
+      </div>
+    </div>`;
+    side.innerHTML = '';
+  }
+  function render(event) {
+    layout.toggleAttribute('data-result',step===TOTAL);
+    play.dataset.view=step===0?'welcome':step===TOTAL?'result':'question';
+    label.textContent=step===TOTAL?'Квиз пройден':`Вопрос ${step+1} из ${TOTAL}`;
+    duration.hidden=step===TOTAL;
+    track.forEach((el,i)=>{el.toggleAttribute('data-done',i<step);el.toggleAttribute('data-current',i===step)});
+    if(step===0) {
+      play.innerHTML=head('Профпроба Академии Йоги','Сможете провести <span>первый урок йоги?</span>','За 1–2 минуты разыграйте урок и узнайте, какие приёмы преподавания уже вам даются.')+
+        `<div class="mobile-offer"><p><strong>Грант 40 000 ₽</strong> на обучение · Чёрная пятница</p>${picture()}</div>`+
+        ask('Что вам ближе сейчас?',goals)+'<p class="small">Разбор и результат сразу на экране.</p>';
+      side.innerHTML=visual('Сцена из профессии','Начните с цели. Дальше вы будете вести группу.','studio')+grant();
+    } else if(step===1) {
+      play.innerHTML=head('Знакомство с группой','Кто пришёл <span>на занятие?</span>','От выбора зависит, какая ситуация случится на вашем уроке.')+
+        ask('Выберите группу',settings)+nav();
+      side.innerHTML=visual('Пробный урок','Сцена изменится в зависимости от того, кого вы ведёте.','studio')+grant();
+    } else if(step<TOTAL) {
+      const group=settings[answers[1].choice];
+      const card=cards[sceneAt(step)];
+      const last=step>2?answers[step-1]:null;
+      const previous=step===2?group.name:last.choice===cards[last.key].correct?cards[last.key].beat:
+        step===3?'Некоторым нужна ещё одна подсказка.':step===4?'Настало время проверить, как группа поняла команды.':'Урок подошёл к концу. Осталось услышать группу.';
+      play.innerHTML=head(card.cue,card.title,card.lead)+(previous?line(previous):'')+ask(card.prompt,card.choices)+nav();
+      side.innerHTML=visual(group.name,step===TOTAL-1?'Последнее решение. Затем покажем разбор.':'Вы выбираете действие. В финале разберём, что помогает группе.',group.first==='online'?'online':'room')+grant();
+    } else result();
+    play.classList.remove('enter'); side.classList.remove('enter');
+    if(event) {
+      const h=play.querySelector('h1');
+      if(h.getBoundingClientRect().top<0||h.getBoundingClientRect().top>innerHeight*.6){
+        label.closest('.navline').scrollIntoView({block:'start',behavior:'instant'});
+      }
+      h.focus({preventScroll:true});
+      if(event.detail>0&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        void play.offsetWidth;
+        (play.querySelector('.result-grid') || play).classList.add('enter');
+        if (step !== TOTAL) side.classList.add('enter');
+      }
+    }
+  }
+  play.addEventListener('click',event=>{
+    const target=event.target.closest('button');
+    if(!target) return;
+    if(target.dataset.choice!==undefined && step<TOTAL){
+      const choice=Number(target.dataset.choice);
+      const key=step>=2?sceneAt(step):null;
+      if(answers[step]?.choice!==choice||answers[step]?.key!==key) answers=answers.slice(0,step);
+      answers[step]={choice,key};
+      step++;
+    } else if(target.dataset.action==='back'&&step>0) step--;
+    else return;
+    render(event);
+  });
+  play.addEventListener('submit', async event => {
+    const form = event.target;
+    if (!form.matches('.lead-form')) return;
+    event.preventDefault();
+    const button = form.querySelector('button[type="submit"]');
+    if (button.disabled) return;
+    const name = form.elements.namedItem('name');
+    const phone = form.elements.namedItem('phone');
+    const status = form.querySelector('#grant-status');
+    const digits = phone.value.replace(/\D/g, '');
+    const validPhone = /^\+?[\d\s().-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15;
+    const validName = Boolean(name.value.trim());
+    name.setAttribute('aria-invalid', String(!validName));
+    phone.setAttribute('aria-invalid', String(!validPhone));
+    if (!validName || !validPhone) {
+      status.textContent = !validName ? 'Укажите имя.' : 'Укажите телефон. В номере должно быть от 10 до 15 цифр.';
+      (validName ? phone : name).focus();
+      return;
+    }
+    if (!LEAD_ENDPOINT) {
+      status.textContent = 'Это предпросмотр. Ссылка на форму Академии находится ниже.';
+      return;
+    }
+    button.disabled = true;
+    status.textContent = 'Отправляем заявку…';
+    try {
+      const response = await fetch(LEAD_ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          name:name.value.trim(),
+          phone:phone.value.trim(),
+          gift:form.dataset.gift,
+          goal:goals[answers[0].choice].label,
+          tracking:Object.fromEntries(trackingParams())
+        })
+      });
+      if (!response.ok || (await response.json()).ok !== true) throw new Error('Lead was not saved');
+      form.reset();
+      status.textContent = 'Заявка принята. Приёмная комиссия свяжется с вами.';
+    } catch {
+      button.disabled = false;
+      status.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз.';
+    }
+  });
+  render();
+})();
+
+/* QUIZ_SOURCE_END */
+</script>
+</body>
+</html>
