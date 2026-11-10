@@ -143,9 +143,7 @@ html[data-design="impact"] {
   border-color: #aabc54;
   background: #303820;
   color: var(--brand);
-  animation: none;
 }
-[data-design="impact"] .grant-availability strong { animation: impact-count 2400ms ease-in-out infinite; }
 [data-design="impact"] .offer-gift { background: #292e1f; border-color: #626c47; color: var(--ink); border-radius: 2px; }
 [data-design="impact"] .gift-icon { background: #3c4728; color: var(--brand); border-radius: 2px; }
 [data-design="impact"] .gift-choice:has(input:checked) { background: #3b4728; color: var(--ink); }
@@ -171,10 +169,6 @@ html[data-design="impact"] {
 @keyframes impact-line {
   from { opacity: .6; transform: translateY(11px); }
   to { opacity: 1; transform: translateY(0); }
-}
-@keyframes impact-count {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
 }
 [data-design="impact"] .intro-visual { animation: impact-poster 570ms var(--out) both; }
 [data-design="impact"] .intro h1 span { animation: impact-line 310ms var(--out) 85ms both; }

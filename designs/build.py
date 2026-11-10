@@ -5,10 +5,14 @@ import re
 DESIGNS = Path(__file__).resolve().parent
 SOURCE = DESIGNS.parent / "index.html"
 THEMES = {
-    "zen": ("Тихая практика", "#f5f1e8"),
+    "zen": ("Тихая практика", "#f5f2e9"),
     "apple": ("Студия", "#f5f5f7"),
-    "edtech": ("Учебная платформа", "#f5f6ff"),
+    "edtech": ("Учебная платформа", "#f4f7fc"),
     "impact": ("Пульс", "#151610"),
+    "editorial": ("Журнал", "#f4eee2"),
+    "arcade": ("Аркада", "#0c1528"),
+    "pop": ("Поп", "#fff5fa"),
+    "atlas": ("Атлас движения", "#11336f"),
 }
 
 
@@ -27,6 +31,22 @@ def render_variant(source: str, slug: str, name: str, color: str) -> str:
     </ol>
 """
         page = page.replace("    </figure>\n  </section>", "    </figure>\n" + outline + "  </section>", 1)
+    elif slug == "atlas":
+        page = page.replace(
+            'src="../../assets/scenes/first-class.webp" width="1080" height="810"',
+            'src="plate.webp" width="864" height="1080"',
+            1,
+        )
+        page = page.replace(
+            'А если йога станет <span>вашей профессией?</span>',
+            'Ваш первый <span>урок йоги</span>',
+            1,
+        )
+        page = page.replace(
+            'Преподаватель встречает учеников перед началом занятия в студии йоги',
+            'Учитель и ученики в студии на иллюстрации в технике цианотипии',
+            1,
+        )
     elif slug == "impact":
         page = page.replace(
             'src="../../assets/scenes/first-class.webp" width="1080" height="810"',

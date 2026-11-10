@@ -512,7 +512,6 @@ html[data-design="apple"] .result-promo .offer-subtitle {
 }
 
 html[data-design="apple"] .grant-availability {
-  animation: none;
   background: #f5f6f8;
   border-color: var(--soft-line);
   border-radius: 11px;

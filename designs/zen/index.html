@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f5f1e8">
+<meta name="theme-color" content="#f5f2e9">
 <meta name="description" content="Примерьте роль преподавателя йоги за 1–2 минуты. Шесть вопросов, разбор решений и условия обучения в Академии Йоги.">
 <link rel="icon" href="data:,">
 <title>Сможете провести урок йоги? · Академия Йоги · Тихая практика</title>
@@ -148,9 +148,16 @@ h1:focus{outline:none}
 .campaign-deadline{padding:6px 9px;border-radius:6px;background:var(--warm);color:#321942;font-size:13px;font-weight:810;white-space:nowrap}
 .result-promo .amount{color:var(--brand);margin:12px 0 0;font-size:clamp(44px,6.1vw,80px)}
 .result-promo .offer-subtitle{color:var(--ink);font-weight:780;margin-top:6px;font-size:18px}
-.grant-availability{display:flex;align-items:center;gap:6px 9px;min-height:46px;margin-top:13px;padding:8px 10px;background:#fff3e7;border:1px solid #efcead;border-radius:9px;color:#633614;font-size:13px;font-weight:730;animation:grant-flash 2s ease-in-out infinite}
-.grant-availability strong{margin-inline-start:auto;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
-@keyframes grant-flash{0%,100%{background-color:#fff3e7;border-color:#efcead;box-shadow:0 0 0 0 #d77d4500}50%{background-color:#ffd8b5;border-color:#c66b39;box-shadow:0 0 0 3px #d77d453b}}
+.grant-availability{display:flex;align-items:center;gap:6px 9px;min-height:46px;margin-top:13px;padding:8px 10px;background:#fff3e7;border:1px solid #efcead;border-radius:9px;color:#633614;font-size:13px;font-weight:730}
+.grant-remaining{
+  position:relative;isolation:isolate;margin-inline-start:auto;padding:3px 8px;border-radius:5px;
+  background:#fff0c9;color:#422306;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.grant-remaining::before{
+  content:"";position:absolute;z-index:-1;inset:0;border-radius:inherit;background:#ffae38;
+  animation:grant-signal 1.8s ease-in-out infinite;
+}
+@keyframes grant-signal{0%,20%,100%{opacity:.08;transform:scale(.98)}45%,65%{opacity:1;transform:scale(1.07)}}
 .lead-form .gift-heading{margin:0 0 5px;color:var(--ink);font-size:14px;font-weight:750;line-height:1.3}
 .offer-gift{margin:0 0 10px;background:#fff3e7;border:1px solid #f2dcc5;border-radius:10px;color:#693610}
 .offer-gift summary{display:grid;grid-template-columns:35px minmax(0,1fr) 18px;align-items:center;gap:9px;min-height:48px;padding:8px 10px;list-style:none;cursor:pointer;font-size:14px;line-height:1.3}
@@ -619,7 +626,7 @@ html:has(.grant-dialog[open]){overflow:hidden}
         <div class="amount" data-campaign>40&nbsp;000&nbsp;₽</div>
         <p class="offer-subtitle"><span data-campaign>Грант на обучение</span><span data-after-campaign>Узнайте условия обучения</span></p>
         <div class="grant-availability" data-campaign>
-          <span>Осталось грантов:</span><strong>${GRANTS_LEFT} / ${GRANTS_TOTAL}</strong>
+          <span>Осталось грантов:</span><strong class="grant-remaining">${GRANTS_LEFT} / ${GRANTS_TOTAL}</strong>
         </div>
         <div id="grant-form-home"><div class="application-fields">
         <form class="lead-form" method="post" novalidate>

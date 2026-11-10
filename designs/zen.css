@@ -120,7 +120,6 @@ html[data-design="zen"] .grant-availability {
   border-color: #d7c6a6;
   color: var(--amber);
   border-radius: 5px;
-  animation: none;
 }
 html[data-design="zen"] .offer-gift { background: #f2eddf; border-color: #dcd1b8; color: var(--brand-dark); border-radius: 5px; }
 html[data-design="zen"] .gift-icon { color: var(--amber); border-radius: 50%; }

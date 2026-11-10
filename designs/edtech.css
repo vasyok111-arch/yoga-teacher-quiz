@@ -510,7 +510,6 @@ html[data-design="edtech"] .grant-availability {
   border-color: var(--benefit-edge);
   background: var(--benefit-wash);
   color: var(--benefit-ink);
-  animation: none;
 }
 
 html[data-design="edtech"] .offer-gift {

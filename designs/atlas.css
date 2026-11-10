@@ -1,0 +1,162 @@
+html[data-design="atlas"] {
+  --paper: #11336f;
+  --ink: #fff8e7;
+  --mute: #d0ddf3;
+  --line: #7595c6;
+  --white: #183b78;
+  --brand: #f6e2a8;
+  --brand-dark: #f9e8b8;
+  --lav: #224985;
+  --deep: #0b285d;
+  --warm: #f6e2a8;
+  --edge: 2px;
+  --out: cubic-bezier(.22, .68, .28, 1);
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  scrollbar-color: #adc3e4 var(--paper);
+}
+
+[data-design="atlas"] body {
+  background-image: linear-gradient(#a9c3eb13 1px, transparent 1px), linear-gradient(90deg, #a9c3eb13 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+[data-design="atlas"] .wrap { width: min(1184px, calc(100% - 70px)); }
+[data-design="atlas"] .masthead { background: var(--deep); border-color: #7f9bc6; }
+[data-design="atlas"] .mast-row { min-height: 68px; }
+[data-design="atlas"] .brand img { filter: brightness(0) invert(1); }
+[data-design="atlas"] .brand span { border-color: #8aa6ce; color: var(--mute); }
+[data-design="atlas"] .license-link { color: var(--brand-dark); }
+[data-design="atlas"] .kicker,
+[data-design="atlas"] .visual-tag,
+[data-design="atlas"] .visual-index,
+[data-design="atlas"] .progress-label,
+[data-design="atlas"] .time { font-family: Consolas, "Courier New", monospace; letter-spacing: .06em; }
+[data-design="atlas"] .kicker { color: var(--brand); }
+[data-design="atlas"] .kicker::before { width: 13px; height: 1px; border-radius: 0; }
+[data-design="atlas"] .intro {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(26px, 6vw, 88px);
+  padding: clamp(22px, 4vw, 55px) 0 27px;
+}
+[data-design="atlas"] .intro-copy { border-block: 1px solid var(--line); padding-block: 23px; }
+[data-design="atlas"] .intro h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 6.8vw, 96px);
+  font-weight: 400;
+  line-height: .93;
+  letter-spacing: -.065em;
+  text-wrap: initial;
+}
+[data-design="atlas"] .intro h1 span { display: block; color: var(--brand); font-style: italic; }
+[data-design="atlas"] .intro .lead { max-width: 43ch; }
+[data-design="atlas"] .intro-points { border-top: 1px solid #7e9bc7; padding-top: 14px; max-width: 46ch; }
+[data-design="atlas"] .intro-visual {
+  padding: 10px;
+  border: 1px solid #9ab0d0;
+  outline: 1px solid #6a8abb;
+  outline-offset: 5px;
+  background: var(--deep);
+  align-self: start;
+}
+[data-design="atlas"] .intro-visual img { aspect-ratio: .94; object-position: 50% 47%; border-radius: 0; background: var(--deep); }
+[data-design="atlas"] .intro-offer {
+  position: static;
+  max-width: none;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 3px 12px;
+  align-items: center;
+  margin: 8px 0 0;
+  padding: 9px 10px;
+  border: 1px solid #b9c9e5;
+  border-radius: 0;
+  box-shadow: none;
+  background: #e8edf7;
+  color: #1d3869;
+}
+[data-design="atlas"] .intro-offer strong { grid-row: span 2; color: #193564; font-size: clamp(25px, 3.8vw, 51px); }
+[data-design="atlas"] .intro-offer span { margin: 0; }
+[data-design="atlas"] .intro-offer small { margin: 0; padding: 0; color: #314b76; background: none; }
+[data-design="atlas"] :is(.solid.start-btn, .result-cta, .lead-form .grant-btn) {
+  border: 1px solid #f5e6bd;
+  border-radius: 2px;
+  background: #f6e2a8;
+  color: #142b52;
+  box-shadow: 3px 3px 0 #0a2352;
+}
+[data-design="atlas"] .footer { border-top: 1px solid var(--line); }
+[data-design="atlas"] .navline { border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+[data-design="atlas"] .track { gap: 5px; }
+[data-design="atlas"] .track li { border-radius: 0; background: #5475a7; }
+[data-design="atlas"] .track li[data-current]::after { background: #bfd9ff; }
+[data-design="atlas"] .layout:not([data-result]) { gap: 19px; }
+[data-design="atlas"] .play[data-view="question"] { background: var(--white); border-color: #7f9bc6; }
+[data-design="atlas"] .play h1 { letter-spacing: -.048em; }
+[data-design="atlas"] .choice {
+  min-height: 55px;
+  color: var(--ink);
+  background: #153567;
+  border-color: #7894be;
+  border-radius: 1px;
+}
+[data-design="atlas"] .choice[data-selected] { background: #2b538c; border-color: var(--brand); }
+[data-design="atlas"] :is(.glyph, .letter) { background: #294d86; color: #f9e8b8; border-radius: 1px; }
+[data-design="atlas"] .scene-line { background: #23467e; border-radius: 1px; }
+[data-design="atlas"] .visual { background: var(--deep); border-color: var(--line); }
+[data-design="atlas"] .visual-tag,
+[data-design="atlas"] .visual-index { color: var(--brand); }
+[data-design="atlas"] .visual-caption { background: #15346b; color: var(--ink); }
+[data-design="atlas"] .visual .scene-image { background: var(--deep); filter: saturate(.66) contrast(1.04); }
+[data-design="atlas"] .promo { border-color: #7894bd; }
+[data-design="atlas"] .promo-pill { border-color: #819bc4; color: var(--ink); }
+[data-design="atlas"] .promo .terms { color: var(--mute); }
+[data-design="atlas"] .result-hero { background: #1d407c; border-color: #8da6cf; }
+[data-design="atlas"] .score-pill { color: #102854; background: #f2dfad; border-color: #f2dfad; border-radius: 1px; }
+[data-design="atlas"] .result-promo { color: var(--ink); background: var(--deep); border-color: #8da6cf; }
+[data-design="atlas"] .campaign-banner { color: #132c59; background: #e6edf8; border-radius: 1px; }
+[data-design="atlas"] .campaign-brand { color: #345683; }
+[data-design="atlas"] .campaign-deadline { color: #1c325a; background: #f1dca2; border-radius: 1px; }
+[data-design="atlas"] .grant-availability { color: #e7effe; background: #1a3d77; border-color: #7894bf; border-radius: 1px; }
+[data-design="atlas"] .offer-gift { background: #1e427b; border-color: #829dc7; color: var(--ink); border-radius: 1px; }
+[data-design="atlas"] .gift-icon { color: #f6e2a8; background: #30568d; border-radius: 1px; }
+[data-design="atlas"] .gift-choice:has(input:checked) { background: #30568d; }
+[data-design="atlas"] .lead-fields input { background: #113268; border-color: #91a9cf; border-radius: 1px; }
+[data-design="atlas"] .lead-fields input::placeholder { color: #bdcde6; }
+[data-design="atlas"] .lead-form .lead-status { color: #ffcfb2; }
+[data-design="atlas"] .review-panel { background: var(--white); }
+[data-design="atlas"] .review summary small { color: #f6e2a8; }
+[data-design="atlas"] .next-tip { background: #264983; border-color: #809dc8; color: var(--ink); border-radius: 1px; }
+[data-design="atlas"] .result-footer { background: var(--deep); border-top: 1px solid var(--line); }
+[data-design="atlas"] .grant-dialog { background: #15356e; border-color: #9ab2d7; border-radius: 2px; }
+[data-design="atlas"] .grant-dialog::backdrop { background: #07162ac9; }
+[data-design="atlas"] .dialog-close { border-radius: 1px; }
+[data-design="atlas"] .intro-visual { animation: atlas-plate 480ms var(--out) both; }
+[data-design="atlas"] .enter { animation: atlas-plate 220ms var(--out) both; }
+[data-design="atlas"] .enter .choice { animation: none; }
+@keyframes atlas-plate {
+  from { opacity: .48; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-design="atlas"] .choice:hover { background: #284f86; border-color: #e1d6aa; }
+  [data-design="atlas"] :is(.solid.start-btn, .result-cta, .lead-form .grant-btn):hover { background: #fff3d1; }
+  [data-design="atlas"] .dialog-close:hover { background: #345a93; }
+}
+@media (max-width: 860px) {
+  [data-design="atlas"] .wrap { width: calc(100% - 42px); }
+  [data-design="atlas"] .intro { gap: 25px; }
+}
+@media (max-width: 680px) {
+  [data-design="atlas"] .wrap { width: calc(100% - 32px); }
+  [data-design="atlas"] .mast-row { min-height: 58px; }
+  [data-design="atlas"] .intro { grid-template-columns: minmax(0, 1fr); padding: 12px 0 23px; gap: 17px; }
+  [data-design="atlas"] .intro-copy { padding-block: 15px; }
+  [data-design="atlas"] .intro h1 { font-size: clamp(43px, 11vw, 70px); }
+  [data-design="atlas"] .intro-points { padding-top: 9px; }
+  [data-design="atlas"] .intro-visual { max-width: none; outline-offset: 3px; padding: 7px; }
+  [data-design="atlas"] .intro-visual img { aspect-ratio: 1.35; object-position: 50% 61%; }
+  [data-design="atlas"] .intro-offer strong { font-size: clamp(26px, 8vw, 39px); }
+  [data-design="atlas"] .play .visual,
+  [data-design="atlas"] .play { border-radius: 2px; }
+}
