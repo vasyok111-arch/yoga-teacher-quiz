@@ -1,0 +1,810 @@
+<!doctype html>
+<!-- Generated from the original quiz by designs/build.py. -->
+<html lang="ru" data-design="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f3e9">
+<meta name="description" content="Примерьте роль преподавателя йоги за 1–2 минуты. Шесть вопросов, разбор решений и условия обучения в Академии Йоги.">
+<link rel="icon" href="data:,">
+<title>Сможете провести урок йоги? · Академия Йоги · Тушь и бумага</title>
+<style>
+:root{
+  color-scheme:light; --ink:#252233; --mute:#565062; --paper:#f8f5f3; --line:#e4dde7;
+  --white:#fff; --brand:#7025ce; --brand-dark:#561aab; --lav:#f1e8ff; --deep:#2d1746; --warm:#ffdfb9;
+  --green:#165b43; --green-bg:#e9f8f0; --amber:#6b4914; --amber-bg:#fff4dd;
+  --out:cubic-bezier(.23,1,.32,1); --edge:18px;
+  font-family:"Segoe UI Variable Text","Segoe UI",Arial,sans-serif; scrollbar-color:#a99cb8 var(--paper);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper)}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+[hidden]{display:none!important}
+body:not([data-black-friday]) [data-campaign],body[data-black-friday] [data-after-campaign]{display:none!important}
+.wrap{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+.masthead{border-bottom:1px solid var(--line);background:var(--paper)}
+.mast-row{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:77px}
+.brand{display:inline-flex;align-items:center;gap:18px;text-decoration:none}
+.brand img{width:109px;height:auto;flex:none}
+.brand span{padding-left:16px;border-left:1px solid #b68ddc;font-size:12px;line-height:1.25;font-weight:600}
+.license-link{color:var(--mute);text-underline-offset:4px;font-size:13px}
+.main{padding-top:24px}
+.intro{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:center;gap:12px;padding:clamp(20px,3.2vw,48px) 0 24px}
+.intro-copy{position:relative;z-index:1}
+.intro .kicker{margin-bottom:17px}
+.intro h1{font-size:clamp(43px,5vw,75px);line-height:.99;letter-spacing:-.061em;text-wrap:balance}
+.intro .lead{max-width:43ch;font-size:clamp(16px,1.6vw,20px);margin-top:19px}
+.intro-points{list-style:none;padding:0;margin:19px 0 23px;display:grid;gap:8px}
+.intro-points li{display:flex;align-items:flex-start;gap:8px;line-height:1.37;font-size:clamp(14px,1.4vw,17px)}
+.intro-points .ico{color:var(--brand);margin-top:2px}
+.solid.start-btn{width:min(100%,365px);min-height:62px;justify-content:space-between;border-radius:14px;padding:14px 21px;font-size:17px;box-shadow:0 10px 24px #7025ce35}
+.start-btn:disabled{opacity:.72;cursor:default}
+.intro .small{margin-top:9px}
+.intro-visual{display:grid;align-items:end;position:relative;margin:0;isolation:isolate}
+.intro-visual img{display:block;width:100%;height:auto;aspect-ratio:1.2;object-fit:cover;object-position:50% 42%;border-radius:24px;background:#e9dfd7}
+.intro-offer{position:absolute;inset:auto auto 5% 5%;max-width:82%;background:#fff;border:1px solid #e8ddeb;border-radius:18px;padding:14px 18px;box-shadow:0 14px 40px #37185c23}
+.intro-offer strong{display:block;color:var(--brand-dark);font-size:clamp(29px,4.2vw,60px);font-weight:850;line-height:1;letter-spacing:-.065em;white-space:nowrap}
+.intro-offer span{display:block;margin-top:4px;font-size:14px;font-weight:750}
+.intro-offer small{display:block;width:fit-content;margin-top:8px;padding:5px 7px;border-radius:5px;background:var(--deep);color:#fff;font-size:12px;font-weight:740;line-height:1.25}
+.navline{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+.quiz-progress{display:flex;align-items:center;gap:10px;min-width:0}
+.progress-label{font-size:12px;font-weight:790;white-space:nowrap}
+.track{display:flex;gap:4px;align-items:center;margin:0;padding:0;list-style:none}
+.track li{height:5px;width:clamp(13px,2.5vw,34px);border-radius:4px;background:#ded7e9;position:relative;overflow:hidden}
+.track li::after{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left;background:var(--brand);transition:transform 205ms var(--out)}
+.track li[data-done]::after{transform:scaleX(1)}
+.track li[data-current]::after{transform:scaleX(.52);background:#9166da}
+.time{font-size:12px;font-weight:700;color:var(--mute);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.ico{width:18px;height:18px;flex:none}
+.layout{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(0,1fr);gap:16px;align-items:start}
+.play,.visual,.promo{border-radius:var(--edge);overflow:hidden}
+.play{background:var(--white);border:1px solid var(--line);padding:clamp(24px,3.25vw,48px);min-height:530px}
+.side{display:grid;gap:14px;min-width:0}
+.kicker{display:flex;align-items:center;gap:8px;color:var(--brand-dark);font-size:11px;font-weight:850;letter-spacing:.115em;text-transform:uppercase;margin:0 0 14px}
+.kicker::before{content:"";height:7px;width:7px;background:var(--brand);border-radius:2px;flex:none}
+h1{font-size:clamp(32px,4.4vw,64px);line-height:.99;letter-spacing:-.065em;margin:0;font-weight:850;text-wrap:balance}
+h1 span{color:var(--brand)}
+h1:focus{outline:none}
+.play h1{font-size:clamp(31px,3.85vw,55px);line-height:1.035;letter-spacing:-.058em}
+.lead{font-size:17px;line-height:1.48;margin:14px 0 0;color:var(--mute);max-width:47ch}
+.question{margin:21px 0 9px;font-size:15px;font-weight:800;line-height:1.37}
+.choice-list{display:grid;gap:8px}
+.choice{
+  display:grid;grid-template-columns:33px minmax(0,1fr) 18px;align-items:center;gap:11px;
+  width:100%;min-height:52px;text-align:left;background:#fff;border:1px solid #d9d1e4;
+  border-radius:10px;padding:7px 13px 7px 8px;
+  transition:background-color 145ms ease,border-color 145ms ease,transform 120ms var(--out);
+}
+.choice:active,.solid:active{transform:scale(.989)}
+.choice[data-selected]{background:#f2ebff;border-color:#8c64d6}
+.choice b{font-weight:750;font-size:15px;line-height:1.24;overflow-wrap:anywhere}
+.choice-copy{display:grid;gap:2px}
+.choice-copy small{color:var(--mute);font-size:12px;line-height:1.25}
+.glyph,.letter{height:33px;width:33px;display:grid;place-items:center;background:var(--lav);color:var(--brand-dark);border-radius:7px}
+.letter{font-size:12px;font-weight:850}
+.choice>.ico{color:var(--brand-dark);transition:transform 155ms var(--out)}
+.small{font-size:12px;line-height:1.45;color:var(--mute);margin:12px 0 0}
+.scene-line{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:start;padding:10px 12px;background:#f4eefc;border-radius:9px;color:var(--brand-dark);font-size:13px;line-height:1.4;font-weight:690;margin:15px 0 0}
+.scene-line .ico{width:17px;height:17px}
+.nav-actions{display:flex;gap:11px 15px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.quiet,.solid,.grant-btn{min-height:43px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:790;text-decoration:none;border-radius:9px;line-height:1.22;transition:background-color 145ms ease,transform 120ms var(--out)}
+.quiet{color:var(--brand-dark);background:transparent;border:0;padding:8px 0}
+.solid{background:var(--brand);color:#fff;border:1px solid var(--brand);padding:10px 16px}
+.grant-btn{background:var(--warm);color:#241a2c;border:1px solid var(--warm);padding:10px 14px;min-height:49px;width:100%}
+.visual{margin:0;background:#fff;border:1px solid var(--line);display:grid}
+.visual-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 9px;gap:8px}
+.visual-tag{font-weight:850;font-size:10px;letter-spacing:.085em;text-transform:uppercase;color:#503373}
+.visual-index{font-size:11px;font-variant-numeric:tabular-nums;color:#503373;font-weight:800}
+.scene-image{display:block;width:100%;height:auto;object-fit:cover;background:#e9dfd7}
+.visual-caption{padding:10px 14px;color:#49345d;font-size:13px;line-height:1.35;background:#f4ecfb}
+.promo{background:var(--deep);color:#fff;padding:17px 18px 18px;border:1px solid #472964}
+.promo-top{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.promo-kicker{text-transform:uppercase;font-size:10px;font-weight:870;letter-spacing:.10em;color:var(--warm)}
+.promo-pill{font-size:10px;font-weight:740;color:#eadff8;border:1px solid #705c8c;border-radius:20px;padding:4px 7px;white-space:nowrap}
+.amount{font-size:clamp(36px,4.05vw,60px);font-variant-numeric:lining-nums;font-weight:870;line-height:.98;letter-spacing:-.075em;margin:9px 0 0;white-space:nowrap}
+.promo p{color:#eee6f6;margin:7px 0 0;font-size:14px;line-height:1.43}
+.promo .terms{font-size:12px;line-height:1.43;color:#e4d5f6}
+.promo a:not(.grant-btn){text-underline-offset:3px}
+.promo .grant-btn{margin-top:13px}
+.layout[data-result]{display:block}
+.layout[data-result] .side{display:none}
+.play[data-view="result"]{min-height:0;padding:0;background:transparent;border:0;overflow:visible}
+.result-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,1fr);grid-template-rows:min-content minmax(min-content,1fr) auto;gap:14px;align-items:start;grid-template-areas:"result offer" "course offer" "review review"}
+.result-hero,.result-promo,.course-photo,.review-panel{border-radius:var(--edge)}
+.result-hero{grid-area:result;background:var(--lav);color:var(--ink);border:1px solid #e4d4f9;padding:clamp(20px,3vw,36px)}
+.result-hero .kicker{color:var(--brand-dark);margin-bottom:10px}
+.result-hero .kicker::before{background:currentColor}
+.play[data-view="result"] .result-hero h1{font-size:clamp(32px,3.4vw,49px);text-wrap:pretty;letter-spacing:-.052em}
+.result-hero .lead{margin-top:10px;font-size:16px;max-width:43ch}
+.score-pill{
+  display:inline-block;margin-top:14px;padding:6px 9px;
+  border:1px solid #d8c1f4;border-radius:7px;color:var(--brand-dark);font-size:12px;font-weight:770;background:var(--white);
+}
+.course-photo{grid-area:course;margin:0;background:var(--white);border:1px solid var(--line);overflow:hidden}
+.course-photo .scene-image{aspect-ratio:2;object-position:50% 35%}
+.review-heading{margin:0;font-size:21px;line-height:1.13;letter-spacing:-.03em}
+.review-panel{grid-area:review;background:#fff;border:1px solid var(--line);padding:18px 19px}
+.review-top{display:flex;gap:7px 14px;justify-content:space-between;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.review-top .small{margin:0}
+.next-tip{background:#f5efff;border:1px solid #e6d9f9;border-radius:10px;padding:10px 12px;margin:12px 0 0;color:#44296a;font-size:13px;line-height:1.43}
+.review{display:grid;gap:5px;margin:0;padding:0;list-style:none}
+.review li{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.review summary{display:grid;grid-template-columns:21px minmax(0,1fr) 15px;align-items:center;gap:7px;padding:8px 9px;cursor:pointer;list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review summary>.ico:last-child{width:14px;height:14px;color:var(--brand-dark)}
+.review details[open] summary>.ico:last-child{transform:rotate(180deg)}
+.review summary .status{display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:var(--amber-bg);color:var(--amber);font-size:12px;font-weight:900}
+.review summary .status.good{background:var(--green-bg);color:var(--green)}
+.review summary b{display:block;font-size:12px;line-height:1.22;margin-bottom:2px}
+.review summary small{display:block;font-size:13px;line-height:1.28;color:#3d2b56;font-weight:690}
+.review details p{margin:0 10px 9px 37px;color:var(--mute);font-size:13px;line-height:1.43}
+.result-promo{grid-area:offer;padding:clamp(18px,2.4vw,29px);border-color:#e5d5fa;background:var(--white);color:var(--ink)}
+.campaign-banner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;padding:11px 13px;border-radius:10px;background:var(--deep);color:#fff}
+.campaign-banner strong{display:block;font-size:clamp(19px,2.25vw,26px);line-height:1.05;letter-spacing:-.025em}
+.campaign-brand{display:block;margin-top:3px;color:#f0e6fb;font-size:12px;line-height:1.25}
+.campaign-deadline{padding:6px 9px;border-radius:6px;background:var(--warm);color:#321942;font-size:13px;font-weight:810;white-space:nowrap}
+.result-promo .amount{color:var(--brand);margin:12px 0 0;font-size:clamp(44px,6.1vw,80px)}
+.result-promo .offer-subtitle{color:var(--ink);font-weight:780;margin-top:6px;font-size:18px}
+.grant-availability{display:flex;align-items:center;gap:6px 9px;min-height:46px;margin-top:13px;padding:8px 10px;background:#fff3e7;border:1px solid #efcead;border-radius:9px;color:#633614;font-size:13px;font-weight:730}
+.grant-remaining{
+  position:relative;isolation:isolate;margin-inline-start:auto;padding:3px 8px;border-radius:5px;
+  background:#fff0c9;color:#422306;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.grant-remaining::before{
+  content:"";position:absolute;z-index:-1;inset:0;border-radius:inherit;background:#ffae38;
+  animation:grant-signal 1.8s ease-in-out infinite;
+}
+@keyframes grant-signal{0%,20%,100%{opacity:.08;transform:scale(.98)}45%,65%{opacity:1;transform:scale(1.07)}}
+.lead-form .gift-heading{margin:0 0 5px;color:var(--ink);font-size:14px;font-weight:750;line-height:1.3}
+.offer-gift{margin:0 0 10px;background:#fff3e7;border:1px solid #f2dcc5;border-radius:10px;color:#693610}
+.offer-gift summary{display:grid;grid-template-columns:35px minmax(0,1fr) 18px;align-items:center;gap:9px;min-height:48px;padding:8px 10px;list-style:none;cursor:pointer;font-size:14px;line-height:1.3}
+.offer-gift summary::-webkit-details-marker{display:none}
+.offer-gift[open] summary>.ico{transform:rotate(180deg)}
+.gift-icon{display:grid;place-items:center;width:35px;height:35px;background:var(--warm);color:#693610;border-radius:7px}
+.offer-gift strong{display:inline-block;max-width:100%;color:var(--ink);font-weight:800}
+.gift-options{min-inline-size:0;margin:0;padding:0 9px 8px;border:0}
+.gift-choice{display:flex;align-items:center;gap:8px;min-height:44px;padding:5px 8px;border-radius:6px;font-size:14px;line-height:1.25;cursor:pointer}
+.gift-choice:has(input:checked){background:#ffe6cb;color:var(--ink)}
+.gift-choice input{flex:none;margin:0;accent-color:var(--brand)}
+.gift-choice:focus-within{outline:2px solid var(--brand);outline-offset:-2px}
+.lead-form .gift-terms{margin:0 0 8px;color:var(--mute);font-size:12px;line-height:1.4}
+.lead-form{margin-top:13px}
+.lead-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lead-fields label{display:block;margin-bottom:4px;color:var(--ink);font-size:13px;font-weight:740}
+.lead-fields input{
+  box-sizing:border-box;width:100%;min-height:44px;padding:8px 9px;border:1px solid #cdbedb;border-radius:7px;
+  color:var(--ink);background:#fff;font:inherit;font-size:16px;
+}
+.lead-fields input::placeholder{color:#6d627a}
+.lead-fields input[aria-invalid="true"]{border-color:#af3a32}
+.lead-form .lead-status{margin:6px 0 0;min-height:1.4em;color:#973229;font-size:12px;line-height:1.4}
+.lead-form .grant-btn{margin-top:9px;min-height:54px;font-size:15px;background:var(--brand);border-color:var(--brand);color:#fff}
+.lead-form .grant-btn:disabled{opacity:.72;cursor:default}
+.lead-fields input:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.result-promo .follow-up,.application-fields .preview-note{margin:6px 0 0;font-size:12px;color:var(--mute);line-height:1.42}
+.application-fields a{text-underline-offset:3px}
+.application-fields{display:flow-root}
+.result-promo .alliance{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink);font-size:13px;line-height:1.4}
+.alliance .ico{color:var(--brand)}
+.footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 18px;padding:14px 0 19px;font-size:12px;color:var(--mute)}
+.footer a{color:var(--brand-dark);text-underline-offset:3px}
+.result-footer{margin-top:24px;padding:clamp(24px,4vw,46px) 0 18px;background:#111738;color:#f5f5ff}
+.footer-grid{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:20px 32px}
+.footer-grid h2{margin:0 0 10px;color:#b7c0e4;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+.footer-grid p{margin:8px 0 0;color:#c5cbea;font-size:14px;line-height:1.45}
+.footer-logo{display:inline-block}
+.footer-logo img{display:block;width:115px;height:auto;filter:brightness(0) invert(1)}
+.footer-docs{display:grid;gap:5px;align-content:start}
+.footer-docs h2{margin-bottom:5px}
+.footer-docs a{width:fit-content;font-size:14px;text-underline-offset:3px}
+.footer-phone{font-size:clamp(19px,2.2vw,27px);font-weight:800;text-decoration:none}
+.result-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;margin-top:18px;padding:15px 21px;min-height:66px;text-align:left;background:#3540e9;color:#fff;border:0;border-radius:13px;font-size:clamp(16px,2vw,23px);font-weight:810;line-height:1.2}
+.result-cta .ico{width:22px;height:22px;transform:rotate(-45deg)}
+.result-footer :focus-visible{outline-color:#b5bfff}
+.footer-bottom{margin:18px 0 0;padding-top:12px;border-top:1px solid #464d74;color:#b7c0e4;font-size:12px}
+html:has(.grant-dialog[open]){overflow:hidden}
+.grant-dialog{width:min(480px,calc(100% - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:17px;background:#fff;color:var(--ink);box-shadow:0 16px 64px #1a122e40;overscroll-behavior:contain}
+.grant-dialog::backdrop{background:#181028b8}
+.dialog-body{padding:clamp(16px,4vw,27px)}
+.dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.dialog-head h2{margin:0;font-size:clamp(21px,5vw,29px);line-height:1.12;letter-spacing:-.035em}
+.dialog-close{flex:none;width:44px;height:44px;display:grid;place-items:center;background:var(--lav);color:var(--brand-dark);border:0;border-radius:9px;font-size:24px;line-height:1}
+.dialog-copy{margin:7px 0 0;color:var(--mute);font-size:14px;line-height:1.4}
+.enter{animation:enter 200ms var(--out) both}
+.enter .choice{animation:enter 175ms var(--out) both}
+.enter .choice:nth-child(2){animation-delay:25ms}.enter .choice:nth-child(3){animation-delay:50ms}.enter .choice:nth-child(4){animation-delay:75ms}
+@keyframes enter{from{opacity:.24;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){
+  .choice:hover{background:#f7f2ff;border-color:#a587d5}.choice:hover>.ico{transform:translateX(3px)}
+  .quiet:hover,.license-link:hover{text-decoration:underline;text-underline-offset:3px}
+  .solid:not(:disabled):hover,.lead-form .grant-btn:not(:disabled):hover{background:var(--brand-dark)}
+  .result-cta:hover{background:#2833ca}.dialog-close:hover{background:#e4d4f9}
+}
+@media(max-width:860px){
+  .wrap{width:calc(100% - 40px)}.layout{gap:11px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+  .side{gap:11px}.play{padding:24px}
+  .result-grid{gap:11px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  .intro h1{font-size:clamp(39px,5.65vw,53px)}
+}
+@media(max-width:680px){
+  .wrap{width:calc(100% - 32px)}.mast-row{min-height:58px;gap:8px}
+  .brand{gap:9px}.brand img{width:76px}.brand span{padding-left:8px;font-size:10px}.license-link{font-size:11px}
+  .main{padding-top:12px}.navline{margin-bottom:10px;gap:6px}
+  .intro{grid-template-columns:minmax(0,1fr);padding:13px 0 12px;gap:8px}
+  .intro .kicker{margin-bottom:11px}
+  .intro h1{font-size:clamp(37px,10.4vw,61px);text-wrap:balance}
+  .intro .lead{margin-top:13px}
+  .intro-points{margin:13px 0 16px;gap:5px}
+  .solid.start-btn{width:100%;min-height:53px;padding:12px 15px;font-size:16px}
+  .intro .small{margin-top:7px}
+  .intro-visual{max-width:480px;width:100%;margin:0 auto}
+  .intro-visual img{aspect-ratio:1.35;border-radius:17px}
+  .intro-offer{padding:10px 13px;border-radius:13px}
+  .intro-offer strong{font-size:clamp(31px,8.6vw,48px)}
+  .intro-offer span{font-size:12px}.intro-offer small{font-size:11px}
+  .quiz-progress{gap:7px}.progress-label,.time{font-size:11px}
+  .time .ico{width:15px;height:15px}.track{gap:3px}
+  .layout{display:block}.play{padding:19px 15px 17px;min-height:0;border-radius:14px}
+  .side{margin-top:11px}.layout:not([data-result]) .side{display:none}
+  .play .visual{margin-top:13px;border-radius:11px}
+  .play .visual-head{display:none}
+  .play .visual-caption{padding:7px 9px;font-size:12px}
+  .kicker{font-size:10px;letter-spacing:.08em;margin-bottom:9px}
+  h1{font-size:clamp(33px,9.6vw,51px);line-height:1.02}
+  .play h1{font-size:clamp(30px,8.2vw,45px)}
+  .lead{font-size:15px;margin-top:10px}.question{margin-top:15px;font-size:14px}
+  .choice{min-height:48px;gap:8px;padding-right:9px}.choice b{font-size:14px}
+  .choice-list{gap:6px}
+  .result-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"result" "offer" "course" "review";gap:10px}
+  .result-hero{min-height:0;padding:16px 14px;border-radius:14px}
+  .play[data-view="result"] .result-hero h1{font-size:clamp(29px,8.1vw,43px)}
+  .result-hero .lead{font-size:14px;max-width:35ch}
+  .course-photo .scene-image{aspect-ratio:1.9}
+  .score-pill{margin-top:10px}
+  .result-promo,.review-panel{padding:14px;border-radius:14px}
+  .course-photo{border-radius:14px}
+  .result-promo .amount{font-size:54px;margin-top:8px}
+  .lead-form{margin-top:10px}
+  .review-heading{font-size:20px}
+  .footer{padding:12px 0;font-size:11px}.review summary{padding:7px 8px}
+  .footer-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+  .result-cta{margin-top:12px;padding:13px 15px;min-height:58px}
+}
+@media(max-width:350px){.track li{width:12px}.time{font-size:10px}.play{padding-inline:12px}}
+@media(max-width:350px){.lead-fields{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.track li[data-current],.track li[data-done]{border:1px solid Highlight}.choice[data-selected]{outline:1px solid Highlight}:root{scrollbar-color:auto}}
+</style>
+<link rel="stylesheet" href="../ink.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="back" viewBox="0 0 24 24"><path d="M20 12H5m6 6-6-6 6-6"/></symbol>
+  <symbol id="down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.8v4.8l3.1 1.8"/></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 18c-1-7 4-12 14-12 0 10-5 15-12 13m-2 1c3.1-4.9 5.4-7.6 10-10"/></symbol>
+  <symbol id="steps" viewBox="0 0 24 24"><path d="M4 19h5v-5h5V9h6m-5-4h5v4"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2c1.1 6.4 3.6 8.9 10 10-6.4 1.1-8.9 3.6-10 10C10.9 15.6 8.4 13.1 2 12c6.4-1.1 8.9-3.6 10-10Z"/></symbol>
+  <symbol id="talk" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M7 10h10m-10 3h6"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19v-1a6 6 0 0 1 12 0v1m2-13a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 4"/></symbol>
+  <symbol id="online" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="gift" viewBox="0 0 24 24"><path d="M3 8h18v4H3zM5 12v9h14v-9m-7-4v13M12 8c0-3.5-1.5-5-3-5-1 0-2 .8-2 2 0 1.5 1.5 3 5 3Zm0 0c0-3.5 1.5-5 3-5 1 0 2 .8 2 2 0 1.5-1.5 3-5 3Z"/></symbol>
+</svg>
+<header class="masthead">
+  <div class="wrap mast-row">
+    <a class="brand" href="https://yoga-academy.online/" target="_blank" rel="noopener"><img src="../../assets/academy-logo.webp" width="264" height="95" alt="Академия Йоги"><span>Профессиональное<br>образование в йоге</span></a>
+    <a class="license-link" href="https://yoga-academy.online/license" target="_blank" rel="noopener">Лицензия Академии ↗</a>
+  </div>
+</header>
+<main class="wrap main">
+  <section class="intro" id="intro" aria-labelledby="intro-title">
+    <div class="intro-copy">
+      <p class="kicker">Профпроба Академии Йоги</p>
+      <h1 id="intro-title">Проведите <span>первый урок йоги</span></h1>
+      <p class="lead">Примерьте роль преподавателя. Проверьте, что знаете об основах йоги, и решите, как повести себя в двух ситуациях на занятии.</p>
+      <ul class="intro-points">
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#check"></use></svg><span>Разберёте свои решения и узнаете, что уже получается</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#check"></use></svg><span>Узнаете, какой курс можно получить в подарок</span></li>
+      </ul>
+      <button class="solid start-btn" id="start" type="button" disabled>Пройти пробный урок <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><use href="#arrow"></use></svg></button>
+      <p class="small">6 вопросов · 1–2 минуты · результат без телефона</p>
+      <noscript><p class="small">Для квиза нужен JavaScript. <a href="https://yoga-academy.online/ackcia-yoga">Условия обучения</a>.</p></noscript>
+    </div>
+    <figure class="intro-visual">
+      <img src="wash.webp" width="864" height="1080" fetchpriority="high" alt="Преподаватель и ученики на рисунке тушью">
+      <figcaption class="intro-offer" data-campaign>
+        <strong>40&nbsp;000&nbsp;₽</strong>
+        <span>Грант на обучение</span>
+        <small>Чёрная пятница · только до 13 ноября</small>
+      </figcaption>
+    </figure>
+  </section>
+  <div class="navline" hidden>
+    <div class="quiz-progress"><span class="progress-label" id="progress-label">Вопрос 1 из 6</span><ol class="track" id="track" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ol></div>
+    <span class="time" id="duration"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#clock"></use></svg>1–2 минуты</span>
+  </div>
+  <div class="layout" id="layout" hidden>
+    <section class="play" id="play" aria-labelledby="stage-title"></section>
+    <aside class="side" id="side" aria-label="Сцена и условия акции"></aside>
+  </div>
+  <button class="result-cta" id="open-grant-dialog" type="button" aria-haspopup="dialog" aria-controls="grant-dialog" hidden disabled>
+    <span data-campaign>Оставить заявку на получение гранта + подарка</span>
+    <span data-after-campaign>Узнать условия обучения</span>
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#arrow"></use></svg>
+  </button>
+  <footer class="footer" id="quiz-footer"><span>Академия Йоги · Курс «Преподаватель хатха-йоги»</span><a href="https://yoga-academy.online/policy" target="_blank" rel="noopener">Политика обработки персональных данных ↗</a></footer>
+</main>
+<footer class="result-footer" id="result-footer" hidden>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="https://yoga-academy.online/"><img src="../../assets/academy-logo.webp" width="264" height="95" alt="Академия Йоги"></a>
+        <p>Обучение преподавателей и повышение квалификации</p>
+      </div>
+      <nav class="footer-docs" aria-label="Документы Академии">
+        <h2>Документы</h2>
+        <a href="https://yoga-academy.online/policy" target="_blank" rel="noopener">Политика обработки персональных данных</a>
+        <a href="https://yoga-academy.online/offer" target="_blank" rel="noopener">Публичная оферта</a>
+        <a href="https://yoga-academy.online/about" target="_blank" rel="noopener">Об организации</a>
+        <a href="https://yoga-academy.online/license" target="_blank" rel="noopener">Государственная лицензия</a>
+      </nav>
+      <div>
+        <h2>Связаться</h2>
+        <a class="footer-phone" href="tel:+79300359131">+7 (930) 035-91-31</a>
+        <p>С этого номера вам позвонит сотрудник Академии Йоги.</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© Yoga Academy, 2026</p>
+  </div>
+</footer>
+<dialog class="grant-dialog" id="grant-dialog" aria-labelledby="grant-dialog-title" aria-describedby="grant-dialog-description">
+  <div class="dialog-body">
+    <div class="dialog-head">
+      <h2 id="grant-dialog-title"><span data-campaign>Заявка на грант</span><span data-after-campaign>Условия обучения</span></h2>
+      <form method="dialog" novalidate><button class="dialog-close" id="close-grant-dialog" type="submit" aria-label="Закрыть форму" autofocus>×</button></form>
+    </div>
+    <p class="dialog-copy" id="grant-dialog-description">
+      <span data-campaign>Оставьте контакты, чтобы Академия уточнила, доступны ли грант 40 000 ₽ и ваш подарок.</span>
+      <span data-after-campaign>Оставьте контакты, чтобы Академия рассказала о программе и ближайшем потоке.</span>
+    </p>
+    <div id="grant-dialog-form"></div>
+  </div>
+</dialog>
+<script>
+/* QUIZ_SOURCE_START */
+(() => {
+  'use strict';
+  const FORM = 'https://course.great-yoga.ru/pl/lite/widget/widget?id=1533435';
+  const CAMPAIGN_END = Date.parse('2026-11-14T00:00:00+03:00');
+  const GRANTS_LEFT = 12;
+  const GRANTS_TOTAL = 50;
+  const gifts = [
+    {id:'yoga-guide', title:'Йога Гид'},
+    {id:'womens-yoga-therapy', title:'Йогатерапия женского здоровья'}
+  ];
+  // Configure a same-origin endpoint that accepts a JSON lead and returns {ok: true} after saving it.
+  const LEAD_ENDPOINT = '';
+  const TOTAL = 6;
+  const LETTERS = ['А','Б','В','Г'];
+  const goals = [
+    {label:'Практикую йогу и иногда веду занятия для друзей',icon:'steps',tip:'В следующий раз спросите друзей, какую подсказку было проще всего понять. Так вы узнаете, что в ваших объяснениях уже работает.'},
+    {label:'Практикую йогу и хочу стать преподавателем',icon:'sun',tip:'Набросайте план 10-минутного урока: одна цель, три короткие команды и время на самостоятельный повтор.'},
+    {label:'Уже преподаю и хочу освоить новое направление',detail:'Например, йогу для детей или для беременных',icon:'spark',tip:'Выберите направление, которое вас интересует, и сравните программы по тому, сколько в них практики с наставником.'},
+    {label:'Пока практикую для себя',icon:'leaf',tip:'Возьмите три знакомых движения и объясните каждое одной фразой. Заметьте, какой переход сложнее описать словами.'}
+  ];
+  const settings = [
+    {label:'Новички в студии',icon:'leaf',name:'Группа новичков',first:'start'},
+    {label:'Группа с разным опытом',icon:'users',name:'Группа разного уровня',first:'mixed'},
+    {label:'Участники онлайн',icon:'online',name:'Занятие онлайн',first:'online'}
+  ];
+  const cards = {
+    shavasana:{
+      cue:'Основы йоги · 1 из 2', title:'Зачем нужна шавасана?',
+      lead:'В плане занятия шавасана стоит в самом конце.',
+      prompt:'Какова её основная задача?',
+      choices:['Подготовить тело к активным асанам','Расслабиться и спокойно завершить практику','Потренировать устойчивость','Развить подвижность суставов'],
+      correct:1, skill:'Шавасана', explain:'Шавасана — поза для расслабления. Её часто включают в конце занятия, чтобы перейти от движения к покою.',
+    },
+    pranayama:{
+      cue:'Основы йоги · 2 из 2', title:'Что называют пранаямой?',
+      lead:'В описании следующего занятия есть блок «Пранаяма».',
+      prompt:'Что в нём будут практиковать?',
+      choices:['Связки асан в одном темпе','Медитацию с повторением мантры','Техники работы с дыханием','Позы на равновесие'],
+      correct:2, skill:'Пранаяма', explain:'Пранаяма — работа с дыханием в йоге. В зависимости от техники внимание уделяют ритму, длительности вдоха и выдоха или другим параметрам дыхания.',
+    },
+    start:{
+      cue:'Первые минуты', title:'Группа не успевает',
+      lead:'Вы сказали: «Шагните вперёд и поднимите руки». Половина группы ещё переставляет ноги.',
+      prompt:'Что скажете дальше?',
+      choices:['Повторю всю фразу медленнее','Дам команду сделать шаг и подожду','Покажу оба движения ещё раз','Продолжу, чтобы не сбить ритм'],
+      correct:1, skill:'Ясность команд', explain:'Отделите шаг от подъёма рук. Сначала короткая команда, затем пауза: группе нужно время, чтобы выполнить действие.',
+      beat:'Группа снова готова двигаться.',
+    },
+    mixed:{
+      cue:'Первые минуты', title:'Группа движется вразнобой',
+      lead:'Новички спешат за теми, кто давно практикует. Ваша задача — оставить всех в одном упражнении.',
+      prompt:'Как перестроите объяснение?',
+      choices:['Задам всем одинаковый медленный темп','Попрошу опытных показать группе','Предложу два варианта одного перехода','Заменю переход на совсем другой'],
+      correct:2, skill:'Внимание к группе', explain:'Сохраните общую задачу и дайте выбор: «Останьтесь на первом движении или добавьте второе, когда будете готовы».',
+      beat:'Вы переходите к следующей части занятия.',
+    },
+    online:{
+      cue:'Первые минуты', title:'На экране видно не всё',
+      lead:'У двух участников обрезана картинка. Они слышат вас, но не видят, с какой ноги вы начинаете.',
+      prompt:'Как продолжите без остановки занятия?',
+      choices:['Назову сторону и одно движение словами','Встану дальше от камеры и повторю молча','Перешлю запись после занятия','Попрошу участников посмотреть друг на друга'],
+      correct:0, skill:'Ясность команд', explain:'Опишите сторону и одно действие голосом. Картинка помогает, но команда должна быть понятна и без неё.',
+      beat:'Группа продолжает практику по вашим подсказкам.',
+    },
+    clarify:{
+      cue:'Второй заход', title:'Сделайте подсказку короче',
+      lead:'Группа готова повторить переход. На этот раз важно, чтобы первую команду можно было выполнить сразу.',
+      prompt:'Какую фразу выберете?',
+      choices:['«Сделайте, как я, и следите за руками»','«Подготовьтесь и выстройте положение»','«Начните шаг и одновременно тянитесь вверх»','«Шагните правой ногой вперёд» — затем пауза'],
+      correct:3, skill:'Ясность команд', explain:'Конкретная сторона и одно действие дают группе ясную задачу. Вторую команду можно добавить после паузы.',
+      beat:'Теперь группа может повторить переход.',
+    },
+    observe:{
+      cue:'Второй заход', title:'Двое теряют один переход',
+      lead:'Остальные повторяют связку. Два человека пропускают одно и то же действие. Останавливать группу срочно не нужно.',
+      prompt:'Что сделаете на следующем повторе?',
+      choices:['Дам одну общую подсказку в нужный момент','После повтора попрошу двоих показать переход','Добавлю объяснение в общий итог урока','Заменю всю связку'],
+      correct:0, skill:'Внимание к группе', explain:'Назовите пропущенное действие во время повтора. Участники смогут попробовать его сразу, без внимания всей группы к их ошибке.',
+      beat:'Класс доходит до самостоятельного повтора.',
+    },
+    screen:{
+      cue:'Второй заход', title:'Все камеры выключены',
+      lead:'Вы объяснили новый переход онлайн. По видео нельзя понять, успели ли участники его повторить.',
+      prompt:'Как проверите, можно ли двигаться дальше?',
+      choices:['Подожду несколько секунд и начну следующий блок','Попрошу одного человека включить камеру','Попрошу короткий знак в чате, когда готовы','Повторю всю связку с начала'],
+      correct:2, skill:'Внимание к группе', explain:'Заранее договоритесь о простом сигнале в чате. Он даст обратную связь без требования включить камеру.',
+      beat:'Вы получаете сигнал от группы и продолжаете.',
+    },
+    pace:{
+      cue:'Следующий переход', title:'Половина класса уже готова',
+      lead:'Одни закончили переход, другие ещё выполняют его. Через несколько секунд можно продолжить вместе.',
+      prompt:'Что предложите тем, кто уже закончил?',
+      choices:['Начать следующий переход самим','Остаться здесь до общей команды','Повторить движение в быстром темпе','Показать остальным, как успеть'],
+      correct:1, skill:'Внимание к группе', explain:'Один понятный ориентир удержит группу вместе: «Останьтесь здесь, я подскажу, когда продолжать».',
+      beat:'Урок подходит к финалу.',
+    },
+    plan:{
+      cue:'Конец урока', title:'План занятия не помещается',
+      lead:'Осталось пять минут. Вы хотели показать новую связку и оставить время на завершение.',
+      prompt:'Что выберете?',
+      choices:['Ускорю оставшуюся часть','Покажу новую связку без повторения','Уберу завершение ради связки','Повторю знакомое и спокойно завершу'],
+      correct:3, skill:'Структура занятия', explain:'Закрепите знакомое и оставьте время на завершение. Новую связку можно разобрать на следующем уроке.',
+      beat:'Последнее движение уже позади.',
+    },
+  };
+  const play = document.querySelector('#play');
+  const intro = document.querySelector('#intro');
+  const start = document.querySelector('#start');
+  const side = document.querySelector('#side');
+  const layout = document.querySelector('#layout');
+  const label = document.querySelector('#progress-label');
+  const navline = label.closest('.navline');
+  const track = [...document.querySelectorAll('#track li')];
+  const duration = document.querySelector('#duration');
+  const quizFooter = document.querySelector('#quiz-footer');
+  const resultFooter = document.querySelector('#result-footer');
+  const dialog = document.querySelector('#grant-dialog');
+  const openDialog = document.querySelector('#open-grant-dialog');
+  const dialogForm = document.querySelector('#grant-dialog-form');
+  const narrow = matchMedia('(max-width: 680px)');
+  const letters = i => LETTERS[i];
+  const icon = id => `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#${id}"></use></svg>`;
+  const pad = n => String(n).padStart(2,'0');
+  const trackingParams = () => {
+    const incoming = new URLSearchParams(location.search);
+    const tracking = new URLSearchParams();
+    for (const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','yclid']) {
+      const value = incoming.get(key);
+      if (value && value.length < 260) tracking.set(key, value);
+    }
+    return tracking;
+  };
+  const formUrl = () => {
+    const url = new URL(FORM);
+    for (const [key, value] of trackingParams()) url.searchParams.set(key, value);
+    return url.href;
+  };
+  let step = -1;
+  let answers = [];
+
+  function sceneAt(index) {
+    if (index === 2) return 'shavasana';
+    if (index === 3) return 'pranayama';
+    const group = settings[answers[1].choice];
+    if (index === 4) return group.first;
+    if (group.first === 'online') return 'screen';
+    const previous = answers[4];
+    const wasRight = previous.choice === cards[previous.key].correct;
+    if (group.first === 'mixed') return wasRight ? 'observe' : 'pace';
+    return wasRight ? 'plan' : 'clarify';
+  }
+  function choiceRows(choices, current) {
+    return `<div class="choice-list" role="group" aria-labelledby="question">${choices.map((opt,i)=>{
+      const o=typeof opt==='string'?{label:opt}:opt;
+      return `<button class="choice" type="button" data-choice="${i}" ${i===current?'data-selected aria-describedby="chosen-before"':''}>
+        <span class="${o.icon?'glyph':'letter'}" aria-hidden="true">${o.icon?icon(o.icon):letters(i)}</span><span class="choice-copy"><b>${o.label}</b>${o.detail ? `<small>${o.detail}</small>` : ''}</span>${icon('arrow')}
+      </button>`;
+    }).join('')}</div>`;
+  }
+  const head = (kicker,title,lead) => `<p class="kicker">${kicker}</p><h1 id="stage-title" tabindex="-1">${title}</h1>${lead?`<p class="lead">${lead}</p>`:''}`;
+  const line = t => `<p class="scene-line">${icon('talk')}<span>${t}</span></p>`;
+  const button = (action, text, ico='back') => `<button class="quiet" type="button" data-action="${action}">${icon(ico)}${text}</button>`;
+  const nav = () => `<div class="nav-actions">${button('back','Назад')}</div>`;
+  const ask = (prompt, list) => `<p id="question" class="question">${prompt}</p>${choiceRows(list,answers[step]?.choice)}<span id="chosen-before" hidden>Выбирали ранее</span>`;
+  const grant = () => `<div class="promo" data-campaign>
+    <div class="promo-top"><span class="promo-kicker">Чёрная пятница</span><span class="promo-pill">До 13 ноября</span></div>
+    <div class="amount">40 000 ₽</div><p><strong>Грант на обучение</strong> на курсе «Преподаватель хатха-йоги».</p>
+    <p class="terms">Доступность гранта уточняет Академия.</p>
+  </div>`;
+
+  const scenes = {
+    goal: ['Преподаватель входит в студию с ковриком, участники готовятся к занятию.', 'Представьте, что сегодня группу ведёте вы.'],
+    group: ['Участники готовятся к практике, рядом открыт ноутбук для занятия онлайн.', 'Состав группы определит, с какой ситуации начнётся урок.'],
+    shavasana: ['Участники сидят на ковриках, преподаватель готовит следующий этап занятия.', 'Активная часть занятия закончилась.'],
+    pranayama: ['Преподаватель смотрит в план занятия, группа ждёт объявления следующего блока.', 'В программе появился новый блок практики.'],
+    start: ['Один ученик уже поднял руки, другие только начинают движение.', 'Посмотрите, где сейчас каждый ученик. Что скажете группе?'],
+    mixed: ['Одна участница уверенно делает шаг, другая поглядывает на неё и только начинает движение.', 'У группы разный опыт, но задача у всех одна.'],
+    online: ['На экране ноутбука видна только верхняя часть тела преподавателя.', 'Взгляните на урок глазами участника: ноги в кадр не попали.'],
+    clarify: ['Участники снова стоят на ковриках и ждут команды.', 'У вас есть ещё одна попытка объяснить переход.'],
+    observe: ['Часть группы уже наклонилась вперёд, двое остались стоять.', 'Остальные продолжают связку. У вас есть следующий повтор.'],
+    screen: ['Вместо видео участников на ноутбуке видны тёмные окна.', 'Вы дали команду. По экрану пока непонятно, можно ли продолжать.', 380],
+    pace: ['Одни участники уже закончили переход, другие ещё делают шаг.', 'Одни ждут, пока другие закончат движение. Как удержите общий ритм?', 380],
+    plan: ['Часы и открытый блокнот с планом на фоне зала, где ещё идёт занятие.', 'Посмотрите на план и решите, чем закончить урок.', 380],
+    practice: ['Будущая преподавательница ведёт небольшую группу, наставница наблюдает с блокнотом.', '', 427],
+  };
+  function sceneImage(key) {
+    const [alt, , height = 507] = scenes[key];
+    return `<img class="scene-image" src="../../assets/scenes/${key}.webp" alt="${alt}" width="760" height="${height}" decoding="async">`;
+  }
+  function visual(key, tag) {
+    return `<figure class="visual"><div class="visual-head"><span class="visual-tag">${tag}</span><span class="visual-index">${pad(step+1)} / ${pad(TOTAL)}</span></div>${sceneImage(key)}<figcaption class="visual-caption">${scenes[key][1]}</figcaption></figure>`;
+  }
+  function placeScene() {
+    const scene = layout.querySelector('.visual');
+    if (!scene) return;
+    if (narrow.matches) play.querySelector('#question').before(scene);
+    else side.prepend(scene);
+  }
+  narrow.addEventListener('change', placeScene);
+  const trainerTip = {
+    'Шавасана':'На следующем занятии обратите внимание, какое место шавасана занимает в последовательности и чем отличается от активных асан.',
+    'Пранаяма':'Посмотрите, как в расписании йога-студии описывают отдельный блок дыхательных техник.',
+    'Ясность команд':'Разделите две длинные инструкции на короткие команды и оставьте между ними паузу.',
+    'Внимание к группе':'Подготовьте два способа выполнить один переход и придумайте, как предложить их одной фразой.',
+    'Структура занятия':'Продумайте, какую связку можно убрать из плана, чтобы осталось время на повтор и завершение.',
+  };
+  function result() {
+    const decisions = answers.slice(2, TOTAL).map(answer => ({card: cards[answer.key], choice: answer.choice}));
+    const knowledge = decisions.slice(0, 2).filter(({card, choice}) => choice === card.correct).length;
+    const teaching = decisions.slice(2).filter(({card, choice}) => choice === card.correct).length;
+    const firstMiss = decisions.find(({card, choice}) => choice !== card.correct);
+    let title = 'Вести занятия <span>можно научиться</span>';
+    let lead = 'Даже если эти вопросы пока показались сложными, можно начать с основ йоги и постепенно научиться вести группу. В Академии вы сможете освоить и практику, и преподавание с нуля.';
+    if (teaching === 2 && knowledge > 0) {
+      title = 'Вам подходит роль <span>преподавателя</span>';
+      lead = 'Вы нашли подходящее решение в обеих ситуациях на пробном уроке. На обучении сможете проверить эти приёмы на практике и получить обратную связь.';
+    } else if (knowledge === 2) {
+      title = 'Вы знаете <span>основы йоги</span>';
+      lead = 'Вы верно ответили на оба вопроса о практике. Это хорошая опора: дальше можно учиться объяснять движения и вести группу.';
+    } else if (teaching > 0) {
+      title = 'У вас есть <span>с чего начать</span>';
+      lead = teaching === 2
+        ? 'Вы нашли подходящие решения в обеих ситуациях на уроке. Начните с терминов из разбора, чтобы связать эти решения с основами йоги.'
+        : 'В пробном уроке у вас уже есть удачное решение. В разборе можно увидеть, какие понятия йоги и приёмы работы с группой стоит закрепить.';
+    } else if (knowledge === 1) {
+      title = 'Вы уже знакомы <span>с основами йоги</span>';
+      lead = 'Один базовый вопрос уже дался вам. В Академии можно разобраться в остальных понятиях и шаг за шагом освоить ведение занятий.';
+    }
+    const goal = answers[0].choice;
+    const review = decisions.map(({card, choice}, index) => {
+      const good = choice === card.correct;
+      return `<li><details><summary><span class="status ${good?'good':''}" aria-hidden="true">${good?'✓':'·'}</span><span><b>${index+3}. ${card.title}</b><small>${good?'Верно:':index < 2 ? 'Правильный ответ:' : 'Лучший ответ:'} ${card.choices[card.correct]}</small></span>${icon('down')}</summary><p>${good?'':`<strong>Ваш выбор:</strong> ${card.choices[choice]}.<br>`}${card.explain}</p></details></li>`;
+    }).join('');
+    const gift = knowledge === 2 || (goal === 2 && knowledge === 1) ? gifts[1] : gifts[0];
+    const application = formUrl().replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+    play.innerHTML = `<div class="result-grid">
+      <div class="result-hero">
+        ${head('Пробный урок пройден', title, lead)}
+        <span class="score-pill">Верных ответов: ${knowledge + teaching} из ${decisions.length}</span>
+      </div>
+      <div class="promo result-promo" id="grant">
+        <div class="campaign-banner" data-campaign>
+          <div><strong>Чёрная пятница</strong><span class="campaign-brand">В Академии Йоги</span></div>
+          <span class="campaign-deadline">Только до 13 ноября</span>
+        </div>
+        <div class="amount" data-campaign>40&nbsp;000&nbsp;₽</div>
+        <p class="offer-subtitle"><span data-campaign>Грант на обучение</span><span data-after-campaign>Узнайте условия обучения</span></p>
+        <div class="grant-availability" data-campaign>
+          <span>Осталось грантов:</span><strong class="grant-remaining">${GRANTS_LEFT} / ${GRANTS_TOTAL}</strong>
+        </div>
+        <div id="grant-form-home"><div class="application-fields">
+        <form class="lead-form" method="post" novalidate>
+          <p class="gift-heading" id="gift-heading">Выберите курс в подарок</p>
+          <details class="offer-gift">
+            <summary aria-labelledby="gift-heading gift-title"><span class="gift-icon">${icon('gift')}</span><strong class="gift-title" id="gift-title">«${gift.title}»</strong>${icon('down')}</summary>
+            <fieldset class="gift-options" aria-labelledby="gift-heading">
+              ${gifts.map(option => `<label class="gift-choice"><input type="radio" name="gift" value="${option.id}"${option.id === gift.id ? ' checked' : ''}> <span>«${option.title}»</span></label>`).join('')}
+            </fieldset>
+          </details>
+          <p class="gift-terms" data-after-campaign>Уточните в Академии, действует ли предложение с подарком.</p>
+          <div class="lead-fields">
+            <div><label for="grant-name">Имя</label><input id="grant-name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Ваше имя" aria-describedby="grant-status" required></div>
+            <div><label for="grant-phone">Телефон</label><input id="grant-phone" name="phone" type="tel" inputmode="tel" maxlength="30" autocomplete="tel" placeholder="+7 999 000-00-00" aria-describedby="grant-status" required></div>
+          </div>
+          <button type="submit" class="grant-btn"><span data-campaign>Оставить заявку на грант + подарок</span><span data-after-campaign>Оставить заявку</span>${icon('arrow')}</button>
+          <p id="grant-status" class="lead-status" role="status"></p>
+        </form>
+        ${LEAD_ENDPOINT ? '' : `<p class="preview-note">Предпросмотр. Для отправки используйте <a href="${application}" target="_blank" rel="noopener">форму Академии</a>.</p>`}
+        </div></div>
+        <p class="follow-up">Приёмная комиссия расскажет об условиях обучения и ближайшем потоке.</p>
+        <p class="alliance">${icon('check')}<span>Академия Йоги входит в международный союз <strong>Yoga Alliance</strong>.</span></p>
+      </div>
+      <figure class="course-photo">
+        ${sceneImage('practice')}
+      </figure>
+      <div class="review-panel">
+        <div class="review-top"><h2 class="review-heading">Разбор ваших ответов</h2><p class="small">Откройте ответ, чтобы прочитать объяснение</p></div>
+        <ol class="review">${review}</ol>
+        <p class="next-tip"><strong>Попробуйте на практике.</strong> ${firstMiss ? trainerTip[firstMiss.card.skill] : goals[goal].tip}</p>
+      </div>
+    </div>`;
+    side.innerHTML = '';
+  }
+  function render(event) {
+    const onIntro = step < 0;
+    intro.hidden = !onIntro;
+    navline.hidden = layout.hidden = onIntro;
+    quizFooter.hidden = step === TOTAL;
+    resultFooter.hidden = step !== TOTAL;
+    openDialog.hidden = step !== TOTAL;
+    if (onIntro) {
+      if (event) start.focus();
+      return;
+    }
+    layout.toggleAttribute('data-result',step===TOTAL);
+    play.dataset.view=step===TOTAL?'result':'question';
+    label.textContent=step===TOTAL?'Квиз пройден':`Вопрос ${step+1} из ${TOTAL}`;
+    duration.hidden=step===TOTAL;
+    track.forEach((el,i)=>{el.toggleAttribute('data-done',i<step);el.toggleAttribute('data-current',i===step)});
+    if(step===0) {
+      play.innerHTML=head('Ваш опыт и цель','Зачем вам <span>преподавание йоги?</span>','Расскажите, как йога уже входит в вашу жизнь и чего вы хотите дальше.')+
+        ask('Что вам ближе сейчас?',goals)+nav();
+      side.innerHTML=visual('goal','Перед занятием')+grant();
+    } else if(step===1) {
+      play.innerHTML=head('Знакомство с группой','Кто пришёл <span>на занятие?</span>','Этот выбор определит, какие ситуации вы разберёте в конце квиза.')+
+        ask('Выберите группу',settings)+nav();
+      side.innerHTML=visual('group','Знакомство с группой')+grant();
+    } else if(step<TOTAL) {
+      const key=sceneAt(step);
+      const card=cards[key];
+      const last=step===5?answers[4]:null;
+      const previous=step===4?settings[answers[1].choice].name:
+        last && last.choice===cards[last.key].correct?cards[last.key].beat:'';
+      play.innerHTML=head(card.cue,card.title,card.lead)+(previous?line(previous):'')+ask(card.prompt,card.choices)+nav();
+      side.innerHTML=visual(key,card.cue)+grant();
+    } else result();
+    placeScene();
+    play.classList.remove('enter'); side.classList.remove('enter');
+    if(event) {
+      const h=play.querySelector('h1');
+      if(h.getBoundingClientRect().top<0||h.getBoundingClientRect().top>innerHeight*.6){
+        navline.scrollIntoView({block:'start',behavior:'instant'});
+      }
+      h.focus({preventScroll:true});
+      if(event.detail>0&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        void play.offsetWidth;
+        (play.querySelector('.result-grid') || play).classList.add('enter');
+        if (step !== TOTAL) side.classList.add('enter');
+      }
+    }
+  }
+  start.disabled = false;
+  start.addEventListener('click', event => {
+    step = 0;
+    render(event);
+  });
+  play.addEventListener('click',event=>{
+    const target=event.target.closest('button');
+    if(!target) return;
+    if(target.dataset.choice!==undefined && step<TOTAL){
+      const choice=Number(target.dataset.choice);
+      const key=step>=2?sceneAt(step):null;
+      if(answers[step]?.choice!==choice||answers[step]?.key!==key) answers=answers.slice(0,step);
+      answers[step]={choice,key};
+      step++;
+    } else if(target.dataset.action==='back'&&step>=0) step--;
+    else return;
+    render(event);
+  });
+  openDialog.addEventListener('click', () => {
+    const home = document.querySelector('#grant-form-home');
+    if (!home?.firstElementChild || dialog.open) return;
+    home.style.minHeight = `${home.offsetHeight}px`;
+    dialogForm.append(home.firstElementChild);
+    dialog.showModal();
+  });
+  openDialog.disabled = false;
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    const home = document.querySelector('#grant-form-home');
+    home.append(dialogForm.firstElementChild);
+    home.style.removeProperty('min-height');
+    openDialog.focus({preventScroll:true});
+  });
+  document.addEventListener('change', event => {
+    const choice = event.target;
+    if (!choice.matches('.gift-choice input') || !choice.checked) return;
+    const gift = gifts.find(option => option.id === choice.value);
+    choice.form.querySelector('.gift-title').textContent = `«${gift.title}»`;
+  });
+  document.addEventListener('submit', async event => {
+    const form = event.target;
+    if (!form.matches('.lead-form')) return;
+    event.preventDefault();
+    const button = form.querySelector('button[type="submit"]');
+    if (button.disabled) return;
+    const name = form.elements.namedItem('name');
+    const phone = form.elements.namedItem('phone');
+    const status = form.querySelector('#grant-status');
+    const digits = phone.value.replace(/\D/g, '');
+    const validPhone = /^\+?[\d\s().-]+$/.test(phone.value.trim()) && digits.length >= 10 && digits.length <= 15;
+    const validName = Boolean(name.value.trim());
+    name.setAttribute('aria-invalid', String(!validName));
+    phone.setAttribute('aria-invalid', String(!validPhone));
+    if (!validName || !validPhone) {
+      status.textContent = !validName ? 'Укажите имя.' : 'Укажите телефон. В номере должно быть от 10 до 15 цифр.';
+      (validName ? phone : name).focus();
+      return;
+    }
+    if (!LEAD_ENDPOINT) {
+      status.textContent = 'Это предпросмотр. Ссылка на форму Академии находится ниже.';
+      return;
+    }
+    button.disabled = true;
+    status.textContent = 'Отправляем заявку…';
+    try {
+      const response = await fetch(LEAD_ENDPOINT, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          name:name.value.trim(),
+          phone:phone.value.trim(),
+          gift:form.elements.namedItem('gift').value,
+          goal:goals[answers[0].choice].label,
+          tracking:Object.fromEntries(trackingParams())
+        })
+      });
+      if (!response.ok || (await response.json()).ok !== true) throw new Error('Lead was not saved');
+      name.value = '';
+      phone.value = '';
+      status.textContent = 'Заявка принята. Приёмная комиссия свяжется с вами.';
+    } catch {
+      button.disabled = false;
+      status.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз.';
+    }
+  });
+  const remaining = CAMPAIGN_END - Date.now();
+  document.body.toggleAttribute('data-black-friday', remaining > 0);
+  if (remaining > 0 && remaining <= 2147483647) {
+    setTimeout(() => document.body.removeAttribute('data-black-friday'), remaining);
+  }
+  render();
+})();
+
+/* QUIZ_SOURCE_END */
+</script>
+</body>
+</html>

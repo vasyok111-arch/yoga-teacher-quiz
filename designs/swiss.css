@@ -1,0 +1,202 @@
+/* Swiss · flush-left grotesk, an asymmetric poster grid, one cobalt ink. */
+html[data-design="swiss"] {
+  --ink: #141414;
+  --mute: #464646;
+  --paper: #fff;
+  --white: #fff;
+  --line: #bcbcbc;
+  --brand: #1833df;
+  --brand-dark: #1023a5;
+  --lav: #eaf0ff;
+  --deep: #141414;
+  --warm: #eaf0ff;
+  --green: #17442c;
+  --green-bg: #e7f0e8;
+  --amber: #62421b;
+  --amber-bg: #f7ecdc;
+  --edge: 0px;
+  --swiss-mono: 'Cascadia Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --swiss-grid: #e4e4e4;
+  font-family: 'Helvetica Neue', Arial, 'Liberation Sans', sans-serif;
+  scrollbar-color: #757575 var(--paper);
+}
+
+html[data-design="swiss"] .wrap { width: min(1232px, calc(100% - 64px)); }
+html[data-design="swiss"] .masthead { border: 0; }
+html[data-design="swiss"] .mast-row { min-height: 72px; border-top: 6px solid var(--brand); border-bottom: 2px solid var(--ink); }
+html[data-design="swiss"] .brand img { filter: grayscale(1) contrast(1.25); }
+html[data-design="swiss"] .brand span { border-color: var(--ink); font-weight: 700; }
+html[data-design="swiss"] .license-link { color: var(--ink); }
+html[data-design="swiss"] :is(.kicker, .progress-label, .time, .visual-tag, .visual-index, .promo-kicker, .promo-pill, .score-pill, .campaign-deadline, .footer-grid h2) {
+  font-family: var(--swiss-mono);
+  letter-spacing: .025em;
+  font-weight: 700;
+}
+html[data-design="swiss"] .main { padding-top: 19px; }
+html[data-design="swiss"] .intro {
+  grid-template-columns: minmax(0, 1.24fr) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 60px);
+  padding: clamp(20px, 3.6vw, 52px) 0 clamp(24px, 4.1vw, 56px);
+}
+html[data-design="swiss"] .kicker { color: var(--brand-dark); }
+html[data-design="swiss"] .kicker::before { width: 8px; height: 8px; border-radius: 0; }
+html[data-design="swiss"] .intro h1 { font-size: clamp(44px, 5.65vw, 82px); font-weight: 800; line-height: .98; letter-spacing: -.066em; text-wrap: wrap; }
+html[data-design="swiss"] .intro h1 span { display: block; }
+html[data-design="swiss"] .intro .lead { max-width: 39ch; color: var(--ink); line-height: 1.48; }
+html[data-design="swiss"] .intro-points { max-width: 42ch; border-block: 1px solid var(--ink); padding-block: 10px; }
+html[data-design="swiss"] .intro-points .ico { width: 16px; height: 16px; }
+html[data-design="swiss"] .solid.start-btn { border-radius: 0; box-shadow: none; }
+html[data-design="swiss"] .small { color: var(--mute); }
+
+/* The original studio image becomes a single monochrome plate on the cover. */
+html[data-design="swiss"] .intro-visual {
+  align-self: center;
+  border-inline-start: clamp(9px, 1.05vw, 16px) solid var(--brand);
+}
+html[data-design="swiss"] .intro-visual img {
+  aspect-ratio: 1.12;
+  border-radius: 0;
+  object-position: 54% 42%;
+  background: var(--swiss-grid);
+  filter: grayscale(1);
+  outline: 1px solid var(--ink);
+  outline-offset: -1px;
+}
+html[data-design="swiss"] .intro-offer {
+  position: relative;
+  inset: auto;
+  max-width: none;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 2px 15px;
+  border: 0;
+  border-radius: 0;
+  padding: 13px 12px;
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: none;
+}
+html[data-design="swiss"] .intro-offer strong { grid-row: span 2; color: var(--white); font-size: clamp(29px, 4vw, 53px); font-weight: 800; }
+html[data-design="swiss"] .intro-offer span { margin: 0; font-size: 13px; }
+html[data-design="swiss"] .intro-offer small { margin: 0; padding: 0; background: transparent; color: #ddd; font-size: 11px; }
+
+html[data-design="swiss"] .navline { border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+html[data-design="swiss"] .track li { height: 6px; border-radius: 0; background: var(--swiss-grid); }
+html[data-design="swiss"] .track li[data-current]::after { background: var(--brand); }
+html[data-design="swiss"] .layout { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(14px, 2.65vw, 33px); }
+html[data-design="swiss"] .play { border: 0; border-top: 5px solid var(--brand); padding-inline: clamp(16px, 2.6vw, 38px); }
+html[data-design="swiss"] .play h1 { font-weight: 800; line-height: 1.02; }
+html[data-design="swiss"] .play[data-view="result"] { border: 0; padding: 0; }
+html[data-design="swiss"] .question { border-top: 1px solid var(--ink); padding-top: 10px; }
+html[data-design="swiss"] .choice-list { gap: 0; border-top: 1px solid var(--ink); }
+html[data-design="swiss"] .choice {
+  min-height: 54px;
+  grid-template-columns: 34px minmax(0, 1fr) 18px;
+  padding-inline: 0 8px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--white);
+}
+html[data-design="swiss"] .choice:focus-visible { outline-offset: -3px; }
+html[data-design="swiss"] .choice[data-selected] { background: var(--lav); }
+html[data-design="swiss"] .choice b { font-weight: 700; line-height: 1.32; }
+html[data-design="swiss"] :is(.glyph, .letter) { border-radius: 0; background: var(--ink); color: var(--white); }
+html[data-design="swiss"] .letter { font: 700 14px/1 var(--swiss-mono); }
+html[data-design="swiss"] .choice[data-selected] :is(.glyph, .letter) { background: var(--brand); }
+html[data-design="swiss"] .scene-line { background: var(--lav); border-inline-start: 3px solid var(--brand); border-radius: 0; }
+html[data-design="swiss"] .quiet { border-radius: 0; text-decoration: underline; text-underline-offset: 3px; }
+html[data-design="swiss"] :is(.visual, .course-photo) { border-color: var(--ink); }
+html[data-design="swiss"] .visual-head { padding: 10px 12px; background: var(--ink); }
+html[data-design="swiss"] :is(.visual-tag, .visual-index) { color: var(--white); }
+html[data-design="swiss"] .visual-caption { background: var(--white); border-top: 1px solid var(--ink); color: var(--ink); }
+html[data-design="swiss"] .scene-image { background: var(--swiss-grid); }
+html[data-design="swiss"] .promo { border-color: var(--brand); background: var(--brand); color: var(--white); }
+html[data-design="swiss"] .promo:not(.result-promo) :is(.promo-kicker, p, .terms, .promo-pill) { color: var(--white); }
+html[data-design="swiss"] .promo-pill { border-color: #b6c4ff; border-radius: 0; }
+
+html[data-design="swiss"] .result-grid { grid-template-columns: minmax(0, 1.34fr) minmax(0, 1fr); gap: clamp(14px, 2.4vw, 29px); }
+html[data-design="swiss"] .result-hero { padding: clamp(16px, 2.3vw, 29px) 0; border: 0; border-block: 5px solid var(--brand); border-bottom-width: 1px; background: var(--white); }
+html[data-design="swiss"] .play[data-view="result"] .result-hero h1 { letter-spacing: -.057em; }
+html[data-design="swiss"] .score-pill { border: 0; border-radius: 0; background: var(--brand); color: var(--white); }
+html[data-design="swiss"] .result-promo { border: 1px solid var(--ink); background: var(--white); color: var(--ink); }
+html[data-design="swiss"] .result-promo p { color: var(--ink); }
+html[data-design="swiss"] .result-promo .amount { color: var(--brand); }
+html[data-design="swiss"] .campaign-banner { background: var(--brand); border-radius: 0; }
+html[data-design="swiss"] .campaign-brand { color: #eaf0ff; }
+html[data-design="swiss"] .campaign-deadline { border-radius: 0; color: var(--brand-dark); }
+html[data-design="swiss"] .offer-gift { border-color: #a0b0f3; border-radius: 0; background: var(--lav); color: var(--brand-dark); }
+html[data-design="swiss"] .gift-icon { background: var(--brand); color: var(--white); border-radius: 0; }
+html[data-design="swiss"] .gift-choice { border-radius: 0; }
+html[data-design="swiss"] .gift-choice:has(input:checked) { background: #d9e2ff; }
+html[data-design="swiss"] .lead-fields input { border-color: #636363; border-radius: 0; }
+html[data-design="swiss"] .lead-fields input::placeholder { color: var(--mute); }
+html[data-design="swiss"] .lead-fields input[aria-invalid="true"] { border-color: #af3a32; }
+html[data-design="swiss"] .lead-form .lead-status { color: #973229; }
+html[data-design="swiss"] .lead-form .grant-btn { border-radius: 0; }
+html[data-design="swiss"] :is(.lead-form .gift-terms, .result-promo .follow-up, .application-fields .preview-note) { color: var(--mute); }
+html[data-design="swiss"] .course-photo .scene-image { filter: grayscale(1); }
+html[data-design="swiss"] .review-panel { border: 0; border-top: 2px solid var(--ink); padding-inline: 0; }
+html[data-design="swiss"] .review-heading { font-weight: 800; letter-spacing: -.045em; }
+html[data-design="swiss"] .review { gap: 0; border-top: 1px solid var(--ink); }
+html[data-design="swiss"] .review li { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+html[data-design="swiss"] .review summary { min-height: 44px; }
+html[data-design="swiss"] .review summary small { color: var(--ink); }
+html[data-design="swiss"] :is(.review summary, .offer-gift summary):focus-visible { outline-offset: -3px; }
+html[data-design="swiss"] .next-tip { border: 0; border-inline-start: 3px solid var(--brand); border-radius: 0; color: var(--brand-dark); background: var(--lav); }
+
+html[data-design="swiss"] .footer { border-top: 2px solid var(--ink); }
+html[data-design="swiss"] .result-footer { border-top: 5px solid var(--brand); background: var(--ink); color: var(--white); }
+html[data-design="swiss"] :is(.footer-grid h2, .footer-grid p, .footer-bottom) { color: #e4e4e4; }
+html[data-design="swiss"] .footer-bottom { border-color: #646464; }
+html[data-design="swiss"] .result-cta { border-radius: 0; background: var(--brand); color: var(--white); }
+html[data-design="swiss"] .result-footer :focus-visible { outline-color: var(--white); }
+html[data-design="swiss"] .grant-dialog { border: 1px solid var(--ink); border-top: 6px solid var(--brand); border-radius: 0; box-shadow: 8px 8px 0 #14141466; }
+html[data-design="swiss"] .grant-dialog::backdrop { background: #141414a6; }
+html[data-design="swiss"] .dialog-head h2 { font-weight: 800; }
+html[data-design="swiss"] .dialog-close { border-radius: 0; }
+
+html[data-design="swiss"] .enter { animation: swiss-enter 175ms var(--out) both; }
+html[data-design="swiss"] .enter .choice { animation: none; }
+@keyframes swiss-enter {
+  from { opacity: .64; transform: translateX(-4px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html[data-design="swiss"] .choice:hover { background: #f0f2f8; }
+  html[data-design="swiss"] .choice[data-selected]:hover { background: var(--lav); }
+  html[data-design="swiss"] .result-cta:hover { background: var(--brand-dark); }
+  html[data-design="swiss"] .dialog-close:hover { background: #d9e2ff; }
+}
+
+@media (max-width: 860px) {
+  html[data-design="swiss"] .wrap { width: calc(100% - 40px); }
+  html[data-design="swiss"] .intro { gap: 22px; }
+  html[data-design="swiss"] .intro h1 { font-size: clamp(39px, 6.2vw, 54px); }
+  html[data-design="swiss"] .result-grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); }
+}
+
+@media (max-width: 680px) {
+  html[data-design="swiss"] .wrap { width: calc(100% - 32px); }
+  html[data-design="swiss"] .mast-row { min-height: 55px; border-top-width: 4px; }
+  html[data-design="swiss"] .main { padding-top: 10px; }
+  html[data-design="swiss"] .intro { grid-template-columns: minmax(0, 1fr); padding: 14px 0 17px; gap: 15px; }
+  html[data-design="swiss"] .intro h1 { font-size: clamp(36px, 10.6vw, 61px); }
+  html[data-design="swiss"] .intro-visual { max-width: none; }
+  html[data-design="swiss"] .intro-visual img { aspect-ratio: 1.48; }
+  html[data-design="swiss"] .intro-offer { gap: 2px 8px; padding: 9px; }
+  html[data-design="swiss"] .intro-offer strong { font-size: clamp(28px, 8vw, 43px); }
+  html[data-design="swiss"] .intro-offer span { font-size: 12px; }
+  html[data-design="swiss"] .intro-offer small { font-size: 10px; }
+  html[data-design="swiss"] .play { padding-inline: 12px; border-radius: 0; }
+  html[data-design="swiss"] .play .visual { border-radius: 0; }
+  html[data-design="swiss"] .choice { min-height: 49px; }
+  html[data-design="swiss"] .result-grid { grid-template-columns: minmax(0, 1fr); }
+  html[data-design="swiss"] :is(.result-hero, .result-promo, .course-photo, .review-panel) { border-radius: 0; }
+}
+
+@media (forced-colors: active) {
+  html[data-design="swiss"] { scrollbar-color: auto; }
+}

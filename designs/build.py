@@ -13,6 +13,10 @@ THEMES = {
     "arcade": ("Аркада", "#0c1528"),
     "pop": ("Поп", "#fff5fa"),
     "atlas": ("Атлас движения", "#11336f"),
+    "swiss": ("Швейцарская сетка", "#ffffff"),
+    "sunroom": ("Солнечное ретро", "#fff6e7"),
+    "foil": ("Голограмма", "#e9e9f7"),
+    "ink": ("Тушь и бумага", "#f7f3e9"),
 }
 
 
@@ -45,6 +49,22 @@ def render_variant(source: str, slug: str, name: str, color: str) -> str:
         page = page.replace(
             'Преподаватель встречает учеников перед началом занятия в студии йоги',
             'Учитель и ученики в студии на иллюстрации в технике цианотипии',
+            1,
+        )
+    elif slug == "ink":
+        page = page.replace(
+            'src="../../assets/scenes/first-class.webp" width="1080" height="810"',
+            'src="wash.webp" width="864" height="1080"',
+            1,
+        )
+        page = page.replace(
+            'А если йога станет <span>вашей профессией?</span>',
+            'Проведите <span>первый урок йоги</span>',
+            1,
+        )
+        page = page.replace(
+            'Преподаватель встречает учеников перед началом занятия в студии йоги',
+            'Преподаватель и ученики на рисунке тушью',
             1,
         )
     elif slug == "impact":

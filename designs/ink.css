@@ -1,0 +1,164 @@
+html[data-design="ink"] {
+  --paper: #f7f3e9;
+  --ink: #201e1a;
+  --mute: #58544b;
+  --white: #fffcf5;
+  --line: #c8bfb0;
+  --brand: #24211d;
+  --brand-dark: #872a24;
+  --lav: #eee8da;
+  --deep: #2b2721;
+  --warm: #ecd9c9;
+  --edge: 1px;
+  --out: cubic-bezier(.25, .65, .3, 1);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  scrollbar-color: #918478 var(--paper);
+}
+
+[data-design="ink"] .wrap { width: min(1120px, calc(100% - 84px)); }
+[data-design="ink"] .masthead { background: var(--paper); border-color: #a39a88; }
+[data-design="ink"] .mast-row { min-height: 70px; }
+[data-design="ink"] .brand span { border-color: #b49a86; }
+[data-design="ink"] .license-link { color: var(--brand-dark); }
+[data-design="ink"] .intro {
+  grid-template-columns: minmax(0, 1fr) minmax(0, .91fr);
+  gap: clamp(30px, 7vw, 103px);
+  padding: clamp(25px, 4vw, 58px) 0 35px;
+}
+[data-design="ink"] .intro-copy { padding: clamp(15px, 4vw, 46px) 0; }
+[data-design="ink"] :is(.intro h1, .play h1, .review-heading, .dialog-head h2, .amount, .intro-offer strong) {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -.055em;
+}
+[data-design="ink"] .intro h1 {
+  font-size: clamp(47px, 6.5vw, 92px);
+  line-height: 1;
+  text-wrap: initial;
+}
+[data-design="ink"] .intro h1 span { display: block; font-style: italic; }
+[data-design="ink"] .kicker { color: var(--brand-dark); letter-spacing: .15em; }
+[data-design="ink"] .kicker::before { height: 1px; width: 18px; background: currentColor; }
+[data-design="ink"] .intro .lead { line-height: 1.52; }
+[data-design="ink"] .intro-points {
+  max-width: 43ch;
+  border-block: 1px solid var(--line);
+  padding: 12px 0;
+  margin: 16px 0 19px;
+}
+[data-design="ink"] .intro-points .ico { color: var(--brand-dark); }
+[data-design="ink"] .intro-visual {
+  align-self: start;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #9e9381;
+}
+[data-design="ink"] .intro-visual img {
+  aspect-ratio: .86;
+  object-position: 50% 48%;
+  border-radius: 0;
+  background: transparent;
+  mix-blend-mode: multiply;
+  animation: ink-reveal 550ms var(--out) both;
+}
+[data-design="ink"] .intro-offer {
+  position: static;
+  max-width: none;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: 3px 13px;
+  margin: 7px 0 0;
+  padding: 9px 0 0;
+  border: 0;
+  border-top: 1px solid #a79d8c;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+[data-design="ink"] .intro-offer strong {
+  grid-row: span 2;
+  color: var(--brand-dark);
+  font-size: clamp(29px, 3.8vw, 53px);
+}
+[data-design="ink"] .intro-offer span { margin: 0; }
+[data-design="ink"] .intro-offer small { padding: 0; margin: 0; background: none; color: var(--mute); }
+[data-design="ink"] :is(.solid.start-btn, .result-cta, .lead-form .grant-btn) {
+  background: #25211d;
+  border: 1px solid #25211d;
+  border-radius: 2px;
+  color: #fffaf0;
+  box-shadow: none;
+}
+[data-design="ink"] .footer { border-top: 1px solid var(--line); }
+[data-design="ink"] .navline { border-block: 1px solid var(--line); padding: 8px 0; }
+[data-design="ink"] .track li { background: #d5cabb; border-radius: 0; height: 4px; }
+[data-design="ink"] .track li[data-current]::after { background: #9f4034; }
+[data-design="ink"] .layout:not([data-result]) { gap: 22px; }
+[data-design="ink"] .play[data-view="question"] { background: var(--white); border-color: #aaa08e; }
+[data-design="ink"] .play h1 span { color: var(--brand-dark); }
+[data-design="ink"] .choice { min-height: 53px; border: 0; border-bottom: 1px solid #d2c7b6; border-radius: 0; background: transparent; }
+[data-design="ink"] .choice-list { gap: 0; border-top: 1px solid #d2c7b6; }
+[data-design="ink"] .choice[data-selected] { background: #f0e7d7; border-color: #a59a87; }
+[data-design="ink"] :is(.glyph, .letter) { background: #eee5d6; color: #5b352b; border-radius: 50%; }
+[data-design="ink"] .scene-line { background: #eee7d9; border-radius: 0; }
+[data-design="ink"] .visual { background: var(--white); border-color: var(--line); }
+[data-design="ink"] :is(.visual-tag, .visual-index) { color: var(--brand-dark); }
+[data-design="ink"] .visual-caption { background: #ede6da; color: var(--ink); }
+[data-design="ink"] .visual .scene-image,
+[data-design="ink"] .course-photo .scene-image { filter: grayscale(1) sepia(.13) contrast(1.03); }
+[data-design="ink"] .promo { border-color: #5a5045; }
+[data-design="ink"] .promo-pill { border-color: #a09283; color: #f7ead7; }
+[data-design="ink"] .promo .terms { color: #e8ddcf; }
+[data-design="ink"] .result-grid { gap: 19px; }
+[data-design="ink"] .result-hero { border-color: #a69a88; background: var(--white); }
+[data-design="ink"] .score-pill { color: var(--brand-dark); background: #f7f1e7; border: 1px solid #d0b4a2; border-radius: 1px; }
+[data-design="ink"] .result-promo { background: var(--white); color: var(--ink); border-color: #a69a88; }
+[data-design="ink"] .campaign-banner { background: #352c26; color: #fff8ea; border-radius: 1px; }
+[data-design="ink"] .campaign-brand { color: #ece1d5; }
+[data-design="ink"] .campaign-deadline { color: #50221d; background: #f0d8ca; border-radius: 1px; }
+[data-design="ink"] .result-promo .amount { color: var(--brand-dark); }
+[data-design="ink"] .grant-availability { border-color: #d1bc9f; background: #f4ebd9; color: #4a3424; border-radius: 1px; }
+[data-design="ink"] .offer-gift { background: #f3ede1; border-color: #d1c0ae; color: #482b20; border-radius: 1px; }
+[data-design="ink"] .gift-icon { background: #eddfcf; color: var(--brand-dark); border-radius: 50%; }
+[data-design="ink"] .gift-choice:has(input:checked) { background: #e9decb; }
+[data-design="ink"] .lead-fields input { background: #fffdf8; border-color: #998c7a; border-radius: 1px; }
+[data-design="ink"] .lead-fields input::placeholder { color: #63584c; }
+[data-design="ink"] .review-panel { background: var(--white); }
+[data-design="ink"] .review li { border-radius: 1px; }
+[data-design="ink"] .review summary small { color: #653b32; }
+[data-design="ink"] .next-tip { background: #f1e9dc; color: #46372c; border-color: #cbbba9; border-radius: 1px; }
+[data-design="ink"] .result-footer { background: #302923; border-top: 1px solid #7b6e62; color: #fff9ed; }
+[data-design="ink"] :is(.footer-grid h2, .footer-grid p, .footer-bottom) { color: #e2d5c5; }
+[data-design="ink"] .footer-bottom { border-color: #6f6054; }
+[data-design="ink"] .grant-dialog { background: #fffcf5; border-color: #a59986; border-radius: 2px; }
+[data-design="ink"] .grant-dialog::backdrop { background: #2a211bb5; }
+[data-design="ink"] .dialog-close { border-radius: 50%; }
+[data-design="ink"] .enter { animation: ink-reveal 200ms var(--out) both; }
+[data-design="ink"] .enter .choice { animation: none; }
+@keyframes ink-reveal {
+  from { opacity: .55; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-design="ink"] .choice:hover { background: #f3ebdd; border-color: #a99d8d; }
+  [data-design="ink"] :is(.solid.start-btn, .result-cta, .lead-form .grant-btn):hover { background: #514239; }
+  [data-design="ink"] .dialog-close:hover { background: #e6d8c8; }
+}
+@media (max-width: 860px) {
+  [data-design="ink"] .wrap { width: calc(100% - 42px); }
+  [data-design="ink"] .intro { gap: 28px; }
+}
+@media (max-width: 680px) {
+  [data-design="ink"] .wrap { width: calc(100% - 32px); }
+  [data-design="ink"] .mast-row { min-height: 58px; }
+  [data-design="ink"] .intro { grid-template-columns: minmax(0, 1fr); gap: 15px; padding: 13px 0 19px; }
+  [data-design="ink"] .intro-copy { padding: 5px 0 0; }
+  [data-design="ink"] .intro h1 { font-size: clamp(43px, 11vw, 70px); }
+  [data-design="ink"] .intro-visual { max-width: none; }
+  [data-design="ink"] .intro-visual img { aspect-ratio: 1.38; object-position: 50% 67%; }
+  [data-design="ink"] .intro-offer strong { font-size: clamp(28px, 8vw, 38px); }
+  [data-design="ink"] .choice { min-height: 49px; }
+  [data-design="ink"] :is(.play, .play .visual, .result-hero, .result-promo, .course-photo, .review-panel) { border-radius: 2px; }
+  [data-design="ink"] .result-grid { gap: 12px; }
+}

@@ -1,0 +1,571 @@
+/* Sunroom: a warm print cover for an afternoon in the practice studio. */
+html[data-design="sunroom"] {
+  --paper: #fff6e7;
+  --white: #fffdf5;
+  --ink: #43251d;
+  --mute: #684a39;
+  --line: #e4c69f;
+  --brand: #943e2c;
+  --brand-dark: #733024;
+  --lav: #fae3c6;
+  --deep: #592d25;
+  --warm: #f6c361;
+  --green: #385637;
+  --green-bg: #e8f0d6;
+  --amber: #744316;
+  --amber-bg: #fff0cc;
+  --edge: 22px;
+  --sun-display: Georgia, "Times New Roman", serif;
+  --sun-wash: #fff0d2;
+  --sun-gold: #f8cf80;
+  --sun-field: #a57758;
+  --sun-soft-shadow: 0 8px 22px #653e2112;
+  scrollbar-color: #aa7955 var(--paper);
+}
+
+html[data-design="sunroom"] .wrap { width: min(1180px, calc(100% - 72px)); }
+html[data-design="sunroom"] .masthead { background: #fff3de; }
+html[data-design="sunroom"] .mast-row { min-height: 70px; }
+html[data-design="sunroom"] .brand span { border-color: #c29b75; }
+
+html[data-design="sunroom"] .license-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .main { padding-top: clamp(16px, 2.65vw, 35px); }
+
+html[data-design="sunroom"] :is(h1, .amount, .intro-offer strong, .review-heading, .dialog-head h2) {
+  font-family: var(--sun-display);
+}
+
+html[data-design="sunroom"] .intro {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 54px);
+  padding: clamp(28px, 4.5vw, 58px) clamp(23px, 4vw, 55px);
+  border: 1px solid #e9bf80;
+  border-radius: 30px;
+  background: linear-gradient(114deg, #ffedc9 0 51%, #f8d593 51% 100%);
+}
+
+html[data-design="sunroom"] .kicker {
+  display: inline-flex;
+  width: fit-content;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 5px 10px 5px 7px;
+  border: 1px solid #d8a36a;
+  border-radius: 40px;
+  background: var(--sun-wash);
+  color: var(--brand-dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+html[data-design="sunroom"] .kicker::before {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #efb04e 0 38%, #c36739 38% 68%, #943e2c 68% 100%);
+}
+
+html[data-design="sunroom"] .intro h1 {
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 700;
+  line-height: .99;
+  letter-spacing: -.06em;
+  text-wrap: balance;
+}
+
+html[data-design="sunroom"] .intro h1 span {
+  color: var(--brand-dark);
+  font-style: italic;
+}
+
+html[data-design="sunroom"] .intro .lead {
+  max-width: 42ch;
+  margin-top: 18px;
+  line-height: 1.53;
+}
+
+html[data-design="sunroom"] .intro-points {
+  gap: 8px;
+  margin-block: 17px 20px;
+}
+
+html[data-design="sunroom"] .intro-points li { gap: 8px; }
+
+html[data-design="sunroom"] .intro-points .ico {
+  width: 19px;
+  height: 19px;
+  padding: 2px;
+  margin-top: 0;
+  border: 1px solid #c7914b;
+  border-radius: 50%;
+  background: var(--sun-gold);
+  color: var(--ink);
+}
+
+html[data-design="sunroom"] .solid.start-btn {
+  width: min(100%, 340px);
+  min-height: 57px;
+  padding-inline: 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 0 var(--brand-dark);
+}
+
+html[data-design="sunroom"] .intro .small { margin-top: 13px; }
+
+html[data-design="sunroom"] .intro-visual {
+  min-width: 0;
+  padding: clamp(22px, 4.35vw, 61px) 6.5% 0 0;
+}
+
+/* Solid bands reproduce the color separation of a printed sunrise. */
+html[data-design="sunroom"] .intro-visual::before,
+html[data-design="sunroom"] .intro-visual::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+html[data-design="sunroom"] .intro-visual::before {
+  top: 0;
+  right: 0;
+  width: 56%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(to bottom,
+    #fff1ab 0 16%, #f7bc54 16% 30%, #efa34c 30% 42%,
+    #dd7846 42% 58%, #bf5939 58% 76%, #a64530 76% 100%);
+}
+
+html[data-design="sunroom"] .intro-visual::after {
+  bottom: 12px;
+  left: 1%;
+  width: 48%;
+  height: 30%;
+  border-radius: 55% 45% 60% 40%;
+  background: #db8a50;
+  transform: rotate(-9deg);
+}
+
+html[data-design="sunroom"] .intro-visual img {
+  aspect-ratio: 1.29;
+  object-position: 50% 44%;
+  border: 4px solid #ffefcf;
+  border-radius: 34px 34px 88px 24px;
+  background: #eed1aa;
+  box-shadow: 0 10px 23px #72421d22;
+}
+
+html[data-design="sunroom"] .intro-offer {
+  position: relative;
+  inset: auto;
+  justify-self: end;
+  width: fit-content;
+  max-width: 95%;
+  margin: -22px 0 0 20px;
+  padding: 11px 21px 13px;
+  border: 1px solid #b87942;
+  border-radius: 28px 9px 28px 9px;
+  background: #ffe6a1;
+  box-shadow: 0 5px 0 #a65f358f;
+}
+
+html[data-design="sunroom"] .intro-offer strong {
+  color: var(--brand-dark);
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 700;
+  letter-spacing: -.055em;
+}
+
+html[data-design="sunroom"] .intro-offer span { margin-top: 4px; }
+
+html[data-design="sunroom"] .intro-offer small {
+  margin-top: 6px;
+  padding: 4px 7px;
+  border-radius: 30px;
+  background: var(--white);
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .navline {
+  min-height: 48px;
+  padding: 7px 14px;
+  border: 1px solid #e3c095;
+  border-radius: 30px;
+  background: #fff0d2;
+}
+
+html[data-design="sunroom"] .quiz-progress { gap: 12px; }
+html[data-design="sunroom"] .progress-label { color: var(--brand-dark); }
+
+html[data-design="sunroom"] .track li {
+  width: clamp(13px, 2.5vw, 32px);
+  height: 7px;
+  border: 1px solid #b98c61;
+  border-radius: 5px;
+  background: var(--white);
+}
+
+html[data-design="sunroom"] .track li[data-done]::after { background: #d38a3b; }
+html[data-design="sunroom"] .track li[data-current]::after { background: var(--brand); }
+html[data-design="sunroom"] .time { color: var(--brand-dark); }
+
+html[data-design="sunroom"] .layout:not([data-result]) {
+  grid-template-columns: minmax(0, 1.31fr) minmax(0, 1fr);
+  gap: 16px;
+}
+
+html[data-design="sunroom"] .play[data-view="question"] {
+  min-height: 0;
+  padding: clamp(22px, 3.55vw, 46px);
+  box-shadow: var(--sun-soft-shadow);
+}
+
+html[data-design="sunroom"] .play h1 {
+  font-size: clamp(31px, 4.05vw, 55px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -.054em;
+  text-wrap: pretty;
+}
+
+html[data-design="sunroom"] .choice {
+  grid-template-columns: 35px minmax(0, 1fr) 18px;
+  min-height: 55px;
+  border-color: var(--sun-field);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+html[data-design="sunroom"] .choice[data-selected] {
+  border-color: var(--brand);
+  background: #ffedc5;
+  box-shadow: inset 3px 0 var(--brand);
+}
+
+html[data-design="sunroom"] :is(.glyph, .letter) {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--sun-wash);
+}
+
+html[data-design="sunroom"] .choice[data-selected] :is(.glyph, .letter) { background: var(--sun-gold); }
+
+html[data-design="sunroom"] :is(.scene-line, .next-tip) {
+  border: 1px solid #e3bf8e;
+  border-radius: 10px;
+  background: var(--sun-wash);
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .quiet {
+  min-height: 44px;
+  padding: 8px 13px;
+  border: 1px solid var(--sun-field);
+  border-radius: 30px;
+}
+
+html[data-design="sunroom"] .visual {
+  border-color: #d8b18a;
+  background: #fff6df;
+  box-shadow: var(--sun-soft-shadow);
+}
+
+html[data-design="sunroom"] .visual-head { padding: 11px 14px; }
+html[data-design="sunroom"] :is(.visual-tag, .visual-index) { color: var(--brand-dark); }
+
+html[data-design="sunroom"] .visual-index {
+  padding: 4px 8px;
+  border: 1px solid #deb175;
+  border-radius: 20px;
+  background: #ffebbd;
+}
+
+html[data-design="sunroom"] .scene-image { background: #efd5ad; }
+
+html[data-design="sunroom"] .visual-caption {
+  padding: 11px 14px;
+  border-top: 1px solid #e3c395;
+  background: #fff6df;
+  color: var(--mute);
+}
+
+html[data-design="sunroom"] .promo:not(.result-promo) {
+  position: relative;
+  padding: 16px 16px 20px;
+  border-color: #d29a58;
+  background: var(--sun-gold);
+  color: var(--ink);
+}
+
+html[data-design="sunroom"] .promo:not(.result-promo)::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 8px;
+  background: linear-gradient(to bottom, #eb9a50 0 32%, #cb6d42 32% 66%, #9e4732 66% 100%);
+  pointer-events: none;
+}
+
+html[data-design="sunroom"] .promo-kicker { color: var(--brand-dark); }
+
+html[data-design="sunroom"] .promo-pill {
+  border-color: #b57c43;
+  background: #fff1cd;
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .promo:not(.result-promo) .amount {
+  color: var(--brand-dark);
+  font-size: clamp(35px, 4vw, 54px);
+  font-weight: 700;
+  letter-spacing: -.055em;
+}
+
+html[data-design="sunroom"] .promo:not(.result-promo) p { color: var(--ink); }
+
+html[data-design="sunroom"] .result-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: 14px 16px;
+}
+
+html[data-design="sunroom"] .result-hero {
+  padding: clamp(19px, 3.15vw, 38px);
+  border-color: #d8a572;
+  background: #ffedc6;
+}
+
+html[data-design="sunroom"] .result-hero .kicker {
+  border-color: #ce9c5d;
+  background: #ffe2a1;
+}
+
+html[data-design="sunroom"] .result-hero .kicker::before {
+  background: linear-gradient(to bottom, #efb04e 0 38%, #c36739 38% 68%, #943e2c 68% 100%);
+}
+
+html[data-design="sunroom"] .play[data-view="result"] .result-hero h1 {
+  font-size: clamp(31px, 3.7vw, 52px);
+  letter-spacing: -.05em;
+}
+
+html[data-design="sunroom"] .score-pill {
+  padding: 7px 10px;
+  border-color: #d1ab81;
+  border-radius: 24px;
+}
+
+html[data-design="sunroom"] .course-photo { border-color: #d7ad82; }
+html[data-design="sunroom"] .course-photo .scene-image { object-position: 50% 40%; }
+
+html[data-design="sunroom"] .review-panel {
+  padding: clamp(16px, 2.2vw, 25px);
+  border-color: #d7ad82;
+  background: var(--white);
+}
+
+html[data-design="sunroom"] .review-heading { font-size: clamp(22px, 2.35vw, 28px); }
+html[data-design="sunroom"] .review li { border-color: #d8b48e; border-radius: 11px; }
+html[data-design="sunroom"] .review details[open] { background: #fff0d5; }
+html[data-design="sunroom"] .review summary { min-height: 45px; }
+html[data-design="sunroom"] .review summary:focus-visible { outline-offset: -3px; }
+html[data-design="sunroom"] .review summary small { color: var(--ink); }
+
+html[data-design="sunroom"] .result-promo {
+  padding: clamp(17px, 2.6vw, 32px);
+  border-color: #d8a572;
+  background: var(--white);
+  box-shadow: var(--sun-soft-shadow);
+}
+
+html[data-design="sunroom"] .campaign-banner {
+  padding: 11px 13px;
+  border: 1px solid #c68649;
+  border-radius: 13px;
+  background: var(--sun-gold);
+  color: var(--ink);
+}
+
+html[data-design="sunroom"] .campaign-banner strong {
+  font-family: var(--sun-display);
+  font-size: clamp(22px, 2.7vw, 32px);
+}
+
+html[data-design="sunroom"] .campaign-brand { color: #67412c; }
+
+html[data-design="sunroom"] .campaign-deadline {
+  border-radius: 30px;
+  background: #fff3d1;
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .result-promo .amount {
+  color: var(--brand-dark);
+  font-size: clamp(44px, 6.2vw, 78px);
+  font-weight: 700;
+  letter-spacing: -.059em;
+}
+
+html[data-design="sunroom"] .offer-gift {
+  border-color: #d0a471;
+  border-radius: 11px;
+  background: var(--sun-wash);
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .gift-icon {
+  border-radius: 50%;
+  background: #f9d17e;
+  color: var(--brand-dark);
+}
+
+html[data-design="sunroom"] .gift-choice:has(input:checked) { background: #f8d894; }
+
+html[data-design="sunroom"] .lead-fields input {
+  min-height: 48px;
+  padding-inline: 10px;
+  border-color: var(--sun-field);
+  border-radius: 10px;
+}
+
+html[data-design="sunroom"] .lead-fields input::placeholder { color: #785944; }
+
+html[data-design="sunroom"] .lead-fields input[aria-invalid="true"] {
+  border-color: #a93830;
+  background: #fff5ee;
+}
+
+html[data-design="sunroom"] .lead-form .grant-btn { border-radius: 30px; }
+
+html[data-design="sunroom"] .result-cta {
+  min-height: 59px;
+  border-radius: 40px;
+  background: var(--brand);
+}
+
+html[data-design="sunroom"] .result-cta .ico { transform: none; }
+html[data-design="sunroom"] .footer { padding-block: 17px 20px; }
+
+html[data-design="sunroom"] .result-footer {
+  border-top: 4px solid #e5a552;
+  background: #512b23;
+  color: #fff3dc;
+}
+
+html[data-design="sunroom"] :is(.footer-grid h2, .footer-grid p, .footer-bottom) {
+  color: #f1d7b7;
+}
+
+html[data-design="sunroom"] .footer-bottom { border-color: #9b6754; }
+html[data-design="sunroom"] .result-footer :focus-visible { outline-color: #ffcf73; }
+
+html[data-design="sunroom"] .grant-dialog {
+  width: min(490px, calc(100% - 26px));
+  border-color: #d5a96e;
+  border-top: 5px solid #e4a048;
+  border-radius: 21px;
+  background: var(--white);
+  box-shadow: 0 14px 48px #45291c47;
+}
+
+html[data-design="sunroom"] .grant-dialog::backdrop { background: #382116a8; }
+
+html[data-design="sunroom"] .dialog-close {
+  border: 1px solid #d2a067;
+  border-radius: 50%;
+  background: var(--sun-wash);
+}
+
+html[data-design="sunroom"] .enter { animation: sunroom-slide-in 190ms var(--out) both; }
+html[data-design="sunroom"] .enter .choice { animation: none; }
+
+@keyframes sunroom-slide-in {
+  from { opacity: .56; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html[data-design="sunroom"] .choice:not([data-selected]):hover,
+  html[data-design="sunroom"] .dialog-close:hover {
+    border-color: var(--brand);
+    background: #fff0d2;
+  }
+
+  html[data-design="sunroom"] .result-cta:hover { background: var(--brand-dark); }
+}
+
+@media (max-width: 900px) {
+  html[data-design="sunroom"] .wrap { width: calc(100% - 42px); }
+  html[data-design="sunroom"] .intro { gap: 22px; padding: 24px; }
+  html[data-design="sunroom"] .intro h1 { font-size: clamp(36px, 5.7vw, 56px); }
+  html[data-design="sunroom"] .intro-visual img { border-radius: 24px 24px 55px 18px; }
+  html[data-design="sunroom"] .intro-offer { padding-inline: 14px; }
+  html[data-design="sunroom"] .intro-offer strong { font-size: clamp(31px, 4.45vw, 43px); }
+  html[data-design="sunroom"] .layout:not([data-result]),
+  html[data-design="sunroom"] .result-grid { gap: 12px; }
+}
+
+@media (min-width: 681px) and (max-width: 820px) {
+  html[data-design="sunroom"] .result-promo .lead-fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 680px) {
+  html[data-design="sunroom"] .wrap { width: calc(100% - 28px); }
+  html[data-design="sunroom"] .mast-row { min-height: 58px; }
+  html[data-design="sunroom"] .main { padding-top: 12px; }
+  html[data-design="sunroom"] .intro { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 16px 13px 15px; border-radius: 19px; background: #ffedc9; }
+  html[data-design="sunroom"] .intro h1 { font-size: clamp(34px, 9.8vw, 56px); }
+  html[data-design="sunroom"] .intro .lead { margin-top: 11px; font-size: 16px; }
+  html[data-design="sunroom"] .intro-points { margin-block: 12px 15px; gap: 6px; }
+  html[data-design="sunroom"] .solid.start-btn { width: 100%; min-height: 51px; padding-inline: 15px; }
+  html[data-design="sunroom"] .intro .small { margin-top: 10px; }
+  html[data-design="sunroom"] .intro-visual { max-width: 480px; padding-top: 19px; }
+  html[data-design="sunroom"] .intro-visual img { aspect-ratio: 1.55; border-width: 3px; border-radius: 16px 16px 34px 13px; }
+  html[data-design="sunroom"] .intro-offer { padding: 7px 11px 9px; margin-top: -11px; border-radius: 16px 7px 16px 7px; }
+  html[data-design="sunroom"] .intro-offer strong { font-size: clamp(30px, 8.25vw, 40px); }
+  html[data-design="sunroom"] .intro-offer span { font-size: 12px; }
+  html[data-design="sunroom"] .navline { min-height: 42px; padding: 6px 8px; }
+  html[data-design="sunroom"] .quiz-progress { gap: 7px; }
+  html[data-design="sunroom"] .track { gap: 3px; }
+  html[data-design="sunroom"] .track li { width: clamp(12px, 3.75vw, 21px); height: 6px; }
+  html[data-design="sunroom"] .play[data-view="question"] { padding: 16px 13px; border-radius: 16px; }
+  html[data-design="sunroom"] .play h1 { font-size: clamp(30px, 8.4vw, 45px); }
+  html[data-design="sunroom"] .kicker { margin-bottom: 9px; }
+  html[data-design="sunroom"] .play .visual { margin-top: 11px; }
+  html[data-design="sunroom"] .choice { grid-template-columns: 32px minmax(0, 1fr) 16px; min-height: 50px; }
+  html[data-design="sunroom"] :is(.glyph, .letter) { width: 32px; height: 32px; }
+  html[data-design="sunroom"] .result-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "result" "offer" "course" "review"; }
+  html[data-design="sunroom"] :is(.result-hero, .result-promo) { padding: 15px; border-radius: 16px; }
+  html[data-design="sunroom"] .play[data-view="result"] .result-hero h1 { font-size: clamp(30px, 8.2vw, 44px); }
+  html[data-design="sunroom"] .result-promo .amount { font-size: clamp(44px, 13vw, 60px); }
+  html[data-design="sunroom"] .result-cta { border-radius: 21px; }
+}
+
+@media (max-width: 350px) {
+  html[data-design="sunroom"] .wrap { width: calc(100% - 20px); }
+  html[data-design="sunroom"] .intro { padding-inline: 11px; }
+  html[data-design="sunroom"] .navline { padding-inline: 5px; }
+  html[data-design="sunroom"] .play[data-view="question"] { padding-inline: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-design="sunroom"] .choice:active,
+  html[data-design="sunroom"] .solid:active,
+  html[data-design="sunroom"] .choice:hover > .ico { transform: none; }
+}
+
+@media (forced-colors: active) {
+  html[data-design="sunroom"] { scrollbar-color: auto; }
+  html[data-design="sunroom"] .intro-visual::before,
+  html[data-design="sunroom"] .intro-visual::after,
+  html[data-design="sunroom"] .promo:not(.result-promo)::after { display: none; }
+  html[data-design="sunroom"] .choice[data-selected] { outline: 2px solid Highlight; }
+}
