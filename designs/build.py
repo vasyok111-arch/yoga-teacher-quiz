@@ -17,7 +17,61 @@ THEMES = {
     "sunroom": ("Солнечное ретро", "#fff6e7"),
     "foil": ("Голограмма", "#e9e9f7"),
     "ink": ("Тушь и бумага", "#f7f3e9"),
+    "ticket": ("Билет на старт", "#2b101f"),
+    "live": ("Прямой эфир", "#f6f5f0"),
+    "drop": ("Дроп", "#f8f4ff"),
+    "premiere": ("Премьера", "#160f0b"),
 }
+
+MARKETING = {
+    "ticket": ("Ваш билет в новую профессию", "Из практики — <span>в преподавание йоги.</span>", "Получить свой разбор"),
+    "live": ("Вы в главной роли на занятии", "Не просто на коврике. <span>Во главе группы.</span>", "Включиться в урок"),
+    "drop": ("Новый поворот в вашей практике", "Йога — ваша тема? <span>Дайте ей новый масштаб.</span>", "Проверить себя за 2 минуты"),
+    "premiere": ("Ваша новая роль · Академия Йоги", "Ваша практика. <span>Ваша новая роль.</span>", "Начать свою историю"),
+}
+
+
+def render_marketing(page: str, slug: str) -> str:
+    """Add campaign interactions only to the four marketing experiments."""
+    kicker, heading, cta = MARKETING[slug]
+    def replace_once(old: str, new: str) -> None:
+        nonlocal page
+        if page.count(old) != 1:
+            raise ValueError(f"Expected one marketing insertion point: {old[:64]}")
+        page = page.replace(old, new, 1)
+
+    timer = '''<div class="offer-timer" data-campaign>
+        <span class="timer-label">До конца акции</span>
+        <time class="timer-value" data-countdown>До 13 ноября</time>
+        <small>До 13 ноября включительно · МСК</small>
+      </div>'''
+    replace_once(f'<link rel="stylesheet" href="../{slug}.css">',
+                 f'<link rel="stylesheet" href="../marketing.css">\n<link rel="stylesheet" href="../{slug}.css">')
+    replace_once('<script>\n/* QUIZ_SOURCE_START */', '<script src="../marketing.js"></script>\n<script>\n/* QUIZ_SOURCE_START */')
+    replace_once('<p class="kicker">Профпроба Академии Йоги</p>', f'<p class="kicker">{kicker}</p>')
+    replace_once('А если йога станет <span>вашей профессией?</span>', heading)
+    replace_once('Пройти пробный урок <svg', cta + ' <svg')
+    replace_once('<div class="intro-copy">', '''<div class="campaign-ribbon" data-campaign><strong>Чёрная пятница</strong><span>40 000 ₽ на обучение + курс в подарок</span><span class="ribbon-grants">Осталось грантов: <b class="grant-remaining">12 / 50</b></span></div>
+    <div class="intro-copy">''')
+    replace_once('      <button class="solid start-btn"', '      ' + timer + '\n      <button class="solid start-btn"')
+    replace_once('  <div class="layout" id="layout" hidden>', '''  <aside class="quiz-hook" id="quiz-hook" aria-label="Ваш следующий шаг" hidden>
+    <span class="hook-index" aria-hidden="true"></span><div><strong class="hook-title"></strong><p class="hook-copy"></p></div>
+  </aside>
+  <div class="layout" id="layout" hidden>''')
+    replace_once('  </div>\n  <aside class="quiz-hook"', '    ' + timer + '\n  </div>\n  <aside class="quiz-hook"')
+    replace_once('        <div id="grant-form-home">', '        ' + timer + '\n        <div id="grant-form-home">')
+    replace_once('  const GRANTS_TOTAL = 50;', '''  const GRANTS_TOTAL = 50;
+  const marketing = typeof window.QuizMarketing === 'function'
+    ? window.QuizMarketing({deadline: CAMPAIGN_END, grantsLeft: GRANTS_LEFT, grantsTotal: GRANTS_TOTAL})
+    : {render() {}};''')
+    replace_once('      if (event) start.focus();', '      marketing.render(step, TOTAL);\n      if (event) start.focus();')
+    replace_once('    placeScene();', '    placeScene();\n    marketing.render(step, TOTAL);')
+    if slug == "premiere":
+        replace_once('src="../../assets/scenes/first-class.webp" width="1080" height="810"',
+                     'src="poster.webp" width="1536" height="1024"')
+        replace_once('Преподаватель встречает учеников перед началом занятия в студии йоги',
+                     'Анимационные персонажи: будущая преподавательница и ученики в залитой золотым светом студии')
+    return page
 
 
 def render_variant(source: str, slug: str, name: str, color: str) -> str:
@@ -90,6 +144,8 @@ def render_variant(source: str, slug: str, name: str, color: str) -> str:
         offer = ticket.group().replace("figcaption", "div")
         page = page.replace('      <button class="solid start-btn"', offer + '      <button class="solid start-btn"', 1)
 
+    if slug in MARKETING:
+        page = render_marketing(page, slug)
     return page.replace(
         "<!doctype html>",
         "<!doctype html>\n<!-- Generated from the original quiz by designs/build.py. -->",

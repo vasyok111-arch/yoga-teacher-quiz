@@ -1,0 +1,32 @@
+/* Shared layout and motion; art direction belongs to each experiment's theme. */
+.campaign-ribbon{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;grid-column:1/-1;padding:12px 18px;border:1px solid currentColor;font-size:14px;line-height:1.3}
+.campaign-ribbon strong{font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:.025em}
+.ribbon-grants{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:750}
+.ribbon-grants .grant-remaining{margin:0;font-size:14px}
+.offer-timer{display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;padding:10px 12px;margin:17px 0;border:1px solid var(--line);border-radius:8px;max-width:460px}
+.offer-timer .timer-label{font-size:12px;font-weight:750}
+.offer-timer .timer-value{font:800 22px/1.2 'Cascadia Mono',Consolas,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.055em;white-space:nowrap}
+.offer-timer small{flex-basis:100%;font-size:11px;line-height:1.35}
+.navline{flex-wrap:wrap;gap:10px 18px}
+.navline .offer-timer{margin:0 0 0 auto;max-width:none;padding:6px 10px}
+.navline .offer-timer small{display:none}
+.navline .offer-timer .timer-value{font-size:17px}
+.quiz-hook{display:flex;align-items:center;gap:14px;margin:0 0 14px;padding:13px 18px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink)}
+.quiz-hook .hook-index{flex:none;font:800 29px/1 Consolas,monospace;letter-spacing:-.07em}
+.quiz-hook .hook-title{display:block;font-size:15px;line-height:1.3}
+.quiz-hook .hook-copy{margin:3px 0 0;font-size:13px;line-height:1.4}
+.quiz-hook.hook-enter{animation:hook-arrive 220ms var(--out) both}
+.result-promo .offer-timer{margin:12px 0;max-width:none}
+@keyframes hook-arrive{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){
+ .campaign-ribbon{gap:5px;padding:10px 12px;font-size:12px}
+ .campaign-ribbon strong{font-size:14px}
+ .offer-timer{gap:5px 10px;margin-block:14px}
+ .offer-timer .timer-value{font-size:20px}
+ .navline .offer-timer{width:100%;justify-content:space-between;margin:0}
+ .quiz-hook{align-items:flex-start;gap:11px;padding:10px 12px;margin-bottom:10px}
+ .quiz-hook .hook-index{font-size:23px}
+ .quiz-hook .hook-title{font-size:13px}
+ .quiz-hook .hook-copy{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
