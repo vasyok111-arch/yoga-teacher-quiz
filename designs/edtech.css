@@ -1,0 +1,715 @@
+/* A course-platform theme. Shared quiz markup and behavior live in index.html. */
+html[data-design="edtech"] {
+  --ink: #172643;
+  --mute: #465672;
+  --paper: #f4f7fc;
+  --line: #d6e0ef;
+  --white: #fff;
+  --brand: #354bc5;
+  --brand-dark: #26389e;
+  --lav: #e8eeff;
+  --deep: #202e67;
+  --warm: #e8f3af;
+  --green: #216246;
+  --green-bg: #e8f6ed;
+  --amber: #705016;
+  --amber-bg: #fff3d8;
+  --edge: 22px;
+  --lesson-wash: #edf3ff;
+  --lesson-edge: #ccd9ef;
+  --choice-edge: #bfcee4;
+  --field-edge: #7688ab;
+  --benefit-wash: #f2f7df;
+  --benefit-edge: #d7e2b4;
+  --benefit-ink: #37451c;
+  --module-shadow: 0 2px 2px #192f5610;
+  --edtech-head: "Segoe UI Variable Display", "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+  scrollbar-color: #8a9aba var(--paper);
+}
+
+html[data-design="edtech"] .wrap {
+  width: min(1184px, calc(100% - 64px));
+}
+
+html[data-design="edtech"] .masthead {
+  background: var(--white);
+}
+
+html[data-design="edtech"] .mast-row {
+  min-height: 70px;
+}
+
+html[data-design="edtech"] .brand span {
+  border-color: var(--choice-edge);
+  color: var(--mute);
+}
+
+html[data-design="edtech"] .license-link {
+  color: var(--brand-dark);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+html[data-design="edtech"] .main {
+  padding-top: clamp(16px, 2.6vw, 34px);
+}
+
+html[data-design="edtech"] h1,
+html[data-design="edtech"] .review-heading,
+html[data-design="edtech"] .dialog-head h2,
+html[data-design="edtech"] .amount,
+html[data-design="edtech"] .intro-offer strong {
+  font-family: var(--edtech-head);
+}
+
+html[data-design="edtech"] .intro {
+  grid-template-columns: minmax(0, 1.07fr) minmax(0, 1fr);
+  gap: clamp(22px, 3.2vw, 48px);
+  padding: clamp(24px, 4.4vw, 56px);
+  background: var(--lesson-wash);
+  border: 1px solid var(--lesson-edge);
+  border-radius: 28px;
+}
+
+html[data-design="edtech"] .lesson-outline {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html[data-design="edtech"] .lesson-outline li {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--lesson-edge);
+  border-radius: 10px;
+  background: var(--white);
+}
+html[data-design="edtech"] .lesson-outline span {
+  color: var(--brand-dark);
+  font-size: 11px;
+  font-weight: 700;
+}
+html[data-design="edtech"] .lesson-outline strong {
+  font-size: clamp(12px, 1.25vw, 16px);
+  line-height: 1.25;
+}
+
+@media (max-width: 480px) {
+  html[data-design="edtech"] .lesson-outline { gap: 5px; }
+  html[data-design="edtech"] .lesson-outline li { padding: 7px; }
+}
+
+html[data-design="edtech"] .kicker {
+  display: inline-flex;
+  width: fit-content;
+  gap: 7px;
+  margin-bottom: 14px;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: var(--lav);
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: .025em;
+  text-transform: none;
+}
+
+html[data-design="edtech"] .kicker::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+html[data-design="edtech"] .intro .kicker {
+  background: var(--white);
+  border: 1px solid var(--lesson-edge);
+}
+
+html[data-design="edtech"] .intro h1 {
+  font-size: clamp(40px, 4.7vw, 67px);
+  font-weight: 820;
+  line-height: 1.02;
+  letter-spacing: -.052em;
+  text-wrap: pretty;
+}
+
+html[data-design="edtech"] .intro .lead {
+  max-width: 39ch;
+  margin-top: 17px;
+  font-size: clamp(16px, 1.45vw, 19px);
+  line-height: 1.48;
+}
+
+html[data-design="edtech"] .intro-points {
+  gap: 9px;
+  margin-block: 18px 21px;
+}
+
+html[data-design="edtech"] .intro-points li {
+  gap: 9px;
+  font-size: clamp(14px, 1.35vw, 16px);
+}
+
+html[data-design="edtech"] .intro-points .ico {
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+  padding: 3px;
+  background: var(--white);
+  border: 1px solid var(--lesson-edge);
+  border-radius: 5px;
+}
+
+html[data-design="edtech"] .solid.start-btn {
+  width: min(100%, 330px);
+  min-height: 56px;
+  border-radius: 12px;
+  box-shadow: 0 3px 0 var(--brand-dark);
+}
+
+html[data-design="edtech"] .intro .small {
+  margin-top: 12px;
+}
+
+html[data-design="edtech"] .intro-visual {
+  align-items: stretch;
+  gap: 9px;
+  min-width: 0;
+}
+
+html[data-design="edtech"] .intro-visual img {
+  aspect-ratio: 1.29;
+  object-position: 50% 43%;
+  border-radius: 17px;
+  background: var(--lesson-edge);
+}
+
+html[data-design="edtech"] .intro-offer {
+  position: static;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: 3px 12px;
+  max-width: none;
+  padding: 12px 15px;
+  border: 1px solid var(--benefit-edge);
+  border-radius: 14px;
+  background: var(--benefit-wash);
+  color: var(--benefit-ink);
+  box-shadow: none;
+}
+
+html[data-design="edtech"] .intro-offer strong {
+  grid-row: span 2;
+  color: var(--benefit-ink);
+  font-size: clamp(30px, 3.2vw, 43px);
+  letter-spacing: -.055em;
+}
+
+html[data-design="edtech"] .intro-offer span {
+  margin: 0;
+  font-size: 14px;
+}
+
+html[data-design="edtech"] .intro-offer small {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--benefit-ink);
+  font-weight: 600;
+}
+
+html[data-design="edtech"] .navline {
+  min-height: 53px;
+  margin-bottom: 13px;
+  padding: 8px 14px;
+  border: 1px solid var(--lesson-edge);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+html[data-design="edtech"] .quiz-progress {
+  gap: 12px;
+}
+
+html[data-design="edtech"] .progress-label {
+  color: var(--deep);
+  font-size: 13px;
+}
+
+html[data-design="edtech"] .track {
+  gap: 5px;
+}
+
+html[data-design="edtech"] .track li {
+  width: clamp(14px, 2.7vw, 39px);
+  height: 8px;
+  border-radius: 3px;
+  background: #dbe4f6;
+}
+
+html[data-design="edtech"] .track li[data-current] {
+  background: #c7d4ff;
+}
+
+html[data-design="edtech"] .track li[data-current]::after {
+  transform: scaleX(.5);
+  background: var(--brand);
+}
+
+html[data-design="edtech"] .time {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: var(--lesson-wash);
+}
+
+html[data-design="edtech"] .layout:not([data-result]) {
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+html[data-design="edtech"] .play[data-view="question"] {
+  min-height: 0;
+  padding: clamp(24px, 3.65vw, 48px);
+  box-shadow: var(--module-shadow);
+}
+
+html[data-design="edtech"] .play h1 {
+  font-size: clamp(31px, 3.7vw, 52px);
+  font-weight: 810;
+  line-height: 1.065;
+  letter-spacing: -.047em;
+  text-wrap: pretty;
+}
+
+html[data-design="edtech"] .question {
+  margin-block: 23px 10px;
+}
+
+html[data-design="edtech"] .choice-list {
+  gap: 8px;
+}
+
+html[data-design="edtech"] .choice {
+  grid-template-columns: 36px minmax(0, 1fr) 18px;
+  min-height: 56px;
+  padding: 8px 12px 8px 9px;
+  border-color: var(--choice-edge);
+  border-radius: 12px;
+  box-shadow: var(--module-shadow);
+}
+
+html[data-design="edtech"] .choice[data-selected] {
+  background: var(--lav);
+  border-color: var(--brand);
+  box-shadow: inset 3px 0 var(--brand);
+}
+
+html[data-design="edtech"] .glyph,
+html[data-design="edtech"] .letter {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+html[data-design="edtech"] .choice[data-selected] :is(.glyph, .letter) {
+  background: var(--brand);
+  color: var(--white);
+}
+
+html[data-design="edtech"] .scene-line,
+html[data-design="edtech"] .next-tip {
+  background: var(--lesson-wash);
+  border: 1px solid var(--lesson-edge);
+  color: var(--deep);
+}
+
+html[data-design="edtech"] .nav-actions {
+  margin-top: 18px;
+}
+
+html[data-design="edtech"] .quiet {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--choice-edge);
+  background: var(--white);
+}
+
+html[data-design="edtech"] .visual {
+  border-color: var(--lesson-edge);
+  box-shadow: var(--module-shadow);
+}
+
+html[data-design="edtech"] .visual-head {
+  padding: 12px 14px;
+}
+
+html[data-design="edtech"] .visual-tag {
+  color: var(--deep);
+  font-size: 12px;
+  font-weight: 740;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[data-design="edtech"] .visual-index {
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: var(--lav);
+  color: var(--brand-dark);
+}
+
+html[data-design="edtech"] .scene-image {
+  background: var(--lesson-edge);
+}
+
+html[data-design="edtech"] .visual-caption {
+  padding: 12px 14px;
+  background: var(--white);
+  color: var(--mute);
+}
+
+html[data-design="edtech"] .promo:not(.result-promo) {
+  padding: 16px 18px;
+  border-color: var(--benefit-edge);
+  background: var(--benefit-wash);
+  color: var(--benefit-ink);
+}
+
+html[data-design="edtech"] .promo-kicker {
+  color: var(--benefit-ink);
+  font-size: 11px;
+  letter-spacing: .07em;
+}
+
+html[data-design="edtech"] .promo-pill {
+  padding: 4px 8px;
+  border-color: var(--benefit-edge);
+  background: var(--white);
+  color: var(--benefit-ink);
+}
+
+html[data-design="edtech"] .promo:not(.result-promo) .amount {
+  font-size: clamp(34px, 4vw, 50px);
+  letter-spacing: -.055em;
+}
+
+html[data-design="edtech"] .promo:not(.result-promo) p {
+  color: var(--benefit-ink);
+}
+
+html[data-design="edtech"] .result-grid {
+  grid-template-columns: minmax(0, 1.24fr) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "result offer" "course offer" "review offer";
+  gap: 13px;
+}
+
+html[data-design="edtech"] .result-hero {
+  padding: clamp(21px, 3.2vw, 37px);
+  border-color: var(--lesson-edge);
+  background: var(--lesson-wash);
+}
+
+html[data-design="edtech"] .result-hero .kicker {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+html[data-design="edtech"] .play[data-view="result"] .result-hero h1 {
+  font-size: clamp(31px, 3.45vw, 48px);
+  letter-spacing: -.046em;
+}
+
+html[data-design="edtech"] .score-pill {
+  margin-top: 15px;
+  padding: 7px 10px;
+  border-color: var(--lesson-edge);
+}
+
+html[data-design="edtech"] .course-photo .scene-image {
+  aspect-ratio: 2.18;
+  object-position: 50% 40%;
+}
+
+html[data-design="edtech"] .review-panel,
+html[data-design="edtech"] .result-promo {
+  box-shadow: var(--module-shadow);
+}
+
+html[data-design="edtech"] .review-top {
+  margin-bottom: 13px;
+}
+
+html[data-design="edtech"] .review-heading {
+  font-size: clamp(21px, 2.2vw, 25px);
+}
+
+html[data-design="edtech"] .review li {
+  border-color: var(--lesson-edge);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+html[data-design="edtech"] .review details[open] {
+  background: var(--lesson-wash);
+}
+
+html[data-design="edtech"] .review summary {
+  min-height: 49px;
+  padding: 7px 10px;
+  gap: 9px;
+}
+
+html[data-design="edtech"] .review summary:focus-visible {
+  outline-offset: -3px;
+}
+
+html[data-design="edtech"] .review summary small {
+  color: var(--deep);
+}
+
+html[data-design="edtech"] .review details p {
+  margin-left: 40px;
+}
+
+html[data-design="edtech"] .result-promo {
+  padding: clamp(17px, 2.55vw, 31px);
+  border-color: var(--lesson-edge);
+}
+
+html[data-design="edtech"] .campaign-banner {
+  padding: 12px 13px;
+  border-radius: 12px;
+  background: var(--deep);
+}
+
+html[data-design="edtech"] .campaign-brand {
+  color: #e7ecff;
+}
+
+html[data-design="edtech"] .campaign-deadline {
+  background: var(--warm);
+  color: var(--benefit-ink);
+}
+
+html[data-design="edtech"] .result-promo .amount {
+  color: var(--deep);
+  font-size: clamp(44px, 6.4vw, 76px);
+  letter-spacing: -.055em;
+}
+
+html[data-design="edtech"] .grant-availability {
+  margin-top: 12px;
+  border-color: var(--benefit-edge);
+  background: var(--benefit-wash);
+  color: var(--benefit-ink);
+  animation: none;
+}
+
+html[data-design="edtech"] .offer-gift {
+  border-color: var(--lesson-edge);
+  border-radius: 11px;
+  background: var(--lesson-wash);
+  color: var(--deep);
+}
+
+html[data-design="edtech"] .gift-icon {
+  background: var(--white);
+  color: var(--brand-dark);
+}
+
+html[data-design="edtech"] .gift-choice:has(input:checked) {
+  background: #dfe8ff;
+}
+
+html[data-design="edtech"] .lead-fields {
+  gap: 9px;
+}
+
+html[data-design="edtech"] .lead-fields input {
+  min-height: 48px;
+  border-color: var(--field-edge);
+  border-radius: 9px;
+  padding-inline: 11px;
+}
+
+html[data-design="edtech"] .lead-fields input::placeholder {
+  color: #586882;
+}
+
+html[data-design="edtech"] .lead-fields input[aria-invalid="true"] {
+  border-color: #b34336;
+  background: #fff8f5;
+}
+
+html[data-design="edtech"] .lead-form .grant-btn {
+  border-radius: 11px;
+}
+
+html[data-design="edtech"] .result-cta {
+  min-height: 60px;
+  border-radius: 13px;
+  background: var(--brand);
+  font-size: clamp(16px, 1.9vw, 22px);
+}
+
+html[data-design="edtech"] .result-cta .ico {
+  transform: none;
+}
+
+html[data-design="edtech"] .footer {
+  padding-block: 17px 20px;
+}
+
+html[data-design="edtech"] .result-footer {
+  border-top: 1px solid var(--lesson-edge);
+  background: #eaf0fb;
+  color: var(--deep);
+}
+
+html[data-design="edtech"] .footer-logo img {
+  filter: none;
+}
+
+html[data-design="edtech"] .footer-grid h2,
+html[data-design="edtech"] .footer-grid p,
+html[data-design="edtech"] .footer-bottom {
+  color: var(--mute);
+}
+
+html[data-design="edtech"] .footer-docs a {
+  line-height: 1.42;
+}
+
+html[data-design="edtech"] .footer-bottom {
+  border-color: var(--lesson-edge);
+}
+
+html[data-design="edtech"] .result-footer :focus-visible {
+  outline-color: var(--brand);
+}
+
+html[data-design="edtech"] .grant-dialog {
+  width: min(500px, calc(100% - 24px));
+  border-color: var(--lesson-edge);
+  border-radius: 20px;
+  box-shadow: 0 18px 56px #14214238;
+}
+
+html[data-design="edtech"] .grant-dialog::backdrop {
+  background: #192749a6;
+}
+
+html[data-design="edtech"] .dialog-body {
+  padding: clamp(16px, 4.3vw, 28px);
+}
+
+html[data-design="edtech"] .dialog-copy {
+  max-width: 43ch;
+}
+
+html[data-design="edtech"] .enter {
+  animation: edtech-enter 180ms var(--out) both;
+}
+
+html[data-design="edtech"] .enter .choice {
+  animation: none;
+}
+
+@keyframes edtech-enter {
+  from { opacity: .45; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html[data-design="edtech"] .choice:not([data-selected]):hover,
+  html[data-design="edtech"] .quiet:hover,
+  html[data-design="edtech"] .dialog-close:hover {
+    background: var(--lesson-wash);
+    border-color: #91a7d2;
+  }
+
+  html[data-design="edtech"] .result-cta:hover {
+    background: var(--brand-dark);
+  }
+}
+
+@media (max-width: 900px) {
+  html[data-design="edtech"] .wrap { width: calc(100% - 40px); }
+  html[data-design="edtech"] .intro { gap: 20px; padding: 26px; }
+  html[data-design="edtech"] .intro h1 { font-size: clamp(35px, 5.4vw, 53px); }
+  html[data-design="edtech"] .intro-offer { gap: 3px 8px; padding-inline: 10px; }
+  html[data-design="edtech"] .intro-offer strong { font-size: clamp(25px, 3.9vw, 35px); }
+  html[data-design="edtech"] .layout:not([data-result]) { gap: 11px; }
+  html[data-design="edtech"] .result-grid { gap: 10px; }
+}
+
+@media (min-width: 681px) and (max-width: 820px) {
+  html[data-design="edtech"] .result-promo .lead-fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 680px) {
+  html[data-design="edtech"] .wrap { width: calc(100% - 28px); }
+  html[data-design="edtech"] .mast-row { min-height: 60px; }
+  html[data-design="edtech"] .main { padding-top: 12px; }
+  html[data-design="edtech"] .intro { grid-template-columns: minmax(0, 1fr); gap: 15px; padding: 17px 14px 14px; border-radius: 18px; }
+  html[data-design="edtech"] .intro h1 { font-size: clamp(34px, 9.7vw, 54px); }
+  html[data-design="edtech"] .intro .lead { margin-top: 11px; font-size: 16px; }
+  html[data-design="edtech"] .intro-points { margin-block: 13px 15px; gap: 7px; }
+  html[data-design="edtech"] .solid.start-btn { width: 100%; min-height: 51px; }
+  html[data-design="edtech"] .intro .small { margin-top: 10px; }
+  html[data-design="edtech"] .intro-visual { max-width: none; margin: 0; gap: 7px; }
+  html[data-design="edtech"] .intro-visual img { aspect-ratio: 1.53; border-radius: 12px; }
+  html[data-design="edtech"] .intro-offer { border-radius: 11px; }
+  html[data-design="edtech"] .intro-offer strong { font-size: clamp(26px, 7.5vw, 38px); }
+  html[data-design="edtech"] .intro-offer span { font-size: 13px; }
+  html[data-design="edtech"] .navline { min-height: 45px; margin-bottom: 8px; padding: 6px 7px; }
+  html[data-design="edtech"] .quiz-progress { gap: 7px; }
+  html[data-design="edtech"] .progress-label { font-size: 11px; }
+  html[data-design="edtech"] .track { gap: 3px; }
+  html[data-design="edtech"] .track li { width: clamp(12px, 4vw, 22px); height: 6px; }
+  html[data-design="edtech"] .time { gap: 3px; padding-inline: 5px; }
+  html[data-design="edtech"] .play[data-view="question"] { padding: 16px 13px; border-radius: 16px; }
+  html[data-design="edtech"] .kicker { margin-bottom: 9px; }
+  html[data-design="edtech"] .play h1 { font-size: clamp(29px, 8.1vw, 44px); }
+  html[data-design="edtech"] .play .visual { margin-top: 11px; }
+  html[data-design="edtech"] .play .visual-caption { padding: 8px 9px; }
+  html[data-design="edtech"] .question { margin-block: 16px 8px; }
+  html[data-design="edtech"] .choice-list { gap: 6px; }
+  html[data-design="edtech"] .choice { grid-template-columns: 32px minmax(0, 1fr) 16px; gap: 8px; min-height: 51px; padding: 6px 8px; }
+  html[data-design="edtech"] .glyph,
+  html[data-design="edtech"] .letter { width: 32px; height: 32px; }
+  html[data-design="edtech"] .nav-actions { margin-top: 12px; }
+  html[data-design="edtech"] .result-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "result" "offer" "course" "review"; }
+  html[data-design="edtech"] .result-hero,
+  html[data-design="edtech"] .result-promo { padding: 15px; border-radius: 16px; }
+  html[data-design="edtech"] .play[data-view="result"] .result-hero h1 { font-size: clamp(29px, 8vw, 43px); }
+  html[data-design="edtech"] .result-promo .amount { font-size: clamp(44px, 13vw, 60px); }
+  html[data-design="edtech"] .review summary { min-height: 46px; }
+}
+
+@media (max-width: 350px) {
+  html[data-design="edtech"] .wrap { width: calc(100% - 20px); }
+  html[data-design="edtech"] .navline { padding-inline: 5px; }
+  html[data-design="edtech"] .intro { padding-inline: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-design="edtech"] .choice:active,
+  html[data-design="edtech"] .solid:active,
+  html[data-design="edtech"] .choice:hover > .ico { transform: none; }
+}
+
+@media (forced-colors: active) {
+  html[data-design="edtech"] { scrollbar-color: auto; }
+  html[data-design="edtech"] .track li[data-current],
+  html[data-design="edtech"] .track li[data-done] { border-color: Highlight; }
+  html[data-design="edtech"] .choice[data-selected] { outline: 2px solid Highlight; }
+}
