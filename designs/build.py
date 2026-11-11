@@ -74,6 +74,44 @@ def render_marketing(page: str, slug: str) -> str:
     return page
 
 
+def render_edtech_offer(page: str) -> str:
+    timer = """<div class="ed-countdown" data-campaign aria-label="До конца акции">
+      <strong>До конца акции</strong>
+      <div class="ed-digits" aria-hidden="true">
+        <span><b>00</b>дн</span><span><b>00</b>ч</span><span><b>00</b>мин</span><span><b>00</b>сек</span>
+      </div>
+    </div>"""
+    benefits = """<ul class="ed-benefits" aria-label="Что вы получите">
+      <li data-campaign><strong>40 000 ₽</strong><span>грант на обучение</span></li>
+      <li data-campaign><strong>Курс в подарок</strong><span>один из двух на выбор</span></li>
+      <li><strong>Разбор ответов</strong><span>сразу, без телефона</span></li>
+    </ul>"""
+    availability = """<div class="ed-availability" data-campaign>
+      <span>Осталось грантов</span><strong><b data-ed-left></b> из <span data-ed-total></span></strong>
+      <progress aria-label="Осталось грантов"></progress>
+    </div>"""
+    popup = """<dialog class="ed-exit" id="ed-exit" aria-labelledby="ed-exit-title">
+      <form method="dialog" class="ed-exit-body">
+        <button class="dialog-close ed-exit-close" value="dismiss" aria-label="Закрыть">×</button>
+        <p class="kicker">Чёрная пятница в Академии Йоги</p>
+        <h2 id="ed-exit-title">Грант <mark>40 000 ₽</mark> на обучение</h2>
+        <p class="ed-exit-copy"></p>
+        """ + timer + """
+        <button class="solid ed-resume" value="resume" autofocus>Продолжить квиз</button>
+        <button class="quiet ed-dismiss" value="dismiss">Закрыть предложение</button>
+      </form>
+    </dialog>"""
+    page = page.replace('        <strong>40&nbsp;000&nbsp;₽</strong>\n        <span>Грант на обучение</span>', '        <span>Грант на обучение</span>\n        <strong>40&nbsp;000&nbsp;₽</strong>', 1)
+    page = page.replace('      </figcaption>\n    </figure>', '      </figcaption>\n      <span class="ed-gift-tag" data-campaign>+ курс <b>в подарок</b></span>\n    </figure>', 1)
+    page = page.replace('    <ol class="lesson-outline"', '    ' + benefits + '\n    <div class="ed-offer-status" data-campaign>' + timer + availability + '</div>\n    <ol class="lesson-outline"', 1)
+    page = page.replace('<script>\n/* QUIZ_SOURCE_START */', popup + '\n<script src="../edtech.js"></script>\n<script>\n/* QUIZ_SOURCE_START */', 1)
+    page = page.replace('        <div class="amount" data-campaign>', '        <p class="ed-result-offer" data-campaign>🎁 <span>Грант 40 000 ₽ и курс в подарок. <strong>Оставьте заявку</strong>, пока действует акция.</span></p>\n        <div class="amount" data-campaign>', 1)
+    page = page.replace('        <div id="grant-form-home">', '        ' + timer + '\n        <div id="grant-form-home">', 1)
+    page = page.replace('  function render(event) {', '  const edtech = window.initEdtech?.({deadline: CAMPAIGN_END, left: GRANTS_LEFT, total: GRANTS_TOTAL, questions: TOTAL});\n  function render(event) {', 1)
+    page = page.replace('      if (event) start.focus();', '      edtech?.render(step);\n      if (event) start.focus();', 1)
+    return page.replace('    placeScene();', '    placeScene();\n    edtech?.render(step);', 1)
+
+
 def render_variant(source: str, slug: str, name: str, color: str) -> str:
     page = source.replace('<html lang="ru">', f'<html lang="ru" data-design="{slug}">', 1)
     page = page.replace('name="theme-color" content="#f8f5f3"', f'name="theme-color" content="{color}"', 1)
@@ -89,6 +127,7 @@ def render_variant(source: str, slug: str, name: str, color: str) -> str:
     </ol>
 """
         page = page.replace("    </figure>\n  </section>", "    </figure>\n" + outline + "  </section>", 1)
+        page = render_edtech_offer(page)
     elif slug == "atlas":
         page = page.replace(
             'src="../../assets/scenes/first-class.webp" width="1080" height="810"',

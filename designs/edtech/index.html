@@ -319,11 +319,26 @@ html:has(.grant-dialog[open]){overflow:hidden}
     <figure class="intro-visual">
       <img src="../../assets/scenes/first-class.webp" width="1080" height="810" fetchpriority="high" alt="Преподаватель встречает учеников перед началом занятия в студии йоги">
       <figcaption class="intro-offer" data-campaign>
-        <strong>40&nbsp;000&nbsp;₽</strong>
         <span>Грант на обучение</span>
+        <strong>40&nbsp;000&nbsp;₽</strong>
         <small>Чёрная пятница · только до 13 ноября</small>
       </figcaption>
+      <span class="ed-gift-tag" data-campaign>+ курс <b>в подарок</b></span>
     </figure>
+    <ul class="ed-benefits" aria-label="Что вы получите">
+      <li data-campaign><strong>40 000 ₽</strong><span>грант на обучение</span></li>
+      <li data-campaign><strong>Курс в подарок</strong><span>один из двух на выбор</span></li>
+      <li><strong>Разбор ответов</strong><span>сразу, без телефона</span></li>
+    </ul>
+    <div class="ed-offer-status" data-campaign><div class="ed-countdown" data-campaign aria-label="До конца акции">
+      <strong>До конца акции</strong>
+      <div class="ed-digits" aria-hidden="true">
+        <span><b>00</b>дн</span><span><b>00</b>ч</span><span><b>00</b>мин</span><span><b>00</b>сек</span>
+      </div>
+    </div><div class="ed-availability" data-campaign>
+      <span>Осталось грантов</span><strong><b data-ed-left></b> из <span data-ed-total></span></strong>
+      <progress aria-label="Осталось грантов"></progress>
+    </div></div>
     <ol class="lesson-outline" aria-label="План пробного урока">
       <li><span>Вопросы 1–2</span><strong>Цель и группа</strong></li>
       <li><span>Вопросы 3–4</span><strong>Основы йоги</strong></li>
@@ -381,6 +396,23 @@ html:has(.grant-dialog[open]){overflow:hidden}
     <div id="grant-dialog-form"></div>
   </div>
 </dialog>
+<dialog class="ed-exit" id="ed-exit" aria-labelledby="ed-exit-title">
+      <form method="dialog" class="ed-exit-body">
+        <button class="dialog-close ed-exit-close" value="dismiss" aria-label="Закрыть">×</button>
+        <p class="kicker">Чёрная пятница в Академии Йоги</p>
+        <h2 id="ed-exit-title">Грант <mark>40 000 ₽</mark> на обучение</h2>
+        <p class="ed-exit-copy"></p>
+        <div class="ed-countdown" data-campaign aria-label="До конца акции">
+      <strong>До конца акции</strong>
+      <div class="ed-digits" aria-hidden="true">
+        <span><b>00</b>дн</span><span><b>00</b>ч</span><span><b>00</b>мин</span><span><b>00</b>сек</span>
+      </div>
+    </div>
+        <button class="solid ed-resume" value="resume" autofocus>Продолжить квиз</button>
+        <button class="quiet ed-dismiss" value="dismiss">Закрыть предложение</button>
+      </form>
+    </dialog>
+<script src="../edtech.js"></script>
 <script>
 /* QUIZ_SOURCE_START */
 (() => {
@@ -628,11 +660,18 @@ html:has(.grant-dialog[open]){overflow:hidden}
           <div><strong>Чёрная пятница</strong><span class="campaign-brand">В Академии Йоги</span></div>
           <span class="campaign-deadline">Только до 13 ноября</span>
         </div>
+        <p class="ed-result-offer" data-campaign>🎁 <span>Грант 40 000 ₽ и курс в подарок. <strong>Оставьте заявку</strong>, пока действует акция.</span></p>
         <div class="amount" data-campaign>40&nbsp;000&nbsp;₽</div>
         <p class="offer-subtitle"><span data-campaign>Грант на обучение</span><span data-after-campaign>Узнайте условия обучения</span></p>
         <div class="grant-availability" data-campaign>
           <span>Осталось грантов:</span><strong class="grant-remaining">${GRANTS_LEFT} / ${GRANTS_TOTAL}</strong>
         </div>
+        <div class="ed-countdown" data-campaign aria-label="До конца акции">
+      <strong>До конца акции</strong>
+      <div class="ed-digits" aria-hidden="true">
+        <span><b>00</b>дн</span><span><b>00</b>ч</span><span><b>00</b>мин</span><span><b>00</b>сек</span>
+      </div>
+    </div>
         <div id="grant-form-home"><div class="application-fields">
         <form class="lead-form" method="post" novalidate>
           <p class="gift-heading" id="gift-heading">Выберите курс в подарок</p>
@@ -666,6 +705,7 @@ html:has(.grant-dialog[open]){overflow:hidden}
     </div>`;
     side.innerHTML = '';
   }
+  const edtech = window.initEdtech?.({deadline: CAMPAIGN_END, left: GRANTS_LEFT, total: GRANTS_TOTAL, questions: TOTAL});
   function render(event) {
     const onIntro = step < 0;
     intro.hidden = !onIntro;
@@ -674,6 +714,7 @@ html:has(.grant-dialog[open]){overflow:hidden}
     resultFooter.hidden = step !== TOTAL;
     openDialog.hidden = step !== TOTAL;
     if (onIntro) {
+      edtech?.render(step);
       if (event) start.focus();
       return;
     }
@@ -700,6 +741,7 @@ html:has(.grant-dialog[open]){overflow:hidden}
       side.innerHTML=visual(key,card.cue)+grant();
     } else result();
     placeScene();
+    edtech?.render(step);
     play.classList.remove('enter'); side.classList.remove('enter');
     if(event) {
       const h=play.querySelector('h1');
